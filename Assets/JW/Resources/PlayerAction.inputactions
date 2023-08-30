@@ -15,6 +15,15 @@
                     "initialStateCheck": true
                 },
                 {
+                    "name": "Attack",
+                    "type": "Button",
+                    "id": "e27be98c-dc8d-4bf4-bf99-9afe5f164e51",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Jump",
                     "type": "Button",
                     "id": "e9c44578-e59f-4bae-9470-f53fbb3f5996",
@@ -33,9 +42,9 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Attack",
+                    "name": "Down",
                     "type": "Button",
-                    "id": "e27be98c-dc8d-4bf4-bf99-9afe5f164e51",
+                    "id": "0cde8689-e5fc-41bb-b826-eb56d31c1d83",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -79,7 +88,7 @@
                 {
                     "name": "",
                     "id": "db15c240-ae24-4bc2-849a-d567c08138a2",
-                    "path": "<Keyboard>/upArrow",
+                    "path": "<Keyboard>/x",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -90,11 +99,22 @@
                 {
                     "name": "",
                     "id": "5d544ac1-985e-4e1c-a557-1ee27e23e858",
-                    "path": "<Keyboard>/x",
+                    "path": "<Keyboard>/z",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Dodge",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1932bd86-8172-4f4d-bc34-aa7b3226d881",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Down",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

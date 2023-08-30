@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BottomUpAttack : BossAbility
 {
-    WaitForSeconds patternDelay = new WaitForSeconds(1.5f);
+    WaitForSeconds onoffDelay = new WaitForSeconds(0.5f);
 
     protected override void HandleInputUpdate()
     {
@@ -13,7 +13,7 @@ public class BottomUpAttack : BossAbility
 
     public override void Active()
     {
-
+        this.enabled = false;
     }
 
     private void OnEnable()
@@ -23,39 +23,54 @@ public class BottomUpAttack : BossAbility
 
     IEnumerator BottomUp()
     {
+        // on
         _boss.ActiveSwitch(_alertAreas, 1, 2);
-        yield return patternDelay;
+        yield return onoffDelay;
 
+        // off
         _boss.ActiveSwitch(_alertAreas, 1, 2);
+        yield return onoffDelay;
 
+        // on
         _boss.ActiveSwitch(_damageAreas, 1, 2);
         _boss.ActiveSwitch(_alertAreas, 3, 5);
-        yield return patternDelay;
+        yield return onoffDelay;
 
+        // off
         _boss.ActiveSwitch(_damageAreas, 1, 2);
         _boss.ActiveSwitch(_alertAreas, 3, 5);
+        yield return onoffDelay;
 
+        // on
         _boss.ActiveSwitch(_damageAreas, 3, 5);
         _boss.ActiveSwitch(_alertAreas, 6, 7);
-        yield return patternDelay;
+        yield return onoffDelay;
 
+        // off
         _boss.ActiveSwitch(_damageAreas, 3, 5);
         _boss.ActiveSwitch(_alertAreas, 6, 7);
+        yield return onoffDelay;
 
+        // on
         _boss.ActiveSwitch(_damageAreas, 6, 7);
         _boss.ActiveSwitch(_alertAreas, 8, 10);
-        yield return patternDelay;
+        yield return onoffDelay;
 
+        // off
         _boss.ActiveSwitch(_damageAreas, 6, 7);
         _boss.ActiveSwitch(_alertAreas, 8, 10);
+        yield return onoffDelay;
 
+        // on
         _boss.ActiveSwitch(_damageAreas, 8, 10);
-        yield return patternDelay;
+        yield return onoffDelay;
 
+        // off
         _boss.ActiveSwitch(_damageAreas, 8, 10);
+        yield return onoffDelay;
+        
+
+        _boss.isPatternFinished = true;
         this.enabled = false;
     }
-
-
-
 }

@@ -11,6 +11,7 @@ public class PlayerDodge : MonoBehaviour
 	private Animator anim;
 	private Rigidbody2D rb;
 	private Player main;
+	[SerializeField] private ParticleSystem ps;
 
 	[SerializeField] private float dodgeForce;
 	[SerializeField] private float dodgeDuration;
@@ -29,6 +30,8 @@ public class PlayerDodge : MonoBehaviour
 		anim.SetBool("dodge", true);
 		rb.bodyType = RigidbodyType2D.Kinematic;
 		rb.velocity = Vector2.right * transform.localScale.x * dodgeForce;
+		ps.transform.localScale = transform.localScale;
+		ps.Play();
 		main.SetInvincibility(true);
 
 		Invoke(nameof(DodgeReady), dodgeCooldown);
