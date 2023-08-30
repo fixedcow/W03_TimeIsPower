@@ -178,9 +178,8 @@ public class Boss : MonoBehaviour
 
         // 조건 플레이어랑 연동해서 바꿔놓기
 
-        currentPatternIdx++;
 
-        if (PatternList.Count - 1 < currentPatternIdx)
+        if (PatternList.Count - 1 <= currentPatternIdx)
         {
             currentPatternIdx = 0;
         }
@@ -194,8 +193,9 @@ public class Boss : MonoBehaviour
         else
         {
             this.ChangeState(PatternList[currentPatternIdx].state);
-            this.transform.position = platformPositions[PatternList[currentPatternIdx].position - 1].position;
+            this.transform.position = platformPositions[PatternList[currentPatternIdx].position].position;
             this._abilities[PatternList[currentPatternIdx].ability].enabled = true;
+            currentPatternIdx++;
         }
         yield return new WaitUntil(() => isPatternFinished);
         yield return delay;

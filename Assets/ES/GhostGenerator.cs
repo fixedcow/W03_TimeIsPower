@@ -22,7 +22,7 @@ public class GhostGenerator : MonoBehaviour
 
     private IEnumerator RecordGhost()
     {
-        GameObject ghost = Instantiate(ghostPrefab, Vector3.zero, Quaternion.identity);
+        GameObject ghost = Instantiate(ghostPrefab, new Vector3(15, 0, 0), Quaternion.identity);
         GhostData ghostData = ghost.GetComponent<GhostData>();
 
         while (!gameOverManager.isPlayerDaad) //게임오버가 되지 않았다면 while문 실행
