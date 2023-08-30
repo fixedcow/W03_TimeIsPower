@@ -6,10 +6,11 @@ using Sirenix.OdinInspector;
 public class GhostManager : MonoBehaviour
 {
     public bool testGameOver;
-
+    [SerializeField] private PlayerGameOverManager gameOverManager;
     [SerializeField] private float recordInterval;
     public List<GhostData> ghostDatas = new List<GhostData>();
     private WaitForSeconds replayWait;
+
 
     private void Start()
     {
@@ -18,20 +19,34 @@ public class GhostManager : MonoBehaviour
 
     private IEnumerator ReplayGhost()
     {
-        int nowCount = 0;
-        while (testGameOver) // 플레이어가 게임오버 되지 않았다면 while문 실행
+        //비활성화 되어있는 ghost들 켜주기
+        foreach(GhostData ghost in ghostDatas)
         {
+            ghost.gameObject.SetActive(true);
+        }
+
+        int nowCount = 0;
+        while (!gameOverManager.isPlayerDaad) // 플레이어가 게임오버 되지 않았다면 while문 실행
+        {
+            
             Debug.Log(nowCount);
             foreach (GhostData ghost in ghostDatas)
             {
-                if (ghost.recordPosition.Count-1 >= nowCount)
+                if(ghost.recordPosition.Count - 1 == nowCount){
+                    ghost.gameObject.SetActive(false);
+                }
+
+                if (ghost.recordPosition.Count-1 > nowCount)
                 {
                     Debug.Log(ghost.recordPosition[nowCount]);
                     ghost.transform.position = ghost.recordPosition[nowCount];
-                    /*ghost.ghostAnimator.SetBool("dodge", ghost.dodgeTrigger[nowCount]);
+                    Vector3 localScale = transform.localScale;
+                    localScale.x = ghost.recordLocalScaleX[nowCount];
+                    ghost.transform.localScale = localScale;
+                    ghost.ghostAnimator.SetBool("dodge", ghost.dodgeTrigger[nowCount]);
                     ghost.ghostAnimator.SetBool("move", ghost.moveTrigger[nowCount]);
                     ghost.ghostAnimator.SetBool("jump", ghost.jumpTrigger[nowCount]);
-                    ghost.ghostAnimator.SetBool("attack", ghost.attackTrigger[nowCount]);*/
+                    ghost.ghostAnimator.SetBool("attack", ghost.attackTrigger[nowCount]);
                 }
             }
             nowCount++;
