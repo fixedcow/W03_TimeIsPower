@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using DG.Tweening;
 
 [RequireComponent(typeof(PlayerDodge), typeof(PlayerMove), typeof(PlayerJump))]
 public class Player : MonoBehaviour
@@ -19,6 +21,19 @@ public class Player : MonoBehaviour
 
 	private bool isInvincible;
 	private bool isPressedDown;
+
+	public bool isPlayerDaad;
+
+	[SerializeField] private GameObject fadeScreen;
+	[SerializeField] private float fadeMiddlePositionX;
+	[SerializeField] private float fadeEndPositionX;
+	[SerializeField] private Vector3 fadeStartPosition;
+	[SerializeField] private float fadeTime;
+	[SerializeField] private float restartInterval;
+	[SerializeField] private Vector3 startPlayerPosition;
+	[SerializeField] private Vector3 startCameraPosition;
+	[SerializeField] private GameObject recordTrigger;
+	[SerializeField] private GameObject cameraTrigger;
 	#endregion
 
 	#region PublicMethod
@@ -26,7 +41,8 @@ public class Player : MonoBehaviour
 	{
 		if(isInvincible == false)
 		{
-			// Die;
+			PlayerGameOver();
+			Invoke("PlayerRestart", restartInterval);
 		}
 	}
 	public void SetInvincibility(bool b) => isInvincible = b;
@@ -98,6 +114,29 @@ public class Player : MonoBehaviour
 	{
 		isPressedDown = false;
 	}
+	private void PlayerGameOver()
+	{
+		isPlayerDaad = true;
+		//transform.position = startPlayerPosition;
+		fadeScreen.transform.DOLocalMoveX(fadeMiddlePositionX, fadeTime)
+			 .OnComplete(() =>
+			 {
+				 Camera.main.GetComponent<CameraController>().enabled = false;
+				 Camera.main.transform.position = startCameraPosition;
+				 transform.position = startPlayerPosition;
+				 fadeScreen.transform.DOLocalMoveX(fadeEndPositionX, fadeTime)
+				 .OnComplete(() =>
+				 {
+					 fadeScreen.transform.localPosition = fadeStartPosition;
+				 });
+			 });
+	}
 
+	private void PlayerRestart()
+	{
+		recordTrigger.SetActive(true);
+		cameraTrigger.SetActive(true);
+		isPlayerDaad = false;
+	}
 	#endregion
 }
