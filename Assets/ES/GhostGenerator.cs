@@ -14,6 +14,7 @@ public class GhostGenerator : MonoBehaviour
     private WaitForSeconds replayWait;
     [SerializeField] private GhostManager ghostManager;
 
+    public Vector2 _deadVector { get; set; }
 
     private void Start()
     {
@@ -35,8 +36,7 @@ public class GhostGenerator : MonoBehaviour
             ghostData.attackTrigger.Add(playerAnimator.GetBool("attack"));
             yield return replayWait;
         }
-		Vector2 后磊府 = Vector2.zero;
-		ghostData.deadVector = 后磊府;
+		ghostData.deadVector = _deadVector;
         ghostManager.ghostDatas.Add(ghostData);
     }
 

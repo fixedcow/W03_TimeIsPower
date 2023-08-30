@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class PlayerGameOverManager : MonoBehaviour
 {
-    public bool isPlayerDaad;
+    public bool isPlayerDead;
 
     [SerializeField] private GameObject fadeScreen;
     [SerializeField] private float fadeMiddlePositionX;
@@ -24,12 +24,13 @@ public class PlayerGameOverManager : MonoBehaviour
         {
             PlayerGameOver();
             Invoke("PlayerRestart", restartInterval);
+            GameObject.Find("Boss").GetComponent<Boss>().ResetParameter();
         }
     }
 
     private void PlayerGameOver()
     {
-        isPlayerDaad = true;
+        isPlayerDead = true;
         //transform.position = startPlayerPosition;
         fadeScreen.transform.DOLocalMoveX(fadeMiddlePositionX, fadeTime)
              .OnComplete(() =>
@@ -49,6 +50,6 @@ public class PlayerGameOverManager : MonoBehaviour
     {
         recordTrigger.SetActive(true);
         cameraTrigger.SetActive(true);
-        isPlayerDaad = false;
+        isPlayerDead = false;
     }
 }
