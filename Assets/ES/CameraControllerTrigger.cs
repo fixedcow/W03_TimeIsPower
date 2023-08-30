@@ -13,18 +13,18 @@ public class CameraControllerTrigger : MonoBehaviour
     {
         cameraController = Camera.main.GetComponent<CameraController>();
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            cameraController.transform.DOMove(stageCameraPosition, 0.5f)
-                .OnComplete(() =>
-                {
-                    //cameraController.enabled = true;
-                    gameObject.SetActive(false);
-                });
-            StartCoroutine(GameObject.Find("Boss").GetComponent<Boss>().ChangePattern());
-        }
-    }
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		if (collision.gameObject.CompareTag("Player"))
+		{
+			cameraController.transform.DOMove(stageCameraPosition, 0.5f)
+				.OnComplete(() =>
+				{
+					//cameraController.enabled = true;
+					gameObject.SetActive(false);
+				});
+			StartCoroutine(GameObject.Find("Boss").GetComponent<Boss>().ChangePattern());
+		}
+	}
 
 }
