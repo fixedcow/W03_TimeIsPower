@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,21 +10,23 @@ public class TitleManager : MonoBehaviour
 	#endregion
 
 	#region PrivateVariables
-	[SerializeField] private GameObject black;
+	[SerializeField] private BlackScreen blackScreen;
+
 	#endregion
 
 	#region PublicMethod
-	public void ExitTitle()
+	public void StartGame()
 	{
-		SpriteRenderer blackSr;
-		black.TryGetComponent(out blackSr);
-		blackSr.DOFade(1, 0.8f).From(0)
-			//.OnComplete(() => Æ©Åä¸®¾ó ·ëÀ¸·Î ÀÌµ¿)
-			.OnComplete(() => blackSr.DOFade(0, 0.3f).From(0))
-			.OnComplete(() => gameObject.SetActive(false));
+		StartGameTask().Forget();
 	}
 	#endregion
 
 	#region PrivateMethod
+	private async UniTaskVoid StartGameTask()
+	{
+		await blackScreen.ScreenFadeOut();
+		Camera.main.transform.position = new Vector3(-19f, 3.75f, -10f);
+		await blackScreen.ScreenFadeIn();
+	}
 	#endregion
 }

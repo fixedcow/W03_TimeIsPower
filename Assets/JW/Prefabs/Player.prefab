@@ -4923,6 +4923,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9901c1a056203642a6fd1cda3f631c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayerDaad: 0
+  fadeScreen: {fileID: 0}
+  fadeMiddlePositionX: 0
+  fadeEndPositionX: 0
+  fadeStartPosition: {x: 0, y: 0, z: 0}
+  fadeTime: 0
+  restartInterval: 0
+  startPlayerPosition: {x: 0, y: 0, z: 0}
+  startCameraPosition: {x: 0, y: 0, z: 0}
+  recordTrigger: {fileID: 0}
+  cameraTrigger: {fileID: 0}
 --- !u!114 &8803760988626880997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4997,7 +5008,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 11
   grondCheckRayLength: 0.6
-  downJumpRayLength: 2
+  downJumpRayLength: 6
 --- !u!114 &8803760988626880998
 MonoBehaviour:
   m_ObjectHideFlags: 0
