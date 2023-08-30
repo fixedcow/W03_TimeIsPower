@@ -27,10 +27,11 @@ public class GhostGenerator : MonoBehaviour
         while (testGameOver) //게임오버가 되지 않았다면 while문 실행
         {
             ghostData.recordPosition.Add(transform.position);
-            /*ghostData.dodgeTrigger.Add(playerAnimator.GetBool("dodge"));
+            ghostData.recordLocalScaleX.Add(transform.localScale.x);
+            ghostData.dodgeTrigger.Add(playerAnimator.GetBool("dodge"));
             ghostData.moveTrigger.Add(playerAnimator.GetBool("move"));
             ghostData.jumpTrigger.Add(playerAnimator.GetBool("jump"));
-            ghostData.attackTrigger.Add(playerAnimator.GetBool("attack"));*/
+            ghostData.attackTrigger.Add(playerAnimator.GetBool("attack"));
             yield return replayWait;
         }
 

@@ -28,10 +28,13 @@ public class GhostManager : MonoBehaviour
                 {
                     Debug.Log(ghost.recordPosition[nowCount]);
                     ghost.transform.position = ghost.recordPosition[nowCount];
-                    /*ghost.ghostAnimator.SetBool("dodge", ghost.dodgeTrigger[nowCount]);
+                    Vector3 localScale = transform.localScale;
+                    localScale.x = ghost.recordLocalScaleX[nowCount];
+                    ghost.transform.localScale = localScale;
+                    ghost.ghostAnimator.SetBool("dodge", ghost.dodgeTrigger[nowCount]);
                     ghost.ghostAnimator.SetBool("move", ghost.moveTrigger[nowCount]);
                     ghost.ghostAnimator.SetBool("jump", ghost.jumpTrigger[nowCount]);
-                    ghost.ghostAnimator.SetBool("attack", ghost.attackTrigger[nowCount]);*/
+                    ghost.ghostAnimator.SetBool("attack", ghost.attackTrigger[nowCount]);
                 }
             }
             nowCount++;
