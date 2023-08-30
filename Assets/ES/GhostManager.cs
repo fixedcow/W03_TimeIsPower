@@ -29,7 +29,7 @@ public class GhostManager : MonoBehaviour
         while (!gameOverManager.isPlayerDaad) // 플레이어가 게임오버 되지 않았다면 while문 실행
         {
             
-            Debug.Log(nowCount);
+            //Debug.Log(nowCount);
             foreach (GhostData ghost in ghostDatas)
             {
                 if(ghost.recordPosition.Count - 1 == nowCount){

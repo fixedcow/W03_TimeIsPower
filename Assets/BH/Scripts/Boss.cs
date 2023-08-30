@@ -55,7 +55,7 @@ public class Boss : MonoBehaviour
 
     public List<Info> PatternList;
 
-    private int currentPatternIdx = -1;
+    private int currentPatternIdx = 0;
 
     private void Awake()
     {
