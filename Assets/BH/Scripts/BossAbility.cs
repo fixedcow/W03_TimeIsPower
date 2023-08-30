@@ -36,9 +36,12 @@ public abstract class BossAbility : Boss
     private void Init()
     {
         _boss = GetComponent<Boss>();
+
         _platformPositions = _boss.platformPositions;
         _alertAreas = _boss.alertAreas;
         _damageAreas = _boss.damageAreas;
+
+        StopAllCoroutines();
     }
 
     protected void PreHandleInput()

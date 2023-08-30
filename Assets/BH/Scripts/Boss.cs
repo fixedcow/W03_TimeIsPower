@@ -1,49 +1,85 @@
+using Sirenix.OdinInspector;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 
 public class Boss : MonoBehaviour
 {
-    public enum State
+
+    private int _maxHp = 100000;
+
+    public bool isPatternFinished = true;
+
+    WaitForSeconds delay = new WaitForSeconds(2f);
+
+    public int HP
+    {
+        get
+        {
+            return HP;
+        }
+        private set
+        {
+            HP = value;
+        }
+    }
+
+    public enum BossState
     {
         Ignore = 0,
         IDLE,
-        ATTACK_1,
-        ATTACK_2,
-        ATTACK_3,
+        ATTACK,
+        CHANGEPHASE,
+        DIE,
     }
 
+    [Serializable]
     public class Info
     {
-        public State state;
+        public BossState state;
+        public int position;
+        public int ability;
     }
 
-    public Info bossInfo {  get; private set; }
+    public BossState state;
 
     private List<BossAbility> _abilities;
-
 
     public List<Transform> platformPositions;
     public List<GameObject> alertAreas;
     public List<GameObject> damageAreas;
+
+    public List<Info> PatternList;
+
+    private int currentPatternIdx = -1;
 
     private void Awake()
     {
         _abilities = new List<BossAbility>();
         _abilities.AddRange(this.GetComponents<BossAbility>());
 
+        foreach (var ability in _abilities)
+        {
+            ability.Active();
+        }
 
-        bossInfo = new Info();
-        
+
+        LateWake();
     }
 
-    private void Run()
+    protected virtual void LateWake()
     {
 
-        //_abilities[1].Active();
+    }
+
+
+    protected virtual void Start()
+    {
+        StartCoroutine(ChangePattern());
     }
 
     private void Update()
@@ -59,7 +95,7 @@ public class Boss : MonoBehaviour
 
     private void PreUpdateBoss()
     {
-        foreach(var ability in _abilities)
+        foreach (var ability in _abilities)
         {
             ability.PreUpdate();
         }
@@ -81,21 +117,27 @@ public class Boss : MonoBehaviour
         }
     }
 
-    public void ChangeState(State _state)
+    void Init()
     {
-        bossInfo.state = _state;
+        ChangeState(BossState.IDLE);
+
+    }
+
+    public void ChangeState(BossState _state)
+    {
+        state = _state;
         switch (_state)
         {
-            case State.IDLE: break;
-            case State.ATTACK_1: break;
-            case State.ATTACK_2: break;
-            case State.ATTACK_3: break;
+            case BossState.IDLE: break;
+            case BossState.ATTACK: break;
+            case BossState.CHANGEPHASE: break;
+            case BossState.DIE: break;
         }
     }
 
     public void ActiveSwitch(List<GameObject> _list, int _startNum, int _endNum)
     {
-        for(int i = _startNum - 1; i <= _endNum - 1; i++)
+        for (int i = _startNum - 1; i <= _endNum - 1; i++)
         {
             if (_list[i].activeSelf)
             {
@@ -107,4 +149,57 @@ public class Boss : MonoBehaviour
             }
         }
     }
+
+    public void ActiveSwitch(List<GameObject> _list, int num)
+    {
+        if (_list[num - 1].activeSelf)
+        {
+            _list[num - 1].SetActive(false);
+        }
+        else
+        {
+            _list[num - 1].SetActive(true);
+        }
+
+    }
+
+    void ResetParameter()
+    {
+        this.HP = _maxHp;
+        this.ChangeState(BossState.IDLE);
+        this.currentPatternIdx = 0;
+    }
+
+
+    IEnumerator ChangePattern()
+    {
+        
+        isPatternFinished = false;
+
+        // 조건 플레이어랑 연동해서 바꿔놓기
+
+        currentPatternIdx++;
+
+        if (PatternList.Count - 1 < currentPatternIdx)
+        {
+            currentPatternIdx = 0;
+        }
+
+        if (PatternList.Count == 0) yield break;
+
+        if (PatternList[currentPatternIdx].state == BossState.CHANGEPHASE)
+        {
+
+        }
+        else
+        {
+            this.ChangeState(PatternList[currentPatternIdx].state);
+            this.transform.position = platformPositions[PatternList[currentPatternIdx].position - 1].position;
+            this._abilities[PatternList[currentPatternIdx].ability].enabled = true;
+        }
+        yield return new WaitUntil(() => isPatternFinished);
+        yield return delay;
+        StartCoroutine(ChangePattern());
+    }
 }
+
