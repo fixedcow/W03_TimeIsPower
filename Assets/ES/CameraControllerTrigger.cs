@@ -7,8 +7,9 @@ public class CameraControllerTrigger : MonoBehaviour
 {
     private CameraController cameraController;
     [SerializeField] private Transform player;
+	[SerializeField] private Vector3 stageCameraPosition; 
 
-    private void Start()
+	private void Start()
     {
         cameraController = Camera.main.GetComponent<CameraController>();
     }
@@ -16,18 +17,12 @@ public class CameraControllerTrigger : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Vector3 endCameraPos = player.position;
-            endCameraPos.y += cameraController.yOffset;
-            endCameraPos.z = -10;
-            cameraController.transform.DOMove(endCameraPos, 0.5f)
+            cameraController.transform.DOMove(stageCameraPosition, 0.5f)
                 .OnComplete(() =>
                 {
-                    cameraController.enabled = true;
+                    //cameraController.enabled = true;
                     gameObject.SetActive(false);
-                }
-                
-                );
-            
+                });
         }
     }
 

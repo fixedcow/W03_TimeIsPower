@@ -14,6 +14,8 @@ public class PlayerJump : MonoBehaviour
 	[SerializeField] private float jumpForce;
 	[SerializeField] private float grondCheckRayLength;
 	[SerializeField] private float downJumpRayLength;
+
+	private bool isDownJumping = false;
 	#endregion
 
 	#region PublicMethod
@@ -27,10 +29,15 @@ public class PlayerJump : MonoBehaviour
 	}
 	public void DownJump()
 	{
-		if (anim.GetBool("jump") == true)
+		if (anim.GetBool("jump") == true || isDownJumping == true)
 			return;
 
-		RaycastHit2D hit = Physics2D.Raycast((Vector2)transform.position - Vector2.down * 1.5f, Vector2.down, downJumpRayLength, 1 << LayerMask.NameToLayer("Ground"));
+		isDownJumping = true;
+		Invoke(nameof(DownJumpReady), 0.5f);
+		anim.SetBool("jump", true);
+		Vector2 origin = (Vector2)transform.position + Vector2.down * 1.5f;
+		RaycastHit2D hit = Physics2D.Raycast(origin, Vector2.down, downJumpRayLength, 1 << LayerMask.NameToLayer("Ground"));
+		Debug.DrawRay(origin, Vector2.down * downJumpRayLength, Color.red);
 		if(hit.collider != null)
 		{
 			transform.position = new Vector2(transform.position.x, transform.position.y - 0.3f);
@@ -61,6 +68,10 @@ public class PlayerJump : MonoBehaviour
 		{
 			anim.SetBool("jump", false);
 		}
+	}
+	private void DownJumpReady()
+	{
+		isDownJumping = false;
 	}
 	#endregion
 }
