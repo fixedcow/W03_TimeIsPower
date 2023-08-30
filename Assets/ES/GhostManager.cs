@@ -26,7 +26,7 @@ public class GhostManager : MonoBehaviour
         }
 
         int nowCount = 0;
-        while (!gameOverManager.isPlayerDaad) // 플레이어가 게임오버 되지 않았다면 while문 실행
+        while (!gameOverManager.isPlayerDead) // 플레이어가 게임오버 되지 않았다면 while문 실행
         {
             
             //Debug.Log(nowCount);
@@ -38,7 +38,7 @@ public class GhostManager : MonoBehaviour
 
                 if (ghost.recordPosition.Count-1 > nowCount)
                 {
-                    Debug.Log(ghost.recordPosition[nowCount]);
+                    //Debug.Log(ghost.recordPosition[nowCount]);
                     ghost.transform.position = ghost.recordPosition[nowCount];
                     Vector3 localScale = transform.localScale;
                     localScale.x = ghost.recordLocalScaleX[nowCount];

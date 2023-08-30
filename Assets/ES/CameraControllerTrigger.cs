@@ -7,7 +7,7 @@ public class CameraControllerTrigger : MonoBehaviour
 {
     private CameraController cameraController;
     [SerializeField] private Transform player;
-	[SerializeField] private Vector3 stageCameraPosition; 
+	[SerializeField] private Vector3 stageCameraPosition;
 
 	private void Start()
     {
@@ -23,6 +23,7 @@ public class CameraControllerTrigger : MonoBehaviour
                     //cameraController.enabled = true;
                     gameObject.SetActive(false);
                 });
+            StartCoroutine(GameObject.Find("Boss").GetComponent<Boss>().ChangePattern());
         }
     }
 

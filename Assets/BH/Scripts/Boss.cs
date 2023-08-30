@@ -2,31 +2,16 @@ using Sirenix.OdinInspector;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 
 public class Boss : MonoBehaviour
 {
 
-    private int _maxHp = 100000;
+    private int _maxHp = 1000;
 
     public bool isPatternFinished = true;
 
     WaitForSeconds delay = new WaitForSeconds(2f);
-
-    public int HP
-    {
-        get
-        {
-            return HP;
-        }
-        private set
-        {
-            HP = value;
-        }
-    }
 
     public enum BossState
     {
@@ -61,14 +46,13 @@ public class Boss : MonoBehaviour
     {
         _abilities = new List<BossAbility>();
         _abilities.AddRange(this.GetComponents<BossAbility>());
+        ResetParameter();
 
         foreach (var ability in _abilities)
         {
             ability.Active();
         }
 
-
-        LateWake();
     }
 
     protected virtual void LateWake()
@@ -79,12 +63,11 @@ public class Boss : MonoBehaviour
 
     protected virtual void Start()
     {
-        StartCoroutine(ChangePattern());
+        
     }
 
     private void Update()
     {
-        //
 
         //PreUpdateBoss();
 
@@ -128,7 +111,9 @@ public class Boss : MonoBehaviour
         state = _state;
         switch (_state)
         {
-            case BossState.IDLE: break;
+            case BossState.IDLE:
+
+                break;
             case BossState.ATTACK: break;
             case BossState.CHANGEPHASE: break;
             case BossState.DIE: break;
@@ -163,21 +148,19 @@ public class Boss : MonoBehaviour
 
     }
 
-    void ResetParameter()
+    public void ResetParameter()
     {
-        this.HP = _maxHp;
         this.ChangeState(BossState.IDLE);
         this.currentPatternIdx = 0;
+        StopAllCoroutines();
     }
 
-
-    IEnumerator ChangePattern()
+    WaitForSeconds wfs = new WaitForSeconds(1f);
+    public IEnumerator ChangePattern()
     {
-        
         isPatternFinished = false;
 
-        // 조건 플레이어랑 연동해서 바꿔놓기
-
+        //yield return wfs;
 
         if (PatternList.Count - 1 < currentPatternIdx)
         {
@@ -194,6 +177,7 @@ public class Boss : MonoBehaviour
         {
             this.ChangeState(PatternList[currentPatternIdx].state);
             this.transform.position = platformPositions[PatternList[currentPatternIdx].position].position;
+
             this._abilities[PatternList[currentPatternIdx].ability].enabled = true;
             currentPatternIdx++;
         }
