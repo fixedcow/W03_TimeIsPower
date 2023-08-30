@@ -110,6 +110,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "UI",
+            "id": "e89fff0e-62b8-4b1c-b161-6bdd36551ac2",
+            "actions": [
+                {
+                    "name": "ESC",
+                    "type": "Button",
+                    "id": "c372cc38-7790-4d0e-83ea-02bf004a754b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "9f18e748-d765-4baa-849f-863a17aed699",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "ESC",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
