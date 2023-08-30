@@ -4997,6 +4997,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 11
   grondCheckRayLength: 0.6
+  downJumpRayLength: 3
 --- !u!114 &8803760988626880998
 MonoBehaviour:
   m_ObjectHideFlags: 0

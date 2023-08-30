@@ -13,6 +13,7 @@ public class PlayerJump : MonoBehaviour
 
 	[SerializeField] private float jumpForce;
 	[SerializeField] private float grondCheckRayLength;
+	[SerializeField] private float downJumpRayLength;
 	#endregion
 
 	#region PublicMethod
@@ -23,6 +24,17 @@ public class PlayerJump : MonoBehaviour
 
 		rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
 		anim.SetBool("jump", true);
+	}
+	public void DownJump()
+	{
+		if (anim.GetBool("jump") == true)
+			return;
+
+		RaycastHit2D hit = Physics2D.Raycast((Vector2)transform.position - Vector2.down * 1.5f, Vector2.down, downJumpRayLength, 1 << LayerMask.NameToLayer("Ground"));
+		if(hit.collider != null)
+		{
+			transform.position = new Vector2(transform.position.x, transform.position.y - 0.3f);
+		}
 	}
 	#endregion
 

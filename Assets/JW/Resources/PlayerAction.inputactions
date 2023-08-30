@@ -40,6 +40,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Down",
+                    "type": "Button",
+                    "id": "0cde8689-e5fc-41bb-b826-eb56d31c1d83",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -79,7 +88,7 @@
                 {
                     "name": "",
                     "id": "db15c240-ae24-4bc2-849a-d567c08138a2",
-                    "path": "<Keyboard>/upArrow",
+                    "path": "<Keyboard>/c",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -101,11 +110,22 @@
                 {
                     "name": "",
                     "id": "f284ff19-1715-455c-81e0-c1b545bd4332",
-                    "path": "<Keyboard>/c",
+                    "path": "<Keyboard>/v",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1932bd86-8172-4f4d-bc34-aa7b3226d881",
+                    "path": "<Keyboard>/downArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Down",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
