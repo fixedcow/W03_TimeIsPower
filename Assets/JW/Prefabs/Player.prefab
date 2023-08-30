@@ -48,9 +48,9 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -4968,7 +4968,7 @@ MonoBehaviour:
   ps: {fileID: 2103933650}
   dodgeForce: 9
   dodgeDuration: 0.24
-  dodgeCooldown: 0.5
+  dodgeCooldown: 1.1
 --- !u!114 &8803760988626880992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4997,7 +4997,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 11
   grondCheckRayLength: 0.6
-  downJumpRayLength: 3
+  downJumpRayLength: 2
 --- !u!114 &8803760988626880998
 MonoBehaviour:
   m_ObjectHideFlags: 0

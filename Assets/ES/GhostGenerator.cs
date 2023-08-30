@@ -35,7 +35,8 @@ public class GhostGenerator : MonoBehaviour
             ghostData.attackTrigger.Add(playerAnimator.GetBool("attack"));
             yield return replayWait;
         }
-
+		Vector2 后磊府 = Vector2.zero;
+		ghostData.deadVector = 后磊府;
         ghostManager.ghostDatas.Add(ghostData);
     }
 
