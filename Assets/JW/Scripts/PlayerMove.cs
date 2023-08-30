@@ -45,8 +45,7 @@ public class PlayerMove : MonoBehaviour
 		{
 			rb.velocity = new Vector2(transform.localScale.x * moveSpeed, rb.velocity.y);
 		}
-		else if(anim.GetBool("move") == false 
-			&& rb.bodyType == RigidbodyType2D.Dynamic)
+		else if(rb.bodyType == RigidbodyType2D.Dynamic)
 		{
 			float velocityX = Mathf.Lerp(rb.velocity.x, 0, linearDrag * Time.deltaTime);
 			rb.velocity = new Vector2(velocityX, rb.velocity.y);
