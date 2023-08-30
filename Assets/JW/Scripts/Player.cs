@@ -22,7 +22,7 @@ public class Player : MonoBehaviour
 	private bool isInvincible;
 	private bool isPressedDown;
 
-	public bool isPlayerDaad;
+	public bool isPlayerDead;
 
 	[SerializeField] private GameObject fadeScreen;
 	[SerializeField] private float fadeMiddlePositionX;
@@ -116,7 +116,7 @@ public class Player : MonoBehaviour
 	}
 	private void PlayerGameOver()
 	{
-		isPlayerDaad = true;
+		isPlayerDead = true;
 		//transform.position = startPlayerPosition;
 		fadeScreen.transform.DOLocalMoveX(fadeMiddlePositionX, fadeTime)
 			 .OnComplete(() =>
@@ -136,7 +136,7 @@ public class Player : MonoBehaviour
 	{
 		recordTrigger.SetActive(true);
 		cameraTrigger.SetActive(true);
-		isPlayerDaad = false;
+		isPlayerDead = false;
 	}
 	#endregion
 }
