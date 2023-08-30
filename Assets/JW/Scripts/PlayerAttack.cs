@@ -9,6 +9,7 @@ public class PlayerAttack : MonoBehaviour
 
 	#region PrivateVariables
 	private Animator anim;
+
 	#endregion
 
 	#region PublicMethod
