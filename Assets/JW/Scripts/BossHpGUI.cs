@@ -24,13 +24,11 @@ public class BossHpGUI : MonoBehaviour
 	#endregion
 
 	#region PublicMethod
-	[Button]
 	public void Initialize(int _hpMax)
 	{
 		hpMax = _hpMax;
 		hpCurrent = hpMax;
 	}
-	[Button]
 	public void SetHp(int _currentHp)
 	{
 		hpCurrent = _currentHp;
