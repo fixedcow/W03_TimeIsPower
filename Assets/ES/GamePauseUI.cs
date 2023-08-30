@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class GamePauseUI : MonoBehaviour
 {
     [SerializeField] private GameObject pauseUI;
+    [SerializeField] private Player player;
     private PlayerAction input;
     private bool isPause;
 
@@ -28,13 +29,20 @@ public class GamePauseUI : MonoBehaviour
     private void PauseGameUI()
     {
         Time.timeScale = 0;
+        player.enabled = false;
         pauseUI.SetActive(true);
     }
 
-    private void ResumeGameUI()
+    public void ResumeGameUI()
     {
         Time.timeScale = 1;
+        player.enabled = true;
         pauseUI.SetActive(false);
+    }
+
+    public void GameQuit()
+    {
+        Application.Quit();
     }
 
     private void Pause(InputAction.CallbackContext _context)
