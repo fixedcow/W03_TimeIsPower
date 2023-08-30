@@ -7,7 +7,7 @@ public class GhostGenerator : MonoBehaviour
 {
     public bool testGameOver;
 
-    [SerializeField] private PlayerGameOverManager gameOverManager;
+    [SerializeField] private Player player;
     [SerializeField] private Animator playerAnimator;
     [SerializeField] private GameObject ghostPrefab;
     [SerializeField] private float recordInterval;
@@ -25,7 +25,7 @@ public class GhostGenerator : MonoBehaviour
         GameObject ghost = Instantiate(ghostPrefab, new Vector3(15, 0, 0), Quaternion.identity);
         GhostData ghostData = ghost.GetComponent<GhostData>();
 
-        while (!gameOverManager.isPlayerDaad) //게임오버가 되지 않았다면 while문 실행
+        while (!player.isPlayerDaad) //게임오버가 되지 않았다면 while문 실행
         {
             ghostData.recordPosition.Add(transform.position);
             ghostData.recordLocalScaleX.Add(transform.localScale.x);
