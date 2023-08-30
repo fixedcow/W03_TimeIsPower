@@ -11,13 +11,14 @@ GameObject:
   - component: {fileID: 7998054061223970321}
   - component: {fileID: 7998054061223970322}
   - component: {fileID: 7998054061223970323}
+  - component: {fileID: -5438544718299983473}
   m_Layer: 0
   m_Name: Magmaball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7998054061223970321
 Transform:
   m_ObjectHideFlags: 0
@@ -4812,3 +4813,19 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &-5438544718299983473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7998054061223970324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f47ae1afdf5d7c45a2ebfcdff421ea3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  guideSpeed: 0
+  rotateSpeed: 0
+  maxSpeed: 0

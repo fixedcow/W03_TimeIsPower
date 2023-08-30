@@ -7693,23 +7693,23 @@ MonoBehaviour:
   - {fileID: 392583338}
   PatternList:
   - state: 2
-    position: 8
-    ability: 2
-  - state: 2
-    position: 7
-    ability: 3
-  - state: 2
-    position: 0
-    ability: 0
-  - state: 2
-    position: 9
-    ability: 1
-  - state: 2
     position: 6
     ability: 4
   - state: 2
     position: 5
     ability: 5
+  - state: 2
+    position: 9
+    ability: 1
+  - state: 2
+    position: 0
+    ability: 0
+  - state: 2
+    position: 7
+    ability: 3
+  - state: 2
+    position: 8
+    ability: 2
 --- !u!114 &1513582330
 MonoBehaviour:
   m_ObjectHideFlags: 0

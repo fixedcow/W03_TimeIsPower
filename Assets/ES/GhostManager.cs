@@ -38,7 +38,7 @@ public class GhostManager : MonoBehaviour
 
                 if (ghost.recordPosition.Count-1 > nowCount)
                 {
-                    Debug.Log(ghost.recordPosition[nowCount]);
+                    //Debug.Log(ghost.recordPosition[nowCount]);
                     ghost.transform.position = ghost.recordPosition[nowCount];
                     Vector3 localScale = transform.localScale;
                     localScale.x = ghost.recordLocalScaleX[nowCount];

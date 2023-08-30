@@ -155,12 +155,12 @@ public class Boss : MonoBehaviour
         StopAllCoroutines();
     }
 
-    WaitForSeconds wfs = new(1f);
+    WaitForSeconds wfs = new WaitForSeconds(1f);
     public IEnumerator ChangePattern()
     {
         isPatternFinished = false;
 
-        yield return wfs;
+        //yield return wfs;
 
         if (PatternList.Count - 1 < currentPatternIdx)
         {
