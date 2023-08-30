@@ -23,7 +23,7 @@ public class CameraControllerTrigger : MonoBehaviour
 					//cameraController.enabled = true;
 					gameObject.SetActive(false);
 				});
-			StartCoroutine(GameObject.Find("Boss").GetComponent<Boss>().ChangePattern());
+			StartCoroutine(GameManager.instance.GetBoss().ChangePattern());
 		}
 	}
 
