@@ -48,6 +48,7 @@ MonoBehaviour:
   ghostTransform: {fileID: 4084996498787428130}
   ghostAnimator: {fileID: 4084996499608370014}
   recordPosition: []
+  recordLocalScaleX: []
   dodgeTrigger: 
   moveTrigger: 
   jumpTrigger: 
@@ -123,9 +124,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -168246843
+  m_SortingLayer: 3
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 2e1934dfbdff5ad48b86a367612dde6b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.34901962}
   m_FlipX: 0
