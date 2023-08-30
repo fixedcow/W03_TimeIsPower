@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 
@@ -13,7 +14,7 @@ public class Boss : MonoBehaviour
 
     public bool isPatternFinished = true;
 
-    public float patternDelay = 2f;
+    WaitForSeconds delay = new WaitForSeconds(2f);
 
     public int HP
     {
@@ -36,6 +37,7 @@ public class Boss : MonoBehaviour
         DIE,
     }
 
+    [Serializable]
     public class Info
     {
         public BossState state;
@@ -51,7 +53,7 @@ public class Boss : MonoBehaviour
     public List<GameObject> alertAreas;
     public List<GameObject> damageAreas;
 
-    public List<Info> PatternList = new();
+    public List<Info> PatternList;
 
     private int currentPatternIdx = -1;
 
@@ -148,6 +150,19 @@ public class Boss : MonoBehaviour
         }
     }
 
+    public void ActiveSwitch(List<GameObject> _list, int num)
+    {
+        if (_list[num - 1].activeSelf)
+        {
+            _list[num - 1].SetActive(false);
+        }
+        else
+        {
+            _list[num - 1].SetActive(true);
+        }
+
+    }
+
     void ResetParameter()
     {
         this.HP = _maxHp;
@@ -158,7 +173,7 @@ public class Boss : MonoBehaviour
 
     IEnumerator ChangePattern()
     {
-        WaitForSeconds delay = new WaitForSeconds(patternDelay);
+        
         isPatternFinished = false;
 
         // 조건 플레이어랑 연동해서 바꿔놓기
@@ -169,6 +184,9 @@ public class Boss : MonoBehaviour
         {
             currentPatternIdx = 0;
         }
+
+        if (PatternList.Count == 0) yield break;
+
         if (PatternList[currentPatternIdx].state == BossState.CHANGEPHASE)
         {
 

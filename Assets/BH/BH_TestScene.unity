@@ -2593,6 +2593,7 @@ GameObject:
   - component: {fileID: 1513582329}
   - component: {fileID: 1513582327}
   - component: {fileID: 1513582328}
+  - component: {fileID: 1513582331}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -2727,11 +2728,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPatternFinished: 1
-  patternDelay: 2
   state: 0
   platformPositions: []
   alertAreas: []
   damageAreas: []
+  PatternList: []
 --- !u!114 &1513582328
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2745,11 +2746,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPatternFinished: 1
-  patternDelay: 2
   state: 0
   platformPositions: []
   alertAreas: []
   damageAreas: []
+  PatternList: []
 --- !u!114 &1513582329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2763,7 +2764,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPatternFinished: 1
-  patternDelay: 2
   state: 0
   platformPositions:
   - {fileID: 378491911}
@@ -2806,6 +2806,16 @@ MonoBehaviour:
   - {fileID: 1610385359}
   - {fileID: 110602203}
   - {fileID: 1722764614}
+  PatternList:
+  - state: 2
+    position: 10
+    ability: 0
+  - state: 2
+    position: 10
+    ability: 1
+  - state: 2
+    position: 1
+    ability: 2
 --- !u!114 &1513582330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2818,6 +2828,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b36f3645eba57f8469403873168c0db8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _list: []
+--- !u!114 &1513582331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513582321}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aa52a5851e13eb4095779c3872dc2bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPatternFinished: 1
+  state: 0
+  platformPositions: []
+  alertAreas: []
+  damageAreas: []
+  PatternList: []
 --- !u!1 &1535754600
 GameObject:
   m_ObjectHideFlags: 0
