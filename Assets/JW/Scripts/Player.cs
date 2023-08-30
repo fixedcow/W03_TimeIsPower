@@ -18,12 +18,16 @@ public class Player : MonoBehaviour
 	private PlayerAttack attack;
 
 	private bool isInvincible;
+	private bool isPressedDown;
 	#endregion
 
 	#region PublicMethod
 	public void Hit()
 	{
-
+		if(isInvincible == false)
+		{
+			// Die;
+		}
 	}
 	public void SetInvincibility(bool b) => isInvincible = b;
 	#endregion
@@ -45,6 +49,8 @@ public class Player : MonoBehaviour
 		input.Player.Attack.performed += Attack;
 		input.Player.Dodge.performed += Dodge;
 		input.Player.Jump.performed += Jump;
+		input.Player.Down.performed += Down;
+		input.Player.Down.canceled += DownCanceled;
 	}
 	private void OnDisable()
 	{
@@ -53,6 +59,8 @@ public class Player : MonoBehaviour
 		input.Player.Attack.performed -= Attack;
 		input.Player.Dodge.performed -= Dodge;
 		input.Player.Jump.performed -= Jump;
+		input.Player.Down.performed -= Down;
+		input.Player.Down.canceled -= DownCanceled;
 		input.Disable();
 	}
 	private void Move(InputAction.CallbackContext _context)
@@ -65,7 +73,14 @@ public class Player : MonoBehaviour
 	}
 	private void Jump(InputAction.CallbackContext _context)
 	{
-		jump.Jump();
+		if(isPressedDown == true)
+		{
+			jump.DownJump();
+		}
+		else
+		{
+			jump.Jump();
+		}
 	}
 	private void Attack(InputAction.CallbackContext _context)
 	{
@@ -74,6 +89,14 @@ public class Player : MonoBehaviour
 	private void Dodge(InputAction.CallbackContext _context)
 	{
 		dodge.Dodge();
+	}
+	private void Down(InputAction.CallbackContext _context)
+	{
+		isPressedDown = true;
+	}
+	private void DownCanceled(InputAction.CallbackContext _context)
+	{
+		isPressedDown = false;
 	}
 
 	#endregion
