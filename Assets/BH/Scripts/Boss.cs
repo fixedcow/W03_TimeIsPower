@@ -179,7 +179,7 @@ public class Boss : MonoBehaviour
         // 조건 플레이어랑 연동해서 바꿔놓기
 
 
-        if (PatternList.Count - 1 <= currentPatternIdx)
+        if (PatternList.Count - 1 < currentPatternIdx)
         {
             currentPatternIdx = 0;
         }
