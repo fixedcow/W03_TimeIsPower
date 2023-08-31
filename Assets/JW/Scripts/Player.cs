@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using DG.Tweening;
+using Sirenix.OdinInspector;
 
 [RequireComponent(typeof(PlayerDodge), typeof(PlayerMove), typeof(PlayerJump))]
 public class Player : MonoBehaviour
@@ -32,11 +33,11 @@ public class Player : MonoBehaviour
 	[SerializeField] private float restartInterval;
 	[SerializeField] private Vector3 startPlayerPosition;
 	[SerializeField] private Vector3 startCameraPosition;
-	[SerializeField] private GameObject recordTrigger;
-	[SerializeField] private GameObject cameraTrigger;
+	[SerializeField] private GameObject stageEnterTrigger;
 	#endregion
 
 	#region PublicMethod
+	[Button]
 	public void Hit()
 	{
 		if(isInvincible == false)
@@ -147,8 +148,7 @@ public class Player : MonoBehaviour
 
 	private void PlayerRestart()
 	{
-		recordTrigger.SetActive(true);
-		cameraTrigger.SetActive(true);
+		stageEnterTrigger.SetActive(true);
 		isPlayerDead = false;
 	}
 	#endregion

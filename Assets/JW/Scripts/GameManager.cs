@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 
 	[SerializeField] private UnityEvent onGameStart;
 	[SerializeField] private UnityEvent onBattleStart;
+	[SerializeField] private UnityEvent onBattleEnd;
 	#endregion
 
 	#region PublicMethod
@@ -32,6 +33,11 @@ public class GameManager : MonoBehaviour
 	public void BattleStart()
 	{
 		onBattleStart.Invoke();
+		StartCoroutine(boss.ChangePattern());
+	}
+	public void BattleEnd()
+	{
+		onBattleEnd.Invoke();
 	}
 	#endregion
 

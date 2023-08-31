@@ -19,6 +19,7 @@ public class StageEnterTrigger : MonoBehaviour
 		if (collision.gameObject.CompareTag("Player"))
 		{
 			GameManager.instance.BattleStart();
+			gameObject.SetActive(false);
 		}
 	}
 	#endregion
