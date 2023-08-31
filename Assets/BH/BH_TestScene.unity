@@ -1313,6 +1313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1472196888}
+  stageCameraPosition: {x: 0, y: 3.75, z: -10}
   yOffset: 2
 --- !u!4 &1358923606 stripped
 Transform:
@@ -1981,6 +1982,66 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7277725790390646206, guid: ca77a88727ca14540bf1c94b1013b28b, type: 3}
+      propertyPath: PatternList.Array.data[0].state
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277725790390646206, guid: ca77a88727ca14540bf1c94b1013b28b, type: 3}
+      propertyPath: PatternList.Array.data[1].state
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277725790390646206, guid: ca77a88727ca14540bf1c94b1013b28b, type: 3}
+      propertyPath: PatternList.Array.data[2].state
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277725790390646206, guid: ca77a88727ca14540bf1c94b1013b28b, type: 3}
+      propertyPath: PatternList.Array.data[0].ability
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277725790390646206, guid: ca77a88727ca14540bf1c94b1013b28b, type: 3}
+      propertyPath: PatternList.Array.data[1].ability
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277725790390646206, guid: ca77a88727ca14540bf1c94b1013b28b, type: 3}
+      propertyPath: PatternList.Array.data[2].ability
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277725790390646206, guid: ca77a88727ca14540bf1c94b1013b28b, type: 3}
+      propertyPath: PatternList.Array.data[3].ability
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277725790390646206, guid: ca77a88727ca14540bf1c94b1013b28b, type: 3}
+      propertyPath: PatternList.Array.data[4].ability
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277725790390646206, guid: ca77a88727ca14540bf1c94b1013b28b, type: 3}
+      propertyPath: PatternList.Array.data[5].ability
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277725790390646206, guid: ca77a88727ca14540bf1c94b1013b28b, type: 3}
+      propertyPath: PatternList.Array.data[0].position
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277725790390646206, guid: ca77a88727ca14540bf1c94b1013b28b, type: 3}
+      propertyPath: PatternList.Array.data[1].position
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277725790390646206, guid: ca77a88727ca14540bf1c94b1013b28b, type: 3}
+      propertyPath: PatternList.Array.data[2].position
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277725790390646206, guid: ca77a88727ca14540bf1c94b1013b28b, type: 3}
+      propertyPath: PatternList.Array.data[3].position
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277725790390646206, guid: ca77a88727ca14540bf1c94b1013b28b, type: 3}
+      propertyPath: PatternList.Array.data[4].position
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7277725790390646206, guid: ca77a88727ca14540bf1c94b1013b28b, type: 3}
+      propertyPath: PatternList.Array.data[5].position
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7277725790595079291, guid: ca77a88727ca14540bf1c94b1013b28b, type: 3}
       propertyPath: m_RootOrder
       value: 0
