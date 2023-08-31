@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
 {
 	#region PublicVariables
 	public static GameManager instance;
+
+	public GameObject GameClearUI;
+	
 	#endregion
 
 	#region PrivateVariables
@@ -40,6 +43,11 @@ public class GameManager : MonoBehaviour
 	public void BattleEnd()
 	{
 		onBattleEnd.Invoke();
+	}
+
+	public void GameClear()
+	{
+		GameClearUI.SetActive(true);
 	}
 	#endregion
 
