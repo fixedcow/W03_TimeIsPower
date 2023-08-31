@@ -14883,9 +14883,9 @@ GameObject:
   - component: {fileID: 7277725790674652552}
   - component: {fileID: 7277725790674652559}
   - component: {fileID: 7277725790674652558}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Boss
-  m_TagString: Boss
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15050,7 +15050,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4adb3d44c2a53dc4c8dabfef4314c20a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 100
+  maxHp: 1
   isPatternFinished: 1
   test: 0
   state: 1

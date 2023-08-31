@@ -7,7 +7,7 @@ using UnityEngine;
 public class Boss : MonoBehaviour
 {
 
-    public int maxHp = 100;
+    public int maxHp = 1;
 
     private int _hp;
     public int HP
@@ -19,7 +19,9 @@ public class Boss : MonoBehaviour
         set
         {
             _hp = value;
-            // ui에 넘겨주기
+            BossHpGUI.instance.SetHp(value);
+            Debug.Log(_hp);
+
             if(value < 0)
             {
                 GameManager.instance.GameClear();
@@ -166,7 +168,7 @@ public class Boss : MonoBehaviour
 
     }
 
-    private void ResetParameter()
+    public void ResetParameter()
     {
         this.HP = maxHp;
         this.ChangeState(BossState.IDLE);

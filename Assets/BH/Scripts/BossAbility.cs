@@ -23,7 +23,10 @@ public abstract class BossAbility : Boss
 
     public virtual void DoUpdate()
     {
-
+        if (GameManager.instance.GetPlayer().isPlayerDead)
+        {
+            StopAllCoroutines();
+        }
     }
 
     public virtual void PostUpdate()
