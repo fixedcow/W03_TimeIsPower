@@ -23,7 +23,7 @@ public abstract class BossAbility : Boss
 
     public virtual void DoUpdate()
     {
-
+        
     }
 
     public virtual void PostUpdate()
@@ -41,7 +41,7 @@ public abstract class BossAbility : Boss
         _alertAreas = _boss.alertAreas;
         _damageAreas = _boss.damageAreas;
 
-        //StopAllCoroutines();
+        StopAllCoroutines();
     }
 
     protected void PreHandleInput()
@@ -50,4 +50,23 @@ public abstract class BossAbility : Boss
     }
 
     protected abstract void HandleInputUpdate();
+
+    public void Stop()
+    {
+        StopAllCoroutines();
+        foreach(GameObject go in _damageAreas)
+        {
+            if (go.activeSelf)
+            {
+                go.SetActive(false);
+            }
+        }
+        foreach(GameObject go in _alertAreas)
+        {
+            if (go.activeSelf)
+            {
+                go.SetActive(false);
+            }
+        }
+    }
 }

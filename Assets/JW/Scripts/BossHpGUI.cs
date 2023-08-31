@@ -31,10 +31,8 @@ public class BossHpGUI : MonoBehaviour
 	}
 	public void Initialize()
 	{
-		//SetMaxHp(GameManager.instance.GetBoss().maxHp);
-		//Test
-		SetMaxHp(300);
-		//Testend
+		SetMaxHp(GameManager.instance.GetBoss().maxHp);
+
 		gameObject.SetActive(true);
 	}
 	public void SetMaxHp(int _hpMax)

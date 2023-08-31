@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour
 {
 	#region PublicVariables
 	public static GameManager instance;
+
+	public GameObject GameClearUI;
+	
 	#endregion
 
 	#region PrivateVariables
@@ -17,6 +20,8 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private UnityEvent onBattleStart;
 	[SerializeField] private UnityEvent onBattleEnd;
 	#endregion
+
+	public GameObject ClearUI;
 
 	#region PublicMethod
 	public Player GetPlayer() => player;
@@ -39,7 +44,16 @@ public class GameManager : MonoBehaviour
 	{
 		onBattleEnd.Invoke();
 	}
+
+	public void GameClear()
+	{
+		GameClearUI.SetActive(true);
+		Time.timeScale = 0;
+		Physics2D.SyncTransforms();
+	}
 	#endregion
+
+	
 
 	#region PrivateMethod
 	private void Awake()
