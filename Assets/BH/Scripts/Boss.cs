@@ -7,7 +7,7 @@ using UnityEngine;
 public class Boss : MonoBehaviour
 {
 
-    private int maxHp = 100;
+    public int maxHp = 100;
 
     public int HP { get; set; }
 
