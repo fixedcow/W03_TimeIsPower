@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private UnityEvent onBattleEnd;
 	#endregion
 
+	public GameObject ClearUI;
+
 	#region PublicMethod
 	public Player GetPlayer() => player;
 	public Boss GetBoss() => boss;
@@ -46,8 +48,12 @@ public class GameManager : MonoBehaviour
 	public void GameClear()
 	{
 		GameClearUI.SetActive(true);
+		Time.timeScale = 0;
+		Physics2D.SyncTransforms();
 	}
 	#endregion
+
+	
 
 	#region PrivateMethod
 	private void Awake()
