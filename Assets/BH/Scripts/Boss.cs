@@ -7,7 +7,9 @@ using UnityEngine;
 public class Boss : MonoBehaviour
 {
 
-    private int _maxHp = 1000;
+    private int maxHp = 100;
+
+    public int HP { get; set; }
 
     public bool isPatternFinished = false;
 
@@ -47,7 +49,7 @@ public class Boss : MonoBehaviour
     {
         _abilities = new List<BossAbility>();
         _abilities.AddRange(this.GetComponents<BossAbility>());
-        ResetParameter();
+        this.Reset();
 
         foreach (var ability in _abilities)
         {
@@ -64,7 +66,6 @@ public class Boss : MonoBehaviour
 
     protected virtual void Start()
     {
-        
     }
 
     private void Update()
@@ -103,7 +104,7 @@ public class Boss : MonoBehaviour
 
     void Init()
     {
-        ChangeState(BossState.IDLE);
+        this.ChangeState(BossState.IDLE);
 
     }
 
@@ -149,8 +150,9 @@ public class Boss : MonoBehaviour
 
     }
 
-    public void ResetParameter()
+    private void ResetParameter()
     {
+        this.HP = maxHp;
         this.ChangeState(BossState.IDLE);
         this.currentPatternIdx = 0;
         StopAllCoroutines();
