@@ -23,17 +23,7 @@ public class Player : MonoBehaviour
 	private bool isInvincible;
 	private bool isPressedDown;
 	[SerializeField] private bool canAct = false;
-	public bool isPlayerDead;
-
-	[SerializeField] private GameObject fadeScreen;
-	[SerializeField] private float fadeMiddlePositionX;
-	[SerializeField] private float fadeEndPositionX;
-	[SerializeField] private Vector3 fadeStartPosition;
-	[SerializeField] private float fadeTime;
-	[SerializeField] private float restartInterval;
-	[SerializeField] private Vector3 startPlayerPosition;
-	[SerializeField] private Vector3 startCameraPosition;
-	[SerializeField] private GameObject stageEnterTrigger;
+	
 	#endregion
 
 	#region PublicMethod
@@ -42,8 +32,7 @@ public class Player : MonoBehaviour
 	{
 		if(isInvincible == false)
 		{
-			PlayerGameOver();
-			Invoke(nameof(PlayerRestart), restartInterval);
+			GameManager.instance.GameOver();
 			GameManager.instance.BattleEnd();
 
 		}
@@ -129,28 +118,6 @@ public class Player : MonoBehaviour
 	{
 		isPressedDown = false;
 	}
-	private void PlayerGameOver()
-	{
-		isPlayerDead = true;
-		//transform.position = startPlayerPosition;
-		fadeScreen.transform.DOLocalMoveX(fadeMiddlePositionX, fadeTime)
-			 .OnComplete(() =>
-			 {
-				 Camera.main.GetComponent<CameraController>().enabled = false;
-				 Camera.main.transform.position = startCameraPosition;
-				 transform.position = startPlayerPosition;
-				 fadeScreen.transform.DOLocalMoveX(fadeEndPositionX, fadeTime)
-				 .OnComplete(() =>
-				 {
-					 fadeScreen.transform.localPosition = fadeStartPosition;
-				 });
-			 });
-	}
-
-	private void PlayerRestart()
-	{
-		stageEnterTrigger.SetActive(true);
-		isPlayerDead = false;
-	}
+	
 	#endregion
 }

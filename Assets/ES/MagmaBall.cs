@@ -18,7 +18,7 @@ public class MagmaBall : MonoBehaviour
     }
     private void GuideToPlayer()
     {
-        if (GameManager.instance.GetPlayer().isPlayerDead)
+        if (GameManager.instance.isPlayerDead)
         {
             Destroy(this.gameObject);
         }
