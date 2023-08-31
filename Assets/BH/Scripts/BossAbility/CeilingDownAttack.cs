@@ -19,19 +19,23 @@ public class CeilingDownAttack : BossAbility
 
     private void OnEnable()
     {
+        Debug.Log("startBossSkill");
         StartCoroutine(CeilingDown());
     }
 
     IEnumerator CeilingDown()
     {
+        Debug.Log("startBossSkill1");
         // on
         _boss.ActiveSwitch(_alertAreas, 8, 10);
         yield return patternTime;
 
+        Debug.Log("startBossSkill2");
         // off
         _boss.ActiveSwitch(_alertAreas, 8, 10);
         yield return onoffDelay;
 
+        Debug.Log("startBossSkill3");
         // on
         _boss.ActiveSwitch(_damageAreas, 8, 10);
         _boss.ActiveSwitch(_alertAreas, 6, 7);

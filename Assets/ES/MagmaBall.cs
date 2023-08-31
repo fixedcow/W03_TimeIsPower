@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MagmaBall : MonoBehaviour
 {
-    [SerializeField] private Transform player;
+    [SerializeField] private GameObject player;
     [SerializeField] float guideSpeed;
     [SerializeField] float rotateSpeed;
     [SerializeField] float maxSpeed;
@@ -18,7 +18,7 @@ public class MagmaBall : MonoBehaviour
     {
 
         Vector2 dir = transform.right;
-        Vector2 targetDir = player.position - transform.position;
+        Vector2 targetDir = player.transform.position - transform.position;
         Vector3 crossVec = Vector3.Cross(dir, targetDir);
         float inner = Vector3.Dot(Vector3.forward, crossVec);
         float saveAngle = inner + transform.rotation.eulerAngles.z;

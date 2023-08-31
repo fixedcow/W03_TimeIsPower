@@ -41,7 +41,7 @@ public abstract class BossAbility : Boss
         _alertAreas = _boss.alertAreas;
         _damageAreas = _boss.damageAreas;
 
-        StopAllCoroutines();
+        //StopAllCoroutines();
     }
 
     protected void PreHandleInput()
