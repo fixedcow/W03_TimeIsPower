@@ -1769,11 +1769,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100430733346573613, guid: 26e4be5712c3c0e4fa664bb8ccd53fc0, type: 3}
       propertyPath: posXRange
-      value: 2.7
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 100430733346573613, guid: 26e4be5712c3c0e4fa664bb8ccd53fc0, type: 3}
       propertyPath: posYRange
-      value: 1.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100430733346573614, guid: 26e4be5712c3c0e4fa664bb8ccd53fc0, type: 3}
       propertyPath: m_RootOrder
