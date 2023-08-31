@@ -21,6 +21,8 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private UnityEvent onBattleEnd;
 	#endregion
 
+	public GameObject ClearUI;
+
 	#region PublicMethod
 	public Player GetPlayer() => player;
 	public Boss GetBoss() => boss;
@@ -48,6 +50,8 @@ public class GameManager : MonoBehaviour
 		GameClearUI.SetActive(true);
 	}
 	#endregion
+
+	
 
 	#region PrivateMethod
 	private void Awake()

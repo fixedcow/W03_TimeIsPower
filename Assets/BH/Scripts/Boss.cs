@@ -9,7 +9,23 @@ public class Boss : MonoBehaviour
 
     public int maxHp = 100;
 
-    public int HP { get; set; }
+    private int _hp;
+    public int HP
+    {
+        get
+        {
+            return _hp;
+        }
+        set
+        {
+            _hp = value;
+            // ui에 넘겨주기
+            if(value < 0)
+            {
+                GameManager.instance.GameClear();
+            }
+        }
+    }
 
     public bool isPatternFinished = false;
 
