@@ -56,7 +56,7 @@ public class StraightFireBallAttack : BossAbility
 
         yield return patternTime;
 
-        _boss.isPatternFinished = true;
+        GameManager.instance.GetBoss().isPatternFinished = true;
         this.enabled = false;
     }
 }
