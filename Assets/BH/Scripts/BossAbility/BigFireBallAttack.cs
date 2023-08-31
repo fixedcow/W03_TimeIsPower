@@ -31,7 +31,7 @@ public class BigFireBallAttack : BossAbility
         Instantiate(fireBall,(Vector2)transform.position + Vector2.up * 3, Quaternion.identity);
         yield return delay;
 
-        _boss.isPatternFinished = true;
+        GameManager.instance.GetBoss().isPatternFinished = true;
         this.enabled = false;
     }
 }
