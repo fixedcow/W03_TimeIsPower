@@ -58,7 +58,7 @@ public class TwoTwoAttack : BossAbility
         _boss.ActiveSwitch(_damageAreas, 14);
         yield return onoffDelay;
 
-        _boss.isPatternFinished = true;
+        GameManager.instance.GetBoss().isPatternFinished = true;
         this.enabled = false;
     }
 }
