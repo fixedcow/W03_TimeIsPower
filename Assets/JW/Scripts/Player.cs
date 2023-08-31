@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
 		{
 			PlayerGameOver();
 			Invoke(nameof(PlayerRestart), restartInterval);
-			//GameManager.instance.GetBoss().Reset();
+			GameManager.instance.GetBoss().ResetParameter();
 		}
 	}
 	public void SetInvincibility(bool b) => isInvincible = b;

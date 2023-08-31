@@ -46,7 +46,10 @@ public abstract class BossAbility : Boss
 
     protected void PreHandleInput()
     {
-        
+        //if (GameManager.instance.GetPlayer().isPlayerDead)
+        //{
+        //    StopAllCoroutines();
+        //}
     }
 
     protected abstract void HandleInputUpdate();
