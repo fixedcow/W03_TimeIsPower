@@ -3246,6 +3246,7 @@ Transform:
   - {fileID: 1168971296}
   - {fileID: 1913034973}
   - {fileID: 419790694}
+  - {fileID: 839531765}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5126,6 +5127,76 @@ Material:
     - _ShadowColor: {r: 0, g: 0, b: 0, a: 1}
     - _ShineColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
+--- !u!1001 &839531764
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 657032909}
+    m_Modifications:
+    - target: {fileID: 100430733346573612, guid: 26e4be5712c3c0e4fa664bb8ccd53fc0, type: 3}
+      propertyPath: m_Name
+      value: DeathCounterManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 100430733346573613, guid: 26e4be5712c3c0e4fa664bb8ccd53fc0, type: 3}
+      propertyPath: posXRange
+      value: 3.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 100430733346573613, guid: 26e4be5712c3c0e4fa664bb8ccd53fc0, type: 3}
+      propertyPath: posYRange
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 100430733346573614, guid: 26e4be5712c3c0e4fa664bb8ccd53fc0, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 100430733346573614, guid: 26e4be5712c3c0e4fa664bb8ccd53fc0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 100430733346573614, guid: 26e4be5712c3c0e4fa664bb8ccd53fc0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 100430733346573614, guid: 26e4be5712c3c0e4fa664bb8ccd53fc0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100430733346573614, guid: 26e4be5712c3c0e4fa664bb8ccd53fc0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100430733346573614, guid: 26e4be5712c3c0e4fa664bb8ccd53fc0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100430733346573614, guid: 26e4be5712c3c0e4fa664bb8ccd53fc0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100430733346573614, guid: 26e4be5712c3c0e4fa664bb8ccd53fc0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100430733346573614, guid: 26e4be5712c3c0e4fa664bb8ccd53fc0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100430733346573614, guid: 26e4be5712c3c0e4fa664bb8ccd53fc0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100430733346573614, guid: 26e4be5712c3c0e4fa664bb8ccd53fc0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 26e4be5712c3c0e4fa664bb8ccd53fc0, type: 3}
+--- !u!4 &839531765 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 100430733346573614, guid: 26e4be5712c3c0e4fa664bb8ccd53fc0, type: 3}
+  m_PrefabInstance: {fileID: 839531764}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &915544417
 GameObject:
   m_ObjectHideFlags: 0
@@ -7639,6 +7710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPatternFinished: 1
+  test: 0
   state: 0
   platformPositions: []
   alertAreas: []
@@ -7657,6 +7729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPatternFinished: 1
+  test: 0
   state: 0
   platformPositions: []
   alertAreas: []
@@ -7675,6 +7748,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPatternFinished: 1
+  test: 0
   state: 1
   platformPositions:
   - {fileID: 573483675}
@@ -7762,6 +7836,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPatternFinished: 1
+  test: 0
   state: 0
   platformPositions: []
   alertAreas: []
