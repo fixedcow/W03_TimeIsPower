@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6294849666120648346}
   - component: {fileID: 6294849666120648349}
   m_Layer: 0
-  m_Name: firebreath
+  m_Name: Firebreath
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

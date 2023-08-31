@@ -25,6 +25,13 @@ public class BodyGenerator : MonoBehaviour
 		body.SetVelocity(_velocity);
 		body.SetTransparency(isGhost);
 	}
+	public void ClearBody()
+	{
+		foreach(GameObject body in bodies)
+		{
+			body.SetActive(false);
+		}
+	}
 	#endregion
 
 	#region PrivateMethod

@@ -35,18 +35,6 @@ public class GameManager : MonoBehaviour
 
 	}
 
-	public void GameOver()
-    {
-		isPlayerDead = true;
-		fadeBlackController.GameOverFade();
-		Invoke("GameRestart", restartInterval);
-
-    }
-	public void GameRestart()
-    {
-		stageEnterTrigger.SetActive(true);
-		isPlayerDead = false;
-    }
 
 	public void GameStart()
 	{
@@ -55,13 +43,13 @@ public class GameManager : MonoBehaviour
 	public void BattleStart()
 	{
 		onBattleStart.Invoke();
-		StartCoroutine(boss.ChangePattern());
 	}
 	public void BattleEnd()
 	{
 		onBattleEnd.Invoke();
+		fadeBlackController.GameOverFade();
+		stageEnterTrigger.SetActive(true);
 	}
-
 	public void GameClear()
 	{
 		GameClearUI.SetActive(true);
@@ -69,9 +57,7 @@ public class GameManager : MonoBehaviour
 		Physics2D.SyncTransforms();
 	}
 	#endregion
-
 	
-
 	#region PrivateMethod
 	private void Awake()
 	{
