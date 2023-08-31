@@ -9,7 +9,12 @@ public class Boss : MonoBehaviour
 
     private int maxHp = 100;
 
-    public int HP { get; set; }
+    private int _hp;
+    public int HP
+    {
+        get => _hp;
+        set => _hp = value;
+    }
 
     public bool isPatternFinished = false;
 
@@ -66,6 +71,7 @@ public class Boss : MonoBehaviour
 
     protected virtual void Start()
     {
+        ResetParameter();
     }
 
     private void Update()
@@ -150,7 +156,7 @@ public class Boss : MonoBehaviour
 
     }
 
-    private void ResetParameter()
+    public void ResetParameter()
     {
         this.HP = maxHp;
         this.ChangeState(BossState.IDLE);
@@ -196,8 +202,11 @@ public class Boss : MonoBehaviour
         //}
 
         yield return delay;
+        if (!GameManager.instance.GetPlayer().isPlayerDead)
+        {
+            StartCoroutine(ChangePattern());
 
-        StartCoroutine(ChangePattern());
+        }
     }
 }
 
