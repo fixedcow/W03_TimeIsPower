@@ -12,6 +12,7 @@ public class GameOverTrigger : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player")){
 
+            Debug.Log("collision");
             Vector3 targetVector = transform.position - player.transform.position;
             player.Hit();
             BodyGenerator.Instance.SpawnBody(collision.transform, targetVector,false);

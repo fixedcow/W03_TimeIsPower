@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
 
 	private bool isInvincible;
 	private bool isPressedDown;
-	private bool canAct = false;
+	[SerializeField] private bool canAct = false;
 	public bool isPlayerDead;
 
 	[SerializeField] private GameObject fadeScreen;
