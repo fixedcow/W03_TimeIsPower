@@ -11,6 +11,9 @@ public class Body : MonoBehaviour
 	#region PrivateVariables
 	[SerializeField] private SpriteRenderer sr;
 	[SerializeField] private Rigidbody2D rb;
+	[SerializeField] private float deadBounceMagnitude;
+	[SerializeField] private float durationMin;
+	[SerializeField] private float durationMax;
 
 	private static Color32 transparent = new Color32(150, 150, 255, 100);
 	private static Color32 opaque = new Color32(255, 255, 255, 255);
@@ -21,16 +24,13 @@ public class Body : MonoBehaviour
 	{
 		sr.color = isTransparent ? transparent : opaque;
 	}
-	public void SetVelocity(Vector2 _velocity)
-	{
-		rb.velocity = _velocity;
-	}
 	#endregion
 
 	#region PrivateMethod
 	private void OnEnable()
 	{
-		sr.DOFade(0, 1).SetDelay(Random.Range(5f, 10f)).OnComplete(() => gameObject.SetActive(false));
+		rb.velocity = Vector2.up * deadBounceMagnitude;
+		sr.DOFade(0, 1).SetDelay(Random.Range(durationMin, durationMax)).OnComplete(() => gameObject.SetActive(false));
 	}
 	#endregion
 }

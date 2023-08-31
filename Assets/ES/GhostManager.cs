@@ -1,65 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Sirenix.OdinInspector;
 
 public class GhostManager : MonoBehaviour
 {
-    public bool testGameOver;
-    [SerializeField] private Player player;
-    [SerializeField] private float recordInterval;
-    public List<GhostData> ghostDatas = new List<GhostData>();
-    private WaitForSeconds replayWait;
+	#region PublicVariables
+	public static GhostManager instance;
+	#endregion
 
+	#region PrivateVariables
+	[SerializeField] private float intervalTime;
+	private GhostRecorder recorder;
+	private GhostReplayer replayer;
+	#endregion
 
-    private void Start()
-    {
-        replayWait = new WaitForSeconds(recordInterval);
-		player = GameManager.instance.GetPlayer();
-    }
+	#region PublicMethod
+	public void RecordAndReplay()
+	{
+		recorder.Record();
+		replayer.Replay();
+	}
+	public void StopRecordAndReplay()
+	{
+		recorder.StopRecord();
+		replayer.StopReplay();
+	}
+	#endregion
 
-    private IEnumerator ReplayGhost()
-    {
-        //비활성화 되어있는 ghost들 켜주기
-        foreach(GhostData ghost in ghostDatas)
-        {
-            ghost.gameObject.SetActive(true);
-        }
-
-        int nowCount = 0;
-        while (!GameManager.instance.isPlayerDead) // 플레이어가 게임오버 되지 않았다면 while문 실행
-        {
-            
-            //Debug.Log(nowCount);
-            foreach (GhostData ghost in ghostDatas)
-            {
-                if(ghost.recordPosition.Count - 1 == nowCount){
-                    ghost.gameObject.SetActive(false);
-                }
-
-                if (ghost.recordPosition.Count-1 > nowCount)
-                {
-                    //Debug.Log(ghost.recordPosition[nowCount]);
-                    ghost.transform.position = ghost.recordPosition[nowCount];
-                    Vector3 localScale = transform.localScale;
-                    localScale.x = ghost.recordLocalScaleX[nowCount];
-                    ghost.transform.localScale = localScale;
-                    ghost.ghostAnimator.SetBool("dodge", ghost.dodgeTrigger[nowCount]);
-                    ghost.ghostAnimator.SetBool("move", ghost.moveTrigger[nowCount]);
-                    ghost.ghostAnimator.SetBool("jump", ghost.jumpTrigger[nowCount]);
-                    ghost.ghostAnimator.SetBool("attack", ghost.attackTrigger[nowCount]);
-                }
-            }
-            nowCount++;
-            yield return replayWait;
-        }
-        
-    }
-
-    [Button]
-    public void StartReplay()
-    {
-        StartCoroutine(ReplayGhost());
-    }
-
+	#region PrivateMethod
+	private void Awake()
+	{
+		if(instance == null)
+			instance = this;
+		TryGetComponent(out recorder);
+		TryGetComponent(out replayer);
+	}
+	private void Start()
+	{
+		recorder.SetReplayer(replayer);
+		recorder.SetInterval(intervalTime);
+		replayer.SetInterval(intervalTime);
+	}
+	#endregion
 }

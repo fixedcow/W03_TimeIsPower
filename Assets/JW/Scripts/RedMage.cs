@@ -16,6 +16,10 @@ public class RedMage : Boss
 	{
 
 	}
+	public void TeleportRandomly()
+	{
+		transform.position = patternPosition[Random.Range(0, patternPosition.Count)];
+	}
 	public void Fireball()
 	{
 

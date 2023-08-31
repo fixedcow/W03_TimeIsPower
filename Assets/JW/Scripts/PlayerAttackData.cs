@@ -8,23 +8,28 @@ public class PlayerAttackData : MonoBehaviour
 	#endregion
 
 	#region PrivateVariables
+	[SerializeField] private GameObject source;
+	[SerializeField] private int damage;
 	[SerializeField] private Vector2 pointA;
 	[SerializeField] private Vector2 pointB;
 
-	private Collider2D[] cols = new Collider2D[0];
 	#endregion
 
 	#region PublicMethod
 	public void OnAttackAnimationImpact()
 	{
-		Physics2D.OverlapAreaNonAlloc((Vector2)transform.position + transform.localScale.x * pointA
-			, (Vector2)transform.position + transform.localScale.x * pointB, cols
-			, 1 << LayerMask.NameToLayer("Enemy"));
+		Collider2D[] cols = Physics2D.OverlapAreaAll((Vector2)transform.position + source.transform.localScale.x * pointA
+			, (Vector2)transform.position + source.transform.localScale.x * pointB, 1 << LayerMask.NameToLayer("Enemy"));
 		if (cols.Length > 0)
 		{
 			foreach (Collider2D col in cols)
 			{
-
+				Boss boss;
+				if(col.TryGetComponent(out boss) == true)
+				{
+					boss.Hit(damage, source);
+				}
+				
 			}
 		}
 	}

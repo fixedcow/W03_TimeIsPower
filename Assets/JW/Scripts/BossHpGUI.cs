@@ -29,7 +29,7 @@ public class BossHpGUI : MonoBehaviour
 	{
 		gameObject.SetActive(false);
 	}
-	public void Initialize()
+	public void ShowGUI()
 	{
 		gameObject.SetActive(true);
 	}
@@ -58,7 +58,7 @@ public class BossHpGUI : MonoBehaviour
 	}
 	private void Start()
 	{
-		Initialize();
+		ShowGUI();
 		HideGUI();
 	}
 	#endregion
