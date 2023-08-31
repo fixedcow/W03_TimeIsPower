@@ -32,7 +32,6 @@ public class Player : MonoBehaviour
 	{
 		if(isInvincible == false)
 		{
-			GameManager.instance.GameOver();
 			GameManager.instance.BattleEnd();
 
 		}
