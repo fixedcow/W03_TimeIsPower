@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 7998054061223970323}
   - component: {fileID: 80815680}
   - component: {fileID: 80815679}
-  - component: {fileID: -7238780905637968738}
   - component: {fileID: 80815681}
   m_Layer: 0
   m_Name: Magmaball
@@ -4853,18 +4852,6 @@ CircleCollider2D:
   m_Offset: {x: -0.033604622, y: -0.05176294}
   serializedVersion: 2
   m_Radius: 1.1127596
---- !u!114 &-7238780905637968738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7998054061223970324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcec5e7e6a7316046adea8905cd28a96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &80815681
 MonoBehaviour:
   m_ObjectHideFlags: 0
