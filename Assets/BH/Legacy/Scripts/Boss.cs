@@ -173,15 +173,23 @@ public class Boss : MonoBehaviour
         this.HP = maxHp;
         this.ChangeState(BossState.IDLE);
         this.currentPatternIdx = 0;
-        StopAllCoroutines();
+
+        GameManager.instance.GetBoss().isPatternFinished = true;
+        foreach (var ability in _abilities)
+        {
+            ability.Stop();
+        }
+
     }
 
     WaitForSeconds wfs = new WaitForSeconds(1f);
     public IEnumerator ChangePattern()
     {
+        yield return wfs;
+
+
         isPatternFinished = false;
 
-        yield return wfs;
 
         if (PatternList.Count - 1 < currentPatternIdx)
         {

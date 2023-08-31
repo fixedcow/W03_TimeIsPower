@@ -15118,6 +15118,138 @@ MonoBehaviour:
   - state: 0
     position: 5
     ability: 5
+  - state: 0
+    position: 0
+    ability: 0
+  - state: 0
+    position: 1
+    ability: 1
+  - state: 0
+    position: 2
+    ability: 2
+  - state: 0
+    position: 3
+    ability: 3
+  - state: 0
+    position: 4
+    ability: 4
+  - state: 0
+    position: 5
+    ability: 5
+  - state: 0
+    position: 0
+    ability: 0
+  - state: 0
+    position: 1
+    ability: 1
+  - state: 0
+    position: 2
+    ability: 2
+  - state: 0
+    position: 3
+    ability: 3
+  - state: 0
+    position: 4
+    ability: 4
+  - state: 0
+    position: 5
+    ability: 5
+  - state: 0
+    position: 0
+    ability: 0
+  - state: 0
+    position: 1
+    ability: 1
+  - state: 0
+    position: 0
+    ability: 0
+  - state: 0
+    position: 2
+    ability: 2
+  - state: 0
+    position: 0
+    ability: 0
+  - state: 0
+    position: 3
+    ability: 3
+  - state: 0
+    position: 0
+    ability: 0
+  - state: 0
+    position: 1
+    ability: 1
+  - state: 0
+    position: 0
+    ability: 0
+  - state: 0
+    position: 2
+    ability: 2
+  - state: 0
+    position: 0
+    ability: 0
+  - state: 0
+    position: 1
+    ability: 1
+  - state: 0
+    position: 1
+    ability: 1
+  - state: 0
+    position: 0
+    ability: 0
+  - state: 0
+    position: 2
+    ability: 2
+  - state: 0
+    position: 0
+    ability: 0
+  - state: 0
+    position: 3
+    ability: 3
+  - state: 0
+    position: 0
+    ability: 0
+  - state: 0
+    position: 1
+    ability: 1
+  - state: 0
+    position: 0
+    ability: 0
+  - state: 0
+    position: 2
+    ability: 2
+  - state: 0
+    position: 0
+    ability: 0
+  - state: 0
+    position: 3
+    ability: 3
+  - state: 0
+    position: 0
+    ability: 0
+  - state: 0
+    position: 1
+    ability: 1
+  - state: 0
+    position: 0
+    ability: 0
+  - state: 0
+    position: 2
+    ability: 2
+  - state: 0
+    position: 1
+    ability: 1
+  - state: 0
+    position: 0
+    ability: 0
+  - state: 0
+    position: 2
+    ability: 2
+  - state: 0
+    position: 0
+    ability: 0
+  - state: 0
+    position: 3
+    ability: 3
 --- !u!114 &7277725790674652558
 MonoBehaviour:
   m_ObjectHideFlags: 0
