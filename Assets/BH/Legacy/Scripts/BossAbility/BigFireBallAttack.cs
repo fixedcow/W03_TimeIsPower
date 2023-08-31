@@ -28,6 +28,11 @@ public class BigFireBallAttack : BossAbility
 
     IEnumerator FireBall()
     {
+        if (GameManager.instance.GetPlayer().isPlayerDead)
+        {
+            yield break;
+        }
+
         Instantiate(fireBall,(Vector2)transform.position + Vector2.up * 3, Quaternion.identity);
         yield return delay;
 
