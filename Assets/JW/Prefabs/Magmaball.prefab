@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7998054061223970321}
   - component: {fileID: 7998054061223970322}
   - component: {fileID: 7998054061223970323}
-  - component: {fileID: 2149215603116230460}
   - component: {fileID: 80815680}
   - component: {fileID: 80815679}
   - component: {fileID: 80815678}
@@ -4817,22 +4816,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &2149215603116230460
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7998054061223970324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f47ae1afdf5d7c45a2ebfcdff421ea3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  guideSpeed: 0
-  rotateSpeed: 0
-  maxSpeed: 0
 --- !u!50 &80815680
 Rigidbody2D:
   serializedVersion: 4
