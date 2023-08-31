@@ -30,7 +30,6 @@ public class GameManager : MonoBehaviour
 	{
 
 	}
-
 	public void GameStart()
 	{
 		onGameStart.Invoke();
@@ -38,13 +37,11 @@ public class GameManager : MonoBehaviour
 	public void BattleStart()
 	{
 		onBattleStart.Invoke();
-		StartCoroutine(boss.ChangePattern());
 	}
 	public void BattleEnd()
 	{
 		onBattleEnd.Invoke();
 	}
-
 	public void GameClear()
 	{
 		GameClearUI.SetActive(true);
@@ -52,9 +49,7 @@ public class GameManager : MonoBehaviour
 		Physics2D.SyncTransforms();
 	}
 	#endregion
-
 	
-
 	#region PrivateMethod
 	private void Awake()
 	{

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NeoBossAI : MonoBehaviour
+public class BossController : MonoBehaviour
 {
 	#region PublicVariables
 	#endregion
