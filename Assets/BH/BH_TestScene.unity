@@ -1734,7 +1734,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   testGameOver: 0
-  gameOverManager: {fileID: 1472196891}
+  player: {fileID: 0}
   recordInterval: 0.02
   ghostDatas: []
 --- !u!4 &333413155
@@ -7274,6 +7274,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8803760988626880923, guid: ba6aea0b79b7fdf46b4f3deed705cdac, type: 3}
+      propertyPath: canAct
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8803760988626880993, guid: ba6aea0b79b7fdf46b4f3deed705cdac, type: 3}
       propertyPath: downJumpRayLength
       value: 2
@@ -7317,7 +7321,7 @@ MonoBehaviour:
   startPlayerPosition: {x: -13.43, y: 0.12, z: 0}
   startCameraPosition: {x: -13, y: 1.5, z: -10}
   recordTrigger: {fileID: 1573601001}
-  cameraTrigger: {fileID: 0}
+  cameraTrigger: {fileID: 1573601001}
 --- !u!114 &1472196892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7688,6 +7692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPatternFinished: 1
+  test: 0
   state: 0
   platformPositions: []
   alertAreas: []
@@ -7706,6 +7711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPatternFinished: 1
+  test: 0
   state: 0
   platformPositions: []
   alertAreas: []
@@ -7724,6 +7730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPatternFinished: 1
+  test: 0
   state: 1
   platformPositions:
   - {fileID: 573483675}
@@ -7820,6 +7827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPatternFinished: 1
+  test: 0
   state: 0
   platformPositions: []
   alertAreas: []
@@ -7838,6 +7846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPatternFinished: 1
+  test: 0
   state: 0
   platformPositions: []
   alertAreas: []
@@ -7856,6 +7865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPatternFinished: 1
+  test: 0
   state: 0
   platformPositions: []
   alertAreas: []
@@ -7874,6 +7884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPatternFinished: 1
+  test: 0
   state: 0
   platformPositions: []
   alertAreas: []

@@ -11,6 +11,7 @@ public class Boss : MonoBehaviour
 
     public bool isPatternFinished = true;
 
+    public int test;
     WaitForSeconds delay = new WaitForSeconds(2f);
 
     public enum BossState
@@ -152,12 +153,13 @@ public class Boss : MonoBehaviour
     {
         this.ChangeState(BossState.IDLE);
         this.currentPatternIdx = 0;
-        StopAllCoroutines();
+        //StopAllCoroutines();
     }
 
     WaitForSeconds wfs = new WaitForSeconds(1f);
     public IEnumerator ChangePattern()
     {
+        Debug.Log("changePattern");
         isPatternFinished = false;
 
         //yield return wfs;
@@ -167,11 +169,15 @@ public class Boss : MonoBehaviour
             currentPatternIdx = 0;
         }
 
-        if (PatternList.Count == 0) yield break;
+        if (PatternList.Count == 0) {
+            Debug.Log("count");
+            yield break;
+        }
+           
 
         if (PatternList[currentPatternIdx].state == BossState.CHANGEPHASE)
         {
-
+           
         }
         else
         {
@@ -181,9 +187,36 @@ public class Boss : MonoBehaviour
             this._abilities[PatternList[currentPatternIdx].ability].enabled = true;
             currentPatternIdx++;
         }
-        yield return new WaitUntil(() => isPatternFinished);
+        Debug.Log("finished값"+ isPatternFinished);
+        while (true)
+        {
+            Debug.Log("hi");
+            yield return null;
+        }
+        yield return new WaitForSeconds(0.2f);
+        // yield return new WaitUntil(() => test>=5);
+     
+        Debug.Log("넘어감" + isPatternFinished);
         yield return delay;
-        StartCoroutine(ChangePattern());
+        Debug.Log("ChangePattern 거의 끝");
+       // StartCoroutine(ChangePatternSequence());
+    }
+
+   
+    public IEnumerator ChangePatternSequence()
+    {
+        while (true)
+        {
+            
+            StartCoroutine(ChangePattern());
+            yield return new WaitUntil(() => isPatternFinished);
+            yield return delay;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        Debug.Log("ispattern값" + isPatternFinished);
     }
 }
 
