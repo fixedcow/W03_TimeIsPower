@@ -19,6 +19,14 @@ public class TitleManager : MonoBehaviour
 	{
 		StartGameTask().Forget();
 	}
+	public void ExitGame()
+	{
+#if UNITY_EDITOR
+		UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
+	}
 	#endregion
 
 	#region PrivateMethod
@@ -27,6 +35,7 @@ public class TitleManager : MonoBehaviour
 		await blackScreen.ScreenFadeOut();
 		Camera.main.transform.position = new Vector3(-19f, 3.75f, -10f);
 		await blackScreen.ScreenFadeIn();
+		GameManager.instance.GameStart();
 	}
 	#endregion
 }

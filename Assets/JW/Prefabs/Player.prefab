@@ -4887,9 +4887,10 @@ GameObject:
   - component: {fileID: 8803760988626880998}
   - component: {fileID: 8803760988626880999}
   - component: {fileID: 8803760988626880996}
+  - component: {fileID: 1472196892}
   m_Layer: 7
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4923,7 +4924,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9901c1a056203642a6fd1cda3f631c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayerDaad: 0
+  isPlayerDead: 0
   fadeScreen: {fileID: 0}
   fadeMiddlePositionX: 0
   fadeEndPositionX: 0
@@ -4980,6 +4981,7 @@ MonoBehaviour:
   dodgeForce: 9
   dodgeDuration: 0.24
   dodgeCooldown: 1.1
+  wallRayLength: 0.4
 --- !u!114 &8803760988626880992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4992,8 +4994,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6fd68f716294d74d9c46e3820522a3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
-  linearDrag: 5
+  moveSpeed: 6
+  linearDrag: 12
 --- !u!114 &8803760988626880993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5031,7 +5033,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 8803760988626880921}
   m_BodyType: 0
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
@@ -5051,13 +5053,30 @@ CircleCollider2D:
   m_GameObject: {fileID: 8803760988626880921}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: c646d9fa23b5d3c44ab30386d936e444, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.25}
   serializedVersion: 2
   m_Radius: 0.25
+--- !u!114 &1472196892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8803760988626880921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbbd832c01a0a5b4db63453587fbc466, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  testGameOver: 0
+  playerAnimator: {fileID: 8803760990524184036}
+  ghostPrefab: {fileID: 4084996498787428131, guid: 3001ffb6766c69f43bb08a70a516df18, type: 3}
+  recordInterval: 0.02
+  ghostManager: {fileID: 0}
 --- !u!1 &8803760990524183962
 GameObject:
   m_ObjectHideFlags: 0

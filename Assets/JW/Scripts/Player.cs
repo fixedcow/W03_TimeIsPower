@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
 
 	private bool isInvincible;
 	private bool isPressedDown;
-
+	private bool canAct = false;
 	public bool isPlayerDead;
 
 	[SerializeField] private GameObject fadeScreen;
@@ -42,10 +42,13 @@ public class Player : MonoBehaviour
 		if(isInvincible == false)
 		{
 			PlayerGameOver();
-			Invoke("PlayerRestart", restartInterval);
+			Invoke(nameof(PlayerRestart), restartInterval);
+			GameManager.instance.GetBoss().ResetParameter();
 		}
 	}
 	public void SetInvincibility(bool b) => isInvincible = b;
+	public void CanAct() => canAct = true;
+	public void CanNotAct() => canAct = false;
 	#endregion
 
 	#region PrivateMethod
@@ -81,6 +84,8 @@ public class Player : MonoBehaviour
 	}
 	private void Move(InputAction.CallbackContext _context)
 	{
+		if (canAct == false)
+			return;
 		move.Move((int)_context.ReadValue<Vector2>().x);
 	}
 	private void MoveCanceled(InputAction.CallbackContext _context)
@@ -89,7 +94,9 @@ public class Player : MonoBehaviour
 	}
 	private void Jump(InputAction.CallbackContext _context)
 	{
-		if(isPressedDown == true)
+		if (canAct == false)
+			return;
+		if (isPressedDown == true)
 		{
 			jump.DownJump();
 		}
@@ -100,14 +107,20 @@ public class Player : MonoBehaviour
 	}
 	private void Attack(InputAction.CallbackContext _context)
 	{
+		if (canAct == false)
+			return;
 		attack.Attack();
 	}
 	private void Dodge(InputAction.CallbackContext _context)
 	{
+		if (canAct == false)
+			return;
 		dodge.Dodge();
 	}
 	private void Down(InputAction.CallbackContext _context)
 	{
+		if (canAct == false)
+			return;
 		isPressedDown = true;
 	}
 	private void DownCanceled(InputAction.CallbackContext _context)

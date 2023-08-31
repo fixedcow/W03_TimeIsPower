@@ -6,7 +6,7 @@ using Sirenix.OdinInspector;
 public class GhostManager : MonoBehaviour
 {
     public bool testGameOver;
-    [SerializeField] private PlayerGameOverManager gameOverManager;
+    [SerializeField] private Player player;
     [SerializeField] private float recordInterval;
     public List<GhostData> ghostDatas = new List<GhostData>();
     private WaitForSeconds replayWait;
@@ -15,6 +15,7 @@ public class GhostManager : MonoBehaviour
     private void Start()
     {
         replayWait = new WaitForSeconds(recordInterval);
+		player = GameManager.instance.GetPlayer();
     }
 
     private IEnumerator ReplayGhost()
@@ -26,7 +27,7 @@ public class GhostManager : MonoBehaviour
         }
 
         int nowCount = 0;
-        while (!gameOverManager.isPlayerDead) // 플레이어가 게임오버 되지 않았다면 while문 실행
+        while (!player.isPlayerDead) // 플레이어가 게임오버 되지 않았다면 while문 실행
         {
             
             //Debug.Log(nowCount);

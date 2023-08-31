@@ -16,6 +16,8 @@ public class PlayerDodge : MonoBehaviour
 	[SerializeField] private float dodgeForce;
 	[SerializeField] private float dodgeDuration;
 	[SerializeField] private float dodgeCooldown;
+	[SerializeField] private float wallRayLength;
+	
 	private bool isReady = true;
 	#endregion
 
@@ -39,8 +41,8 @@ public class PlayerDodge : MonoBehaviour
 	}
 	public void ForceDodgeEnd()
 	{
-		main.SetInvincibility(false);
 		CancelInvoke(nameof(DodgeEnd));
+		DodgeEnd();
 	}
 	#endregion
 
@@ -50,6 +52,21 @@ public class PlayerDodge : MonoBehaviour
 		transform.Find("Renderer").TryGetComponent(out anim);
 		TryGetComponent(out rb);
 		TryGetComponent(out main);
+	}
+	private void FixedUpdate()
+	{
+		if(rb.bodyType == RigidbodyType2D.Kinematic)
+			CheckWall();
+	}
+	private void CheckWall()
+	{
+		RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right * transform.localScale.x, wallRayLength, 1 << LayerMask.NameToLayer("Wall"));
+		Debug.DrawRay(transform.position, Vector2.right * transform.localScale.x * wallRayLength, Color.red);
+		if(hit.collider != null)
+		{
+			ForceDodgeEnd();
+			ps.Stop();
+		}
 	}
 	private void DodgeEnd()
 	{
