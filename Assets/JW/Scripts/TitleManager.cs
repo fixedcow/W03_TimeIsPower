@@ -33,7 +33,7 @@ public class TitleManager : MonoBehaviour
 	private async UniTaskVoid StartGameTask()
 	{
 		await blackScreen.ScreenFadeOut();
-		Camera.main.transform.position = new Vector3(-20f, 3.75f, -10f);
+		CameraController.instance.MoveToRespawnPoint();
 		await blackScreen.ScreenFadeIn();
 		GameManager.instance.GameStart();
 	}

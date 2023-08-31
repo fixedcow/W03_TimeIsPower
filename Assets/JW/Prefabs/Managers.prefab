@@ -44,5 +44,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6fd1cc7c474f5e41a877b86a3d7aac8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameClearUI: {fileID: 0}
   player: {fileID: 0}
-  boss: {fileID: 0}
+  onBattleStart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GhostManager, Assembly-CSharp
+        m_MethodName: StartReplay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GhostGenerator, Assembly-CSharp
+        m_MethodName: StartRecord
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  bossList:
+  - {fileID: 0}
+  ClearUI: {fileID: 0}
+  isPlayerDead: 0
+  fadeBlackController: {fileID: 0}
+  restartInterval: 0
+  stageEnterTrigger: {fileID: 0}

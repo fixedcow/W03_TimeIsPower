@@ -8,6 +8,7 @@ public class StageEnterTrigger : MonoBehaviour
 	#endregion
 
 	#region PrivateVariables
+	[SerializeField] private Utils.EStage targetStage;
 	#endregion
 
 	#region PublicMethod
@@ -18,7 +19,8 @@ public class StageEnterTrigger : MonoBehaviour
 	{
 		if (collision.gameObject.CompareTag("Player"))
 		{
-			GameManager.instance.BattleStart();
+			GameManager.instance.BattleStart(targetStage);
+			CameraController.instance.MoveToStage(targetStage);
 			gameObject.SetActive(false);
 		}
 	}

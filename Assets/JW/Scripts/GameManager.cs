@@ -7,25 +7,18 @@ public class GameManager : MonoBehaviour
 {
 	#region PublicVariables
 	public static GameManager instance;
-
-	public GameObject GameClearUI;
-	
 	#endregion
 
 	#region PrivateVariables
 	[SerializeField] private Player player;
-	[SerializeField] private Boss boss;
+	private Boss boss;
+	private GameObject stageEnterTrigger;
 
-	[SerializeField] private UnityEvent onGameStart;
-	[SerializeField] private UnityEvent onBattleStart;
-	[SerializeField] private UnityEvent onBattleEnd;
-	#endregion
-
-	public GameObject ClearUI;
-	public bool isPlayerDead;
+	[SerializeField] private GameObject GameClearUI;
+	[SerializeField] private List<Boss> bossList = new List<Boss>();
+	[SerializeField] private List<GameObject> stageEnterTriggerList = new List<GameObject>();
 	[SerializeField] private FadeBlackController fadeBlackController;
-	[SerializeField] private float restartInterval;
-	[SerializeField] private GameObject stageEnterTrigger;
+	#endregion
 
 	#region PublicMethod
 	public Player GetPlayer() => player;
@@ -34,21 +27,27 @@ public class GameManager : MonoBehaviour
 	{
 
 	}
-
-
 	public void GameStart()
 	{
-		onGameStart.Invoke();
+		player.CanAct();
 	}
-	public void BattleStart()
+	public void BattleStart(Utils.EStage _stage)
 	{
-		onBattleStart.Invoke();
+		boss = bossList[(int)_stage];
+		stageEnterTrigger = stageEnterTriggerList[(int)_stage];
+		boss.Initialize();
+		BossHpGUI.instance.ShowGUI();
+		BossHpGUI.instance.SetMaxHp(boss.GetMaxHp());
+		BodyGenerator.instance.ClearBody();
+		GhostManager.instance.RecordAndReplay();
 	}
 	public void BattleEnd()
 	{
-		onBattleEnd.Invoke();
+		BossHpGUI.instance.HideGUI();
+		DeathCounterManager.instance.PlayerDead();
 		fadeBlackController.GameOverFade();
 		stageEnterTrigger.SetActive(true);
+		GhostManager.instance.StopRecordAndReplay();
 	}
 	public void GameClear()
 	{
