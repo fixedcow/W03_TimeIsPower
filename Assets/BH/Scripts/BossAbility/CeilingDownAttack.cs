@@ -71,7 +71,7 @@ public class CeilingDownAttack : BossAbility
         yield return onoffDelay;
 
 
-        _boss.isPatternFinished = true;
+        GameManager.instance.GetBoss().isPatternFinished = true;
         this.enabled = false;
     }
 }

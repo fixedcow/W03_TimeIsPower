@@ -9,7 +9,7 @@ public class Boss : MonoBehaviour
 
     private int _maxHp = 1000;
 
-    public bool isPatternFinished = true;
+    public bool isPatternFinished = false;
 
     WaitForSeconds delay = new WaitForSeconds(2f);
 
@@ -63,7 +63,7 @@ public class Boss : MonoBehaviour
 
     protected virtual void Start()
     {
-        
+        //StartCoroutine(ChangePattern());
     }
 
     private void Update()
@@ -160,7 +160,7 @@ public class Boss : MonoBehaviour
     {
         isPatternFinished = false;
 
-        //yield return wfs;
+        yield return wfs;
 
         if (PatternList.Count - 1 < currentPatternIdx)
         {
@@ -175,14 +175,25 @@ public class Boss : MonoBehaviour
         }
         else
         {
+
             this.ChangeState(PatternList[currentPatternIdx].state);
+
             this.transform.position = platformPositions[PatternList[currentPatternIdx].position].position;
 
             this._abilities[PatternList[currentPatternIdx].ability].enabled = true;
             currentPatternIdx++;
         }
+
         yield return new WaitUntil(() => isPatternFinished);
+
+        //while (!isPatternFinished)
+        //{
+        //    Debug.Log("loop");
+        //    yield return null;
+        //}
+
         yield return delay;
+
         StartCoroutine(ChangePattern());
     }
 }
