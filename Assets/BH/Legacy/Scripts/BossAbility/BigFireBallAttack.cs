@@ -28,7 +28,7 @@ public class BigFireBallAttack : BossAbility
 
     IEnumerator FireBall()
     {
-        if (GameManager.instance.GetPlayer().isPlayerDead)
+        if (GameManager.instance.isPlayerDead)
         {
             yield break;
         }
