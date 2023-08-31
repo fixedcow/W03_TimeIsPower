@@ -24,7 +24,7 @@ public class PlayerAttackData : MonoBehaviour
 		{
 			foreach (Collider2D col in cols)
 			{
-				// col.Hit();
+				GameManager.instance.GetBoss().HP--;
 			}
 		}
 	}

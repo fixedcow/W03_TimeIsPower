@@ -7,13 +7,21 @@ using UnityEngine;
 public class Boss : MonoBehaviour
 {
 
-    private int maxHp = 100;
+    public int maxHp = 100;
 
     private int _hp;
     public int HP
     {
         get => _hp;
-        set => _hp = value;
+        set
+        {
+            _hp = value;
+            BossHpGUI.instance.SetHp(value);
+            if(value < 0)
+            {
+                GameManager.instance.GameClear();
+            }
+        }
     }
 
     public bool isPatternFinished = false;

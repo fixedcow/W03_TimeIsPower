@@ -10,9 +10,10 @@ public class DamagingObject : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            Vector2 deadVector = new Vector2(collision.transform.position.x - this.transform.position.x, 0.5f);
+            Vector2 deadVector = new Vector2(0f, 1f);
             collision.GetComponent<GhostGenerator>()._deadVector = deadVector.normalized;
 
+            GameManager.instance.GetPlayer().Hit();
             BodyGenerator.Instance.SpawnBody(collision.transform, deadVector.normalized * deadPower, false);
         }
     }
