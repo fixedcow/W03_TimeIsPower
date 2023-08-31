@@ -24,7 +24,7 @@ public class PlayerGameOverManager : MonoBehaviour
         {
             PlayerGameOver();
             Invoke("PlayerRestart", restartInterval);
-            GameManager.instance.GetBoss().Reset();
+            //GameManager.instance.GetBoss().Reset();
         }
     }
 

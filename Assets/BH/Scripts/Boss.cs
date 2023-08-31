@@ -49,7 +49,7 @@ public class Boss : MonoBehaviour
     {
         _abilities = new List<BossAbility>();
         _abilities.AddRange(this.GetComponents<BossAbility>());
-        this.Reset();
+        //this.Reset();
 
         foreach (var ability in _abilities)
         {
