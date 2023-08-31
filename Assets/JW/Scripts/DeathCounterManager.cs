@@ -6,6 +6,7 @@ using Sirenix.OdinInspector;
 public class DeathCounterManager : MonoBehaviour
 {
 	#region PublicVariables
+	public static DeathCounterManager instance;
 	public int count { get; private set; }
 	#endregion
 
@@ -31,6 +32,11 @@ public class DeathCounterManager : MonoBehaviour
 	#endregion
 
 	#region PrivateMethod
+	private void Awake()
+	{
+		if (instance == null)
+			instance = this;
+	}
 	private DeathCounter InstantiateCount()
 	{
 		DeathCounter result = Instantiate(deathCountPrefab
