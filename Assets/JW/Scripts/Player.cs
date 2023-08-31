@@ -44,6 +44,7 @@ public class Player : MonoBehaviour
 		{
 			PlayerGameOver();
 			Invoke(nameof(PlayerRestart), restartInterval);
+			GameManager.instance.BattleEnd();
 			//GameManager.instance.GetBoss().Reset();
 		}
 	}

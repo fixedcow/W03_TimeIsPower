@@ -49,7 +49,7 @@ MonoBehaviour:
   deathCounters:
   - {fileID: 100430734186762465}
   posXRange: 3
-  posYRange: 1
+  posYRange: 1.5
   current: {fileID: 100430734186762465}
 --- !u!1001 &629410712777550954
 PrefabInstance:
