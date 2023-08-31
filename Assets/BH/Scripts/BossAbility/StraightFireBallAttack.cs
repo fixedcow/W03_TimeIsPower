@@ -19,7 +19,7 @@ public class StraightFireBallAttack : BossAbility
     public override void Active()
     {
         fireBall = (GameObject)Resources.Load("fireball");
-        _player = GameObject.FindWithTag("Player");
+        _player = GameManager.instance.GetPlayer().gameObject;
         this.enabled = false;
     }
 
