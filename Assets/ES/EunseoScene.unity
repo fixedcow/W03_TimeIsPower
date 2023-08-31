@@ -403,6 +403,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1555866249}
+    - target: {fileID: 80815681, guid: 7dddd037b50286a4bb60507d36f187dd, type: 3}
+      propertyPath: destroyMagmaTime
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 80815681, guid: 7dddd037b50286a4bb60507d36f187dd, type: 3}
+      propertyPath: destroyManmaTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7998054061223970321, guid: 7dddd037b50286a4bb60507d36f187dd, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1290,6 +1298,7 @@ MonoBehaviour:
   guideSpeed: 0.9
   rotateSpeed: 5
   maxSpeed: 0.001
+  destroyMagmaTime: 0
 --- !u!212 &1090881491
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7370,6 +7379,10 @@ PrefabInstance:
     - target: {fileID: 4582409841518361823, guid: 590237e337503ed4a95eda442857733e, type: 3}
       propertyPath: m_Name
       value: EndingUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4582409841518361823, guid: 590237e337503ed4a95eda442857733e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5603107761368298481, guid: 590237e337503ed4a95eda442857733e, type: 3}
       propertyPath: m_SortingOrder
