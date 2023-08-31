@@ -10,13 +10,13 @@ public class MagmaBall : MonoBehaviour
     [SerializeField] float maxSpeed;
     [SerializeField] float destroyMagmaTime;
     private float timer;
-    [SerializeField] private Rigidbody2D rigid;
+    private Rigidbody2D rigid;
 
-	private void OnEnable()
-	{
-		player = GameManager.instance.GetPlayer().gameObject;
-	}
-	private void GuideToPlayer()
+    private void Start()
+    {
+        rigid = GetComponent<Rigidbody2D>();
+    }
+    private void GuideToPlayer()
     {
         if (timer <= destroyMagmaTime)
         {
