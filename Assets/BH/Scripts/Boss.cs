@@ -7,22 +7,9 @@ using UnityEngine;
 public class Boss : MonoBehaviour
 {
 
-    public int maxHp = 100;
+    private int maxHp = 100;
 
-    private int _hp;
-    public int HP
-    {
-        get => _hp;
-        set
-        {
-            _hp = value;
-            BossHpGUI.instance.SetHp(value);
-            if(value < 0)
-            {
-                GameManager.instance.GameClear();
-            }
-        }
-    }
+    public int HP { get; set; }
 
     public bool isPatternFinished = false;
 
@@ -79,7 +66,6 @@ public class Boss : MonoBehaviour
 
     protected virtual void Start()
     {
-        ResetParameter();
     }
 
     private void Update()
@@ -164,7 +150,7 @@ public class Boss : MonoBehaviour
 
     }
 
-    public void ResetParameter()
+    private void ResetParameter()
     {
         this.HP = maxHp;
         this.ChangeState(BossState.IDLE);
@@ -210,11 +196,8 @@ public class Boss : MonoBehaviour
         //}
 
         yield return delay;
-        if (!GameManager.instance.GetPlayer().isPlayerDead)
-        {
-            StartCoroutine(ChangePattern());
 
-        }
+        StartCoroutine(ChangePattern());
     }
 }
 
