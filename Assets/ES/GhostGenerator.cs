@@ -27,7 +27,7 @@ public class GhostGenerator : MonoBehaviour
         GameObject ghost = Instantiate(ghostPrefab, new Vector3(15, 0, 0), Quaternion.identity);
         GhostData ghostData = ghost.GetComponent<GhostData>();
 
-        while (!player.isPlayerDead) //게임오버가 되지 않았다면 while문 실행
+        while (!GameManager.instance.isPlayerDead) //게임오버가 되지 않았다면 while문 실행
         {
             ghostData.recordPosition.Add(transform.position);
             ghostData.recordLocalScaleX.Add(transform.localScale.x);

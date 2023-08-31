@@ -22,6 +22,10 @@ public class GameManager : MonoBehaviour
 	#endregion
 
 	public GameObject ClearUI;
+	public bool isPlayerDead;
+	[SerializeField] private FadeBlackController fadeBlackController;
+	[SerializeField] private float restartInterval;
+	[SerializeField] private GameObject stageEnterTrigger;
 
 	#region PublicMethod
 	public Player GetPlayer() => player;
@@ -30,6 +34,19 @@ public class GameManager : MonoBehaviour
 	{
 
 	}
+
+	public void GameOver()
+    {
+		isPlayerDead = true;
+		fadeBlackController.GameOverFade();
+		Invoke("GameRestart", restartInterval);
+
+    }
+	public void GameRestart()
+    {
+		stageEnterTrigger.SetActive(true);
+		isPlayerDead = false;
+    }
 
 	public void GameStart()
 	{

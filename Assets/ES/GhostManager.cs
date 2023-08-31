@@ -27,7 +27,7 @@ public class GhostManager : MonoBehaviour
         }
 
         int nowCount = 0;
-        while (!player.isPlayerDead) // 플레이어가 게임오버 되지 않았다면 while문 실행
+        while (!GameManager.instance.isPlayerDead) // 플레이어가 게임오버 되지 않았다면 while문 실행
         {
             
             //Debug.Log(nowCount);
