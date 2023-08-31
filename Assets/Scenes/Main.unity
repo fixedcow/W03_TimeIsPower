@@ -12769,6 +12769,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 820231356}
+    - target: {fileID: 2845327253685693157, guid: 4ce7108c00cb2cb4ebad5f2f54227689, type: 3}
+      propertyPath: m_text
+      value: "\uC545\uB2F9 \uB9C8\uBC95\uC0AC"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ce7108c00cb2cb4ebad5f2f54227689, type: 3}
 --- !u!1001 &3947328690506905693
@@ -15096,12 +15100,6 @@ MonoBehaviour:
   - {fileID: 7277725791842836342}
   - {fileID: 7277725791525125086}
   PatternList:
-  - state: 0
-    position: 5
-    ability: 5
-  - state: 0
-    position: 4
-    ability: 4
   - state: 2
     position: 0
     ability: 0
@@ -15114,6 +15112,12 @@ MonoBehaviour:
   - state: 0
     position: 3
     ability: 3
+  - state: 0
+    position: 4
+    ability: 4
+  - state: 0
+    position: 5
+    ability: 5
 --- !u!114 &7277725790674652558
 MonoBehaviour:
   m_ObjectHideFlags: 0
