@@ -15,6 +15,8 @@ public class PlayerAttack : MonoBehaviour
 	#region PublicMethod
 	public void Attack()
 	{
+		if (anim.GetBool("jump") == true)
+			return;
 		anim.SetBool("attack", true);
 	}
 	#endregion
