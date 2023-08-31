@@ -11,7 +11,7 @@ public class DeathCounter : MonoBehaviour
 	[SerializeField] private SpriteRenderer sr;
 	[SerializeField] private Sprite[] sprites;
 
-	private int index = 0;
+	private int index = -1;
 	#endregion
 
 	#region PublicMethod
@@ -19,12 +19,13 @@ public class DeathCounter : MonoBehaviour
 	{
 		if(index < sprites.Length - 1)
 		{
+			++index;
 			sr.sprite = sprites[index];
 			return true;
 		}
 		else
 		{
-			return true;
+			return false;
 		}
 	}
 	#endregion
