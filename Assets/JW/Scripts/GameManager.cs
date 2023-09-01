@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.U2D;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -7,9 +8,15 @@ public class GameManager : MonoBehaviour
 {
 	#region PublicVariables
 	public static GameManager instance;
+	public enum EGameState
+	{
+		idle = 0,
+		battle = 1
+	}
 	#endregion
 
 	#region PrivateVariables
+	private EGameState state;
 	[SerializeField] private Player player;
 	private Boss boss;
 	private GameObject stageEnterTrigger;
@@ -33,6 +40,7 @@ public class GameManager : MonoBehaviour
 	}
 	public void BattleStart(Utils.EStage _stage)
 	{
+		state = EGameState.battle;
 		boss = bossList[(int)_stage];
 		stageEnterTrigger = stageEnterTriggerList[(int)_stage];
 		boss.Initialize();
@@ -46,6 +54,9 @@ public class GameManager : MonoBehaviour
 	}
 	public void BattleEnd()
 	{
+		if (state == EGameState.idle)
+			return;
+		state = EGameState.idle;
 		BossHpGUI.instance.HideGUI();
 		DeathCounterManager.instance.PlayerDead();
 		fadeBlackController.GameOverFade();

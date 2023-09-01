@@ -36,7 +36,6 @@ public class Player : MonoBehaviour
 		if(isInvincible == false)
 		{
 			GameManager.instance.BattleEnd();
-			BodyGenerator.instance.SpawnBody(transform, false);
 		}
 	}
 	public Animator GetAnimator() => anim;
@@ -48,6 +47,10 @@ public class Player : MonoBehaviour
 		transform.position = RespawnPoint;
 	}
 	#endregion
+	private void OnParticleCollision()
+	{
+		Hit();
+	}
 
 	#region PrivateMethod
 	private void Awake()
