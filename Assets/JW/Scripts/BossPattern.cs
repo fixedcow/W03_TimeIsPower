@@ -54,7 +54,7 @@ public abstract class BossPattern : MonoBehaviour
 			postDelaySource.Dispose();
 		postDelaySource = new CancellationTokenSource();
 	}
-	private void OnDisable()
+	protected virtual void OnDisable()
 	{
 		preDelaySource.Cancel();
 		postDelaySource.Cancel();

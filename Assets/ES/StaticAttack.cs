@@ -47,8 +47,8 @@ public class StaticAttack : MonoBehaviour
         defaultCautionScale = cautionEffect.transform.localScale;
         defaultColliderScale = attackCollider.transform.localScale;
 
-        defaultCautionPosition = cautionEffect.transform.position;
-        defaultColliderPosition = attackCollider.transform.position;
+        defaultCautionPosition = cautionEffect.transform.localPosition;
+        defaultColliderPosition = attackCollider.transform.localPosition;
 
 
     }
@@ -76,26 +76,26 @@ public class StaticAttack : MonoBehaviour
     {
         cautionEffect.transform.localScale = defaultCautionScale;
         attackCollider.transform.localScale = defaultColliderScale;
-        cautionEffect.transform.position = defaultCautionPosition;
-        attackCollider.transform.position = defaultColliderPosition;
+        cautionEffect.transform.localPosition = defaultCautionPosition;
+        attackCollider.transform.localPosition = defaultColliderPosition;
 
         Vector3 scale = cautionEffect.transform.localScale;
         scale.x += scaleOffsetX;
         scale.y += scaleOffsetY;
         cautionEffect.transform.localScale = scale;
 
-        Vector3 position = cautionEffect.transform.position;
+        Vector3 position = cautionEffect.transform.localPosition;
         position.y += scaleOffsetY / 2;
-        cautionEffect.transform.position = position;
+        cautionEffect.transform.localPosition = position;
 
         scale = attackCollider.transform.localScale;
         scale.x += scaleOffsetX;
         scale.y += scaleOffsetY;
         attackCollider.transform.localScale = scale;
 
-        position = attackCollider.transform.position;
+        position = attackCollider.transform.localPosition;
         position.y += scaleOffsetY / 2;
-        attackCollider.transform.position = position;
+        attackCollider.transform.localPosition = position;
     }
 
     public void InitAttack()

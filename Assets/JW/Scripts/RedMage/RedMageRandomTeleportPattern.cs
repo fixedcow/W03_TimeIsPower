@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RandomTeleport : BossPattern
+public class RedMageRandomTeleportPattern : BossPattern
 {
 	#region PublicVariables
 	#endregion
