@@ -62,6 +62,7 @@ public class GameManager : MonoBehaviour
 		fadeBlackController.GameOverFade();
 		stageEnterTrigger.SetActive(true);
 		GhostManager.instance.StopRecordAndReplay();
+		DynamicObjectManager.instance.Clear();
 		boss.gameObject.SetActive(false);
 		boss = null;
 	}
