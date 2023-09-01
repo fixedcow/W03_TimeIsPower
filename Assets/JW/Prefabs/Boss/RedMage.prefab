@@ -157,7 +157,7 @@ MonoBehaviour:
   bossName: "\uC545\uB2F9 \uB9C8\uBC95\uC0AC"
   respawnPoint: {x: 0, y: 0}
   hpCurrent: 0
-  hpMax: 2000
+  hpMax: 1200
   patternList:
   - {fileID: 5093142162459366960}
   - {fileID: 7076162387893989451}

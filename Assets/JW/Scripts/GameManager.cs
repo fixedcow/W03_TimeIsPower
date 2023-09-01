@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
 	#region PublicMethod
 	public Player GetPlayer() => player;
 	public Boss GetBoss() => boss;
+	public void SetBoss(Boss _boss) => boss = _boss;
 	public void Initialize()
 	{
 
