@@ -20,15 +20,12 @@ public class StaticAttack : MonoBehaviour
     private WaitForSeconds waitCautionTime;
     [SerializeField] private float blinkTime;
     [SerializeField] private ParticleSystem attackParticle;
-    [SerializeField] private GameObject attackCollider;
     [SerializeField] private float attackTime;
     private WaitForSeconds waitAttackTime;
     private Sequence blinkSequence;
 
-    private Vector3 defaultColliderScale;
     private Vector3 defaultCautionScale;
 
-    private Vector3 defaultColliderPosition;
     private Vector3 defaultCautionPosition;
 
     private void Start()
@@ -45,12 +42,8 @@ public class StaticAttack : MonoBehaviour
         blinkSequence.SetLoops(-1);
 
         defaultCautionScale = cautionEffect.transform.localScale;
-        defaultColliderScale = attackCollider.transform.localScale;
 
         defaultCautionPosition = cautionEffect.transform.localPosition;
-        defaultColliderPosition = attackCollider.transform.localPosition;
-
-
     }
 
     [Button]
@@ -64,20 +57,16 @@ public class StaticAttack : MonoBehaviour
         yield return waitCautionTime;
         cautionEffect.SetActive(false);
 
-        attackCollider.SetActive(true);
         attackParticle.Play();
         yield return waitAttackTime;
 
-        attackCollider.SetActive(false);
         attackParticle.Stop();
     }
 
     public void OnValueChange()
     {
         cautionEffect.transform.localScale = defaultCautionScale;
-        attackCollider.transform.localScale = defaultColliderScale;
         cautionEffect.transform.localPosition = defaultCautionPosition;
-        attackCollider.transform.localPosition = defaultColliderPosition;
 
         Vector3 scale = cautionEffect.transform.localScale;
         scale.x += scaleOffsetX;
@@ -88,21 +77,16 @@ public class StaticAttack : MonoBehaviour
         position.y += scaleOffsetY / 2;
         cautionEffect.transform.localPosition = position;
 
-        scale = attackCollider.transform.localScale;
         scale.x += scaleOffsetX;
         scale.y += scaleOffsetY;
-        attackCollider.transform.localScale = scale;
 
-        position = attackCollider.transform.localPosition;
         position.y += scaleOffsetY / 2;
-        attackCollider.transform.localPosition = position;
     }
 
     public void InitAttack()
     {
         StopCoroutine(AttackPlay());
         cautionEffect.SetActive(false);
-        attackCollider.SetActive(false);
         attackParticle.Stop();
     }
 }

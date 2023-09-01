@@ -140,7 +140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6403648206978197813, guid: 24190792d2f83a0459637227578fd953, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10
+      value: 9.8
       objectReference: {fileID: 0}
     - target: {fileID: 6403648206978197813, guid: 24190792d2f83a0459637227578fd953, type: 3}
       propertyPath: m_LocalPosition.y
@@ -179,20 +179,36 @@ PrefabInstance:
       value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 6403648206978197815, guid: 24190792d2f83a0459637227578fd953, type: 3}
+      propertyPath: CollisionModule.maxKillSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6403648206978197815, guid: 24190792d2f83a0459637227578fd953, type: 3}
+      propertyPath: CollisionModule.minKillSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6403648206978197815, guid: 24190792d2f83a0459637227578fd953, type: 3}
+      propertyPath: CollisionModule.m_Bounce.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6403648206978197815, guid: 24190792d2f83a0459637227578fd953, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
-      value: 65
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6403648206978197815, guid: 24190792d2f83a0459637227578fd953, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
-      value: 0.33
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 6403648206978197815, guid: 24190792d2f83a0459637227578fd953, type: 3}
       propertyPath: InitialModule.startSpeed.minScalar
-      value: 50
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6403648206978197815, guid: 24190792d2f83a0459637227578fd953, type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 6403648206978197815, guid: 24190792d2f83a0459637227578fd953, type: 3}
       propertyPath: InitialModule.startLifetime.minScalar
-      value: 0.28
+      value: 0.9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24190792d2f83a0459637227578fd953, type: 3}
@@ -602,7 +618,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6403648206978197813, guid: 24190792d2f83a0459637227578fd953, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10
+      value: -9.8
       objectReference: {fileID: 0}
     - target: {fileID: 6403648206978197813, guid: 24190792d2f83a0459637227578fd953, type: 3}
       propertyPath: m_LocalPosition.y
@@ -641,20 +657,20 @@ PrefabInstance:
       value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 6403648206978197815, guid: 24190792d2f83a0459637227578fd953, type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 65
+      propertyPath: CollisionModule.maxKillSpeed
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6403648206978197815, guid: 24190792d2f83a0459637227578fd953, type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 0.33
+      propertyPath: CollisionModule.minKillSpeed
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6403648206978197815, guid: 24190792d2f83a0459637227578fd953, type: 3}
-      propertyPath: InitialModule.startSpeed.minScalar
-      value: 50
+      propertyPath: CollisionModule.m_Bounce.scalar
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6403648206978197815, guid: 24190792d2f83a0459637227578fd953, type: 3}
-      propertyPath: InitialModule.startLifetime.minScalar
-      value: 0.28
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: -0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24190792d2f83a0459637227578fd953, type: 3}
@@ -4150,7 +4166,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6403648206978197813, guid: 24190792d2f83a0459637227578fd953, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10
+      value: 9.8
       objectReference: {fileID: 0}
     - target: {fileID: 6403648206978197813, guid: 24190792d2f83a0459637227578fd953, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4189,20 +4205,20 @@ PrefabInstance:
       value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 6403648206978197815, guid: 24190792d2f83a0459637227578fd953, type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 65
+      propertyPath: CollisionModule.maxKillSpeed
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6403648206978197815, guid: 24190792d2f83a0459637227578fd953, type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 0.33
+      propertyPath: CollisionModule.minKillSpeed
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6403648206978197815, guid: 24190792d2f83a0459637227578fd953, type: 3}
-      propertyPath: InitialModule.startSpeed.minScalar
-      value: 50
+      propertyPath: CollisionModule.m_Bounce.scalar
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6403648206978197815, guid: 24190792d2f83a0459637227578fd953, type: 3}
-      propertyPath: InitialModule.startLifetime.minScalar
-      value: 0.28
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: -0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24190792d2f83a0459637227578fd953, type: 3}
@@ -4645,6 +4661,67 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4582409841518361823, guid: 590237e337503ed4a95eda442857733e, type: 3}
   m_PrefabInstance: {fileID: 11952761}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1040821353
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4020162765607843905, guid: 74bd020f5f0f26e4e903c32d3c9ec34c, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020162765607843905, guid: 74bd020f5f0f26e4e903c32d3c9ec34c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020162765607843905, guid: 74bd020f5f0f26e4e903c32d3c9ec34c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020162765607843905, guid: 74bd020f5f0f26e4e903c32d3c9ec34c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020162765607843905, guid: 74bd020f5f0f26e4e903c32d3c9ec34c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020162765607843905, guid: 74bd020f5f0f26e4e903c32d3c9ec34c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020162765607843905, guid: 74bd020f5f0f26e4e903c32d3c9ec34c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020162765607843905, guid: 74bd020f5f0f26e4e903c32d3c9ec34c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020162765607843905, guid: 74bd020f5f0f26e4e903c32d3c9ec34c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020162765607843905, guid: 74bd020f5f0f26e4e903c32d3c9ec34c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020162765607843905, guid: 74bd020f5f0f26e4e903c32d3c9ec34c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020162765607843909, guid: 74bd020f5f0f26e4e903c32d3c9ec34c, type: 3}
+      propertyPath: m_Name
+      value: FireWallAttack
+      objectReference: {fileID: 0}
+    - target: {fileID: 4020162765607843909, guid: 74bd020f5f0f26e4e903c32d3c9ec34c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 74bd020f5f0f26e4e903c32d3c9ec34c, type: 3}
 --- !u!1 &1103158488
 GameObject:
   m_ObjectHideFlags: 0
@@ -12142,10 +12219,6 @@ PrefabInstance:
       propertyPath: right.Array.data[1]
       value: 
       objectReference: {fileID: 4243154}
-    - target: {fileID: 7076162387893989451, guid: 3e2e6f1e36f2ccb4f80f6980dbcbdde9, type: 3}
-      propertyPath: postDelayMilliSeconds
-      value: 3000
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e2e6f1e36f2ccb4f80f6980dbcbdde9, type: 3}
 --- !u!1001 &5206396051138674924
@@ -12288,7 +12361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6403648206978197813, guid: 24190792d2f83a0459637227578fd953, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10
+      value: -9.8
       objectReference: {fileID: 0}
     - target: {fileID: 6403648206978197813, guid: 24190792d2f83a0459637227578fd953, type: 3}
       propertyPath: m_LocalPosition.y
@@ -12325,22 +12398,6 @@ PrefabInstance:
     - target: {fileID: 6403648206978197813, guid: 24190792d2f83a0459637227578fd953, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 6403648206978197815, guid: 24190792d2f83a0459637227578fd953, type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 65
-      objectReference: {fileID: 0}
-    - target: {fileID: 6403648206978197815, guid: 24190792d2f83a0459637227578fd953, type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 0.33
-      objectReference: {fileID: 0}
-    - target: {fileID: 6403648206978197815, guid: 24190792d2f83a0459637227578fd953, type: 3}
-      propertyPath: InitialModule.startSpeed.minScalar
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 6403648206978197815, guid: 24190792d2f83a0459637227578fd953, type: 3}
-      propertyPath: InitialModule.startLifetime.minScalar
-      value: 0.28
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24190792d2f83a0459637227578fd953, type: 3}
