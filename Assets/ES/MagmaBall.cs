@@ -44,6 +44,14 @@ public class MagmaBall : MonoBehaviour
     {
         GuideToPlayer();
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+		if (collision.gameObject.CompareTag("Player"))
+		{
+			GameManager.instance.GetPlayer().Hit();
+		}
+    }
 }
 
 
