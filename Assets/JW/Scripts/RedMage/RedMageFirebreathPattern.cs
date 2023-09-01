@@ -10,6 +10,7 @@ public class RedMageFirebreathPattern : BossPattern
 	#region PrivateVariables
 	[SerializeField] List<StaticAttack> left = new List<StaticAttack>();
 	[SerializeField] List<StaticAttack> right = new List<StaticAttack>();
+	private bool flip;
 	#endregion
 
 	#region PublicMethod
@@ -30,8 +31,9 @@ public class RedMageFirebreathPattern : BossPattern
 	}
 	protected override void ActionContext()
 	{
-		if(GetRandom())
+		if(flip)
 		{
+			flip = !flip;
 			foreach(StaticAttack breath in left)
 			{
 				breath.StartAttack();
@@ -39,15 +41,12 @@ public class RedMageFirebreathPattern : BossPattern
 		}
 		else
 		{
+			flip = !flip;
 			foreach (StaticAttack breath in right)
 			{
 				breath.StartAttack();
 			}
 		}
-	}
-	private bool GetRandom()
-	{
-		return Random.value > 0.5f;
 	}
 	#endregion
 }
