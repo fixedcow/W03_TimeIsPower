@@ -17,7 +17,7 @@ public class RedMageFirewallPattern : BossPattern
 	#region PrivateMethod
 	protected override void ActionContext()
 	{
-
+		firewalls[Random.Range(0, firewalls.Count - 1)].StartAttack();
 	}
 	#endregion
 }

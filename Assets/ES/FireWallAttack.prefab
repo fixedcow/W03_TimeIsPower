@@ -4829,10 +4829,10 @@ MonoBehaviour:
   scaleOffsetX: 5
   scaleOffsetY: 1
   cautionEffect: {fileID: 4020162766302776457}
-  cautionTime: 3
+  cautionTime: 2
   blinkTime: 1
   attackParticle: {fileID: 4020162765607843911}
-  attackTime: 5
+  attackTime: 20
 --- !u!1 &4020162766302776457
 GameObject:
   m_ObjectHideFlags: 0

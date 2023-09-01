@@ -63,6 +63,8 @@ public abstract class BossPattern : MonoBehaviour
 	{
 		if (animationStateName != "")
 		{
+			//TODO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			transform.Find("renderer").TryGetComponent(out anim);
 			anim.Play(animationStateName);
 		}
 	}
