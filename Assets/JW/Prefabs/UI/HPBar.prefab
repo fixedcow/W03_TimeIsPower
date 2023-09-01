@@ -250,6 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af4ef95e621320147a606a0610250b81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  text: {fileID: 2845327253685693157}
   red: {fileID: 2845327252200120325}
   yellow: {fileID: 2845327253371919512}
 --- !u!1 &2845327253371919508
@@ -470,7 +471,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uCC9C\uC7AC \uB808\uBCA8 \uB514\uC790\uC774\uB108"
+  m_text: "\uC545\uB2F9 \uB9C8\uBC95\uC0AC"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 93628427bf49f8545b4297c2c3656f94, type: 2}
   m_sharedMaterial: {fileID: 8360293387077050269, guid: 93628427bf49f8545b4297c2c3656f94, type: 2}

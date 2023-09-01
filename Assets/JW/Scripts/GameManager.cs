@@ -36,10 +36,13 @@ public class GameManager : MonoBehaviour
 		boss = bossList[(int)_stage];
 		stageEnterTrigger = stageEnterTriggerList[(int)_stage];
 		boss.Initialize();
+		boss.gameObject.SetActive(true);
 		BossHpGUI.instance.ShowGUI();
+		BossHpGUI.instance.SetBossNameText(boss.bossName);
 		BossHpGUI.instance.SetMaxHp(boss.GetMaxHp());
 		BodyGenerator.instance.ClearBody();
 		GhostManager.instance.RecordAndReplay();
+		boss.PatternStart();
 	}
 	public void BattleEnd()
 	{
@@ -48,6 +51,8 @@ public class GameManager : MonoBehaviour
 		fadeBlackController.GameOverFade();
 		stageEnterTrigger.SetActive(true);
 		GhostManager.instance.StopRecordAndReplay();
+		boss.gameObject.SetActive(false);
+		boss = null;
 	}
 	public void GameClear()
 	{
