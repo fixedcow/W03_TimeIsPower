@@ -4887,7 +4887,6 @@ GameObject:
   - component: {fileID: 8803760988626880998}
   - component: {fileID: 8803760988626880999}
   - component: {fileID: 8803760988626880996}
-  - component: {fileID: 1472196892}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -4924,17 +4923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9901c1a056203642a6fd1cda3f631c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPlayerDead: 0
-  fadeScreen: {fileID: 0}
-  fadeMiddlePositionX: 0
-  fadeEndPositionX: 0
-  fadeStartPosition: {x: 0, y: 0, z: 0}
-  fadeTime: 0
-  restartInterval: 0
-  startPlayerPosition: {x: 0, y: 0, z: 0}
-  startCameraPosition: {x: 0, y: 0, z: 0}
-  recordTrigger: {fileID: 0}
-  cameraTrigger: {fileID: 0}
+  anim: {fileID: 0}
 --- !u!114 &8803760988626880997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4994,7 +4983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6fd68f716294d74d9c46e3820522a3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 6
+  moveSpeed: 5
   linearDrag: 12
 --- !u!114 &8803760988626880993
 MonoBehaviour:
@@ -5010,7 +4999,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 11
   grondCheckRayLength: 0.6
-  downJumpRayLength: 6
+  downJumpRayLength: 10
 --- !u!114 &8803760988626880998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5060,23 +5049,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.25}
   serializedVersion: 2
   m_Radius: 0.25
---- !u!114 &1472196892
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8803760988626880921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbbd832c01a0a5b4db63453587fbc466, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  testGameOver: 0
-  playerAnimator: {fileID: 8803760990524184036}
-  ghostPrefab: {fileID: 4084996498787428131, guid: 3001ffb6766c69f43bb08a70a516df18, type: 3}
-  recordInterval: 0.02
-  ghostManager: {fileID: 0}
 --- !u!1 &8803760990524183962
 GameObject:
   m_ObjectHideFlags: 0
@@ -5196,5 +5168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0a5e41d4c3f21f449352ee4155830f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  source: {fileID: 8803760988626880921}
+  damage: 3
   pointA: {x: -0.1, y: 0.5}
   pointB: {x: 1.5, y: -0.5}

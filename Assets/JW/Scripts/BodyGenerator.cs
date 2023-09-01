@@ -6,7 +6,7 @@ using Sirenix.OdinInspector;
 public class BodyGenerator : MonoBehaviour
 {
 	#region PublicVariables
-	public static BodyGenerator Instance;
+	public static BodyGenerator instance;
 	#endregion
 
 	#region PrivateVariables
@@ -15,14 +15,13 @@ public class BodyGenerator : MonoBehaviour
 	#endregion
 
 	#region PublicMethod
-	public void SpawnBody(Transform _transform, Vector2 _velocity, bool isGhost = true)
+	public void SpawnBody(Transform _transform, bool isGhost = true)
 	{
 		GameObject current = GetPrefab();
 		current.transform.position = _transform.position;
 		current.transform.localScale = _transform.localScale;
 		Body body;
 		current.TryGetComponent(out body);
-		body.SetVelocity(_velocity);
 		body.SetTransparency(isGhost);
 	}
 	public void ClearBody()
@@ -37,8 +36,8 @@ public class BodyGenerator : MonoBehaviour
 	#region PrivateMethod
 	private void Awake()
 	{
-		if (Instance == null)
-			Instance = this;
+		if (instance == null)
+			instance = this;
 	}
 	private GameObject GetPrefab()
 	{

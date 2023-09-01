@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8827446450428424876}
   - component: {fileID: 8827446450428424877}
   - component: {fileID: 8853301306497195863}
-  - component: {fileID: 2505605971395381585}
   m_Layer: 0
   m_Name: Fireball
   m_TagString: Boss
@@ -869,7 +868,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 5
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -922,7 +921,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -4830,15 +4829,3 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.0070574284}
   serializedVersion: 2
   m_Radius: 0.17653489
---- !u!114 &2505605971395381585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8827446450428424874}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcec5e7e6a7316046adea8905cd28a96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

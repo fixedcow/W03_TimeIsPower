@@ -5,11 +5,11 @@ using DG.Tweening;
 
 public class FadeBlackController : MonoBehaviour
 {
-	[SerializeField] private float fadeMiddlePositionX;
-	[SerializeField] private float fadeEndPositionX;
-	[SerializeField] private float fadeStartPositionX;
+	private float fadeStartPositionX = -40f;
+	private float fadeMiddlePositionX = 0f;
+	private float fadeEndPositionX = 40f;
+
 	[SerializeField] private float fadeTime;
-	[SerializeField] private Vector3 startPlayerPosition;
 	private Transform player;
 	private Transform cameraTransfom;
 
@@ -24,13 +24,12 @@ public class FadeBlackController : MonoBehaviour
 		transform.DOLocalMoveX(fadeMiddlePositionX, fadeTime)
 			.OnComplete(() =>
 			{
-				player.position = startPlayerPosition;
+				GameManager.instance.GetPlayer().MoveToRespawnPoint();
+				CameraController.instance.MoveToRespawnPoint();
 				transform.DOLocalMoveX(fadeEndPositionX, fadeTime)
 				 .OnComplete(() =>
 				 {
-					 Vector3 cameraPos = cameraTransfom.position;
-					 cameraPos.x = fadeStartPositionX;
-					 transform.localPosition = cameraPos;
+					 transform.DOLocalMoveX(fadeStartPositionX, 0f);
 				 });
 			});
 

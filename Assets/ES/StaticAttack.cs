@@ -3,16 +3,15 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 using DG.Tweening;
 
-public class FireWallAtack : MonoBehaviour
+public class StaticAttack : MonoBehaviour
 {
-
     [SerializeField]
-    [Range(0, 3)]
+    [Range(0, 20)]
     [OnValueChanged("OnValueChange")]
     private float scaleOffsetX;
 
     [SerializeField]
-    [Range(0, 3)]
+    [Range(0, 20)]
     [OnValueChanged("OnValueChange")]
     private float scaleOffsetY;
 
@@ -81,9 +80,9 @@ public class FireWallAtack : MonoBehaviour
         attackCollider.transform.position = defaultColliderPosition;
 
         Vector3 scale = cautionEffect.transform.localScale;
-        scale.x+= scaleOffsetX;
+        scale.x += scaleOffsetX;
         scale.y += scaleOffsetY;
-        cautionEffect.transform.localScale= scale;
+        cautionEffect.transform.localScale = scale;
 
         Vector3 position = cautionEffect.transform.position;
         position.y += scaleOffsetY / 2;

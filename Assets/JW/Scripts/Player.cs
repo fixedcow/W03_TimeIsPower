@@ -13,6 +13,8 @@ public class Player : MonoBehaviour
 	#endregion
 
 	#region PrivateVariables
+	[SerializeField] private Animator anim;
+
 	private PlayerAction input;
 
 	private PlayerDodge dodge;
@@ -22,7 +24,8 @@ public class Player : MonoBehaviour
 
 	private bool isInvincible;
 	private bool isPressedDown;
-	[SerializeField] private bool canAct = false;
+	private bool canAct = false;
+	Vector2 RespawnPoint = new Vector2(-19f, 0.3f);
 	
 	#endregion
 
@@ -33,12 +36,17 @@ public class Player : MonoBehaviour
 		if(isInvincible == false)
 		{
 			GameManager.instance.BattleEnd();
-
+			BodyGenerator.instance.SpawnBody(transform, false);
 		}
 	}
+	public Animator GetAnimator() => anim;
 	public void SetInvincibility(bool b) => isInvincible = b;
 	public void CanAct() => canAct = true;
 	public void CanNotAct() => canAct = false;
+	public void MoveToRespawnPoint()
+	{
+		transform.position = RespawnPoint;
+	}
 	#endregion
 
 	#region PrivateMethod
