@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Sirenix.OdinInspector;
+using TMPro;
 
 public class BossHpGUI : MonoBehaviour
 {
 	#region PublicVariables
 	public static BossHpGUI instance;
+	public TextMeshPro text;
 	#endregion
 
 	#region PrivateVariables
@@ -45,6 +47,10 @@ public class BossHpGUI : MonoBehaviour
 		hpCurrent = _currentHp;
 		red.SetTargetValue(percentage);
 		yellow.SetTargetValue(percentage);
+	}
+	public void SetBossNameText(string _str)
+	{
+		text.text = _str;
 	}
 	#endregion
 
