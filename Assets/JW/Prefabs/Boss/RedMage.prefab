@@ -175,7 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationStateName: Pattern2
   preDelayMilliSeconds: 1000
-  postDelayMilliSeconds: 1500
+  postDelayMilliSeconds: 3000
   teleportPosition:
   - {x: 0, y: 0}
   - {x: -6.5, y: 2.5}
