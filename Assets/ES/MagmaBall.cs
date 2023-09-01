@@ -15,6 +15,7 @@ public class MagmaBall : MonoBehaviour
     private void Start()
     {
 		player = GameManager.instance.GetPlayer().gameObject;
+		DynamicObjectManager.instance.AddObject(this.gameObject);
     }
     private void GuideToPlayer()
     {
