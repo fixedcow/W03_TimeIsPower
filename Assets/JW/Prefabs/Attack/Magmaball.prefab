@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7998054061223970321}
   - component: {fileID: 7998054061223970322}
   - component: {fileID: 7998054061223970323}
-  - component: {fileID: 80815680}
   - component: {fileID: 80815679}
   - component: {fileID: 80815681}
   m_Layer: 0
@@ -4815,27 +4814,6 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!50 &80815680
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7998054061223970324}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!58 &80815679
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4869,4 +4847,4 @@ MonoBehaviour:
   rotateSpeed: 1
   maxSpeed: 0.001
   destroyMagmaTime: 15
-  rigid: {fileID: 80815680}
+  rigid: {fileID: 0}
