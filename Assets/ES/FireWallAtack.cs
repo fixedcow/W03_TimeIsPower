@@ -77,8 +77,8 @@ public class FireWallAtack : MonoBehaviour
     {
         cautionEffect.transform.localScale = defaultCautionScale;
         attackCollider.transform.localScale = defaultColliderScale;
-        cautionEffect.transform.position = defaultCautionPosition;
-        attackCollider.transform.position = defaultColliderPosition;
+        cautionEffect.transform.localPosition = defaultCautionPosition;
+        attackCollider.transform.localPosition = defaultColliderPosition;
 
         Vector3 scale = cautionEffect.transform.localScale;
         scale.x+= scaleOffsetX;
