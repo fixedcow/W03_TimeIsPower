@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 8827446450428424876}
   - component: {fileID: 8827446450428424877}
   - component: {fileID: 8853301306497195863}
+  - component: {fileID: 6960173981278715175}
+  - component: {fileID: 3929049856306601985}
   m_Layer: 0
   m_Name: Fireball
   m_TagString: Boss
@@ -4829,3 +4831,30 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.0070574284}
   serializedVersion: 2
   m_Radius: 0.17653489
+--- !u!114 &6960173981278715175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8827446450428424874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4aa8f22a6bbdef44a44570d52876a13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3929049856306601985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8827446450428424874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 731734531021fe44d9554c86b74a113f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayTime: 1
+  delaySpeed: 1
+  speed: 10

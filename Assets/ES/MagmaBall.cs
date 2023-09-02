@@ -15,6 +15,7 @@ public class MagmaBall : MonoBehaviour
     private void Start()
     {
 		player = GameManager.instance.GetPlayer().gameObject;
+		DynamicObjectManager.instance.AddObject(this.gameObject);
     }
     private void GuideToPlayer()
     {
@@ -42,6 +43,14 @@ public class MagmaBall : MonoBehaviour
     private void Update()
     {
         GuideToPlayer();
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+		if (collision.gameObject.CompareTag("Player"))
+		{
+			GameManager.instance.GetPlayer().Hit();
+		}
     }
 }
 

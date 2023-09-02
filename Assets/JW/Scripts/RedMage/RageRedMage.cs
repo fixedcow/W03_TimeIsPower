@@ -1,0 +1,30 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class RageRedMage : Boss
+{
+	#region PublicVariables
+	#endregion
+
+	#region PrivateVariables
+	#endregion
+
+	#region PublicMethod
+	public void SetHpSameWithMain(int _hpCurrent, int _hpMax)
+	{
+		hpMax = _hpMax;
+		hpCurrent = _hpCurrent;
+	}
+	#endregion
+
+	#region PrivateMethod
+	private void OnEnable()
+	{
+		BossHpGUI.instance.SetBossNameText(bossName);
+		BossHpGUI.instance.SetHp(hpCurrent);
+		GameManager.instance.SetBoss(this);
+		PatternStart();
+	}
+	#endregion
+}
