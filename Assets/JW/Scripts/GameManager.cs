@@ -41,7 +41,6 @@ public class GameManager : MonoBehaviour
 	}
 	public void BattleStart(Utils.EStage _stage)
 	{
-		
 		state = EGameState.battle;
 		boss = bossList[(int)_stage];
 		stageEnterTrigger = stageEnterTriggerList[(int)_stage];
@@ -58,7 +57,7 @@ public class GameManager : MonoBehaviour
 	{
 		if (state == EGameState.idle)
 			return;
-
+		CameraController.instance.EndFollowToPlayer();
 		player.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
 		state = EGameState.idle;
 		DeathCounterManager.instance.PlayerDead();
