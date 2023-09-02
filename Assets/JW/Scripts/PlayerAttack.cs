@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
 	#region PublicVariables
+	public bool isAttack;
 	#endregion
 
 	#region PrivateVariables
@@ -15,9 +16,12 @@ public class PlayerAttack : MonoBehaviour
 	#region PublicMethod
 	public void Attack()
 	{
-		if (anim.GetBool("jump") == true)
-			return;
-		anim.SetBool("attack", true);
+        if (isAttack)
+        {
+			if (anim.GetBool("jump") == true)
+				return;
+			anim.SetBool("attack", true);
+		}
 	}
 	#endregion
 
@@ -26,5 +30,10 @@ public class PlayerAttack : MonoBehaviour
 	{
 		transform.Find("Renderer").TryGetComponent(out anim);
 	}
-	#endregion
+
+    private void Update()
+    {
+		Attack();
+	}
+    #endregion
 }
