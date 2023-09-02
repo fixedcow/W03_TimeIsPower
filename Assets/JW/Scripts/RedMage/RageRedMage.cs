@@ -19,9 +19,10 @@ public class RageRedMage : Boss
 	#endregion
 
 	#region PrivateMethod
-	private void OnEnable()
+	protected override void OnEnable()
 	{
 		BossHpGUI.instance.SetBossNameText(bossName);
+		BossHpGUI.instance.SetMaxHp(hpMax);
 		BossHpGUI.instance.SetHp(hpCurrent);
 		GameManager.instance.SetBoss(this);
 		PatternStart();
