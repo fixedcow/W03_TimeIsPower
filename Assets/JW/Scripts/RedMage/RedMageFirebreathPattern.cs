@@ -32,7 +32,7 @@ public class RedMageFirebreathPattern : BossPattern
 	}
 	protected override void ActionContext()
 	{
-		if(flip)
+		if(flip == false)
 		{
 			flip = !flip;
 			foreach(StaticAttack breath in left)
