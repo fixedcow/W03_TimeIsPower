@@ -11,12 +11,16 @@ public class RageRedMage : Boss
 	#endregion
 
 	#region PublicMethod
+	public void SetHpSameWithMain(int _hpCurrent, int _hpMax)
+	{
+		hpMax = _hpMax;
+		hpCurrent = _hpCurrent;
+	}
 	#endregion
 
 	#region PrivateMethod
 	private void OnEnable()
 	{
-		hpCurrent = hpMax * 3 / 10;
 		BossHpGUI.instance.SetBossNameText(bossName);
 		BossHpGUI.instance.SetHp(hpCurrent);
 		GameManager.instance.SetBoss(this);
