@@ -23,6 +23,7 @@ public abstract class Boss : MonoBehaviour
 	[SerializeField] protected BossPattern startPattern;
 	[SerializeField] protected List<BossPattern> patternList = new List<BossPattern>();
 	[SerializeField] protected List<StaticAttack> initAttackList = new();
+	[SerializeField] private GameObject halo;
 	[ReadOnly] [SerializeField] protected int patternIndex;
 	[ReadOnly][SerializeField] protected BossPattern currentPattern;
 	#endregion
@@ -39,6 +40,9 @@ public abstract class Boss : MonoBehaviour
 	{
 		if (hpCurrent <= 0)
 		{
+			GameManager.instance.GetPlayer().CanNotAct();
+			halo.SetActive(false);
+			ShutdownAction();
 			DynamicObjectManager.instance.Clear();
 			foreach (StaticAttack attack in initAttackList)
 			{
@@ -46,7 +50,7 @@ public abstract class Boss : MonoBehaviour
 			}
 			transform.Find("renderer").TryGetComponent(out anim);
 			anim.Play("Die");
-			Invoke("BossKilled", 5f);
+			Invoke("BossKilled", 3f);
 		}
         else
         {
@@ -60,6 +64,7 @@ public abstract class Boss : MonoBehaviour
 	public void BossKilled()
 	{
 		GameManager.instance.GameClear();
+
 	}
 	[Button]
 	public void PatternStart()

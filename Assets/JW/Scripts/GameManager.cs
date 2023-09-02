@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
 	private Boss boss;
 	private GameObject stageEnterTrigger;
 
-	[SerializeField] private GameObject GameClearUI;
+	[SerializeField] private EndingUI GameClearUI;
 	[SerializeField] private List<Boss> bossList = new List<Boss>();
 	[SerializeField] private List<GameObject> stageEnterTriggerList = new List<GameObject>();
 	[SerializeField] private FadeBlackController fadeBlackController;
@@ -80,7 +80,8 @@ public class GameManager : MonoBehaviour
 	}
 	public void GameClear()
 	{
-		GameClearUI.SetActive(true);
+		GameClearUI.EnableEndingUI();
+		GameClearUI.SetTryText();
 		
 		Physics2D.SyncTransforms();
 	}
