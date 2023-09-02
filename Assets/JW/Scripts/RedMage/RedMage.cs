@@ -10,13 +10,14 @@ public class RedMage : Boss
 
 	#region PrivateVariables
 	[SerializeField] GameObject rageVersion;
+	[Range(0, 1)][SerializeField] private float ragePercentage;
 	#endregion
 
 	#region PublicMethod
 	public override void Hit(int _damage, GameObject _source)
 	{
 		base.Hit(_damage, _source);
-		if(hpCurrent < hpMax * 3 / 10)
+		if(hpCurrent < hpMax * ragePercentage)
 		{
 			RageRedMage rage;
 			rageVersion.TryGetComponent(out rage);

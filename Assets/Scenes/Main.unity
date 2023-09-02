@@ -13437,12 +13437,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5093142162459366962, guid: 3e2e6f1e36f2ccb4f80f6980dbcbdde9, type: 3}
       propertyPath: hpMax
-      value: 800
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 5093142162459366962, guid: 3e2e6f1e36f2ccb4f80f6980dbcbdde9, type: 3}
       propertyPath: rageVersion
       value: 
       objectReference: {fileID: 1608839984809345237}
+    - target: {fileID: 5093142162459366962, guid: 3e2e6f1e36f2ccb4f80f6980dbcbdde9, type: 3}
+      propertyPath: ragePercentage
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5093142162459366962, guid: 3e2e6f1e36f2ccb4f80f6980dbcbdde9, type: 3}
       propertyPath: patternList.Array.size
       value: 9
