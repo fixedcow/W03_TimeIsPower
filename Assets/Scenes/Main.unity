@@ -3042,6 +3042,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeTime: 0.6
+  waitFadeTime: 0.5
 --- !u!1 &761224113
 GameObject:
   m_ObjectHideFlags: 0
@@ -5455,6 +5456,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseUI
       objectReference: {fileID: 0}
+    - target: {fileID: 5432523412558266078, guid: 20f01e0c34a31044aab5d4d59b277c3e, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20f01e0c34a31044aab5d4d59b277c3e, type: 3}
 --- !u!4 &1152081418 stripped
@@ -5923,6 +5928,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   main: {fileID: 1288541789}
+  shakeDuration: 0.3
+  shakeStrength: 0.5
+  shakeVibrato: 25
+  shakeRandomness: 30
   datas:
   - {fileID: 11400000, guid: 2fbeed6072e09d543b3d861c77fe24a4, type: 2}
 --- !u!4 &1358923606 stripped
@@ -6005,6 +6014,10 @@ PrefabInstance:
       propertyPath: anim
       value: 
       objectReference: {fileID: 1997598755}
+    - target: {fileID: 8803760990524184039, guid: ba6aea0b79b7fdf46b4f3deed705cdac, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba6aea0b79b7fdf46b4f3deed705cdac, type: 3}
 --- !u!1001 &1492248217
