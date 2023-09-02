@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
 	}
 	public void BattleStart(Utils.EStage _stage)
 	{
+		
 		state = EGameState.battle;
 		boss = bossList[(int)_stage];
 		stageEnterTrigger = stageEnterTriggerList[(int)_stage];
@@ -57,15 +58,25 @@ public class GameManager : MonoBehaviour
 	{
 		if (state == EGameState.idle)
 			return;
+
+		player.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
 		state = EGameState.idle;
-		BossHpGUI.instance.HideGUI();
 		DeathCounterManager.instance.PlayerDead();
-		fadeBlackController.GameOverFade();
+		CameraController.instance.HitShake();
+		fadeBlackController.StartFade();
 		stageEnterTrigger.SetActive(true);
 		GhostManager.instance.StopRecordAndReplay();
+
+		Invoke(nameof(WaitBattleEnd), fadeBlackController.waitFadeTime+fadeBlackController.fadeTime);
+	}
+
+	private void WaitBattleEnd()
+    {
+		BossHpGUI.instance.HideGUI();
 		DynamicObjectManager.instance.Clear();
 		boss.gameObject.SetActive(false);
 		boss = null;
+
 	}
 	public void GameClear()
 	{
