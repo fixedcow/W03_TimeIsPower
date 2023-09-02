@@ -18,6 +18,7 @@ public class RedMage : Boss
 		base.Hit(_damage, _source);
 		if(hpCurrent < hpMax * 3 / 10)
 		{
+			rageVersion.GetComponent<RageRedMage>().SetHpSameWithMain(hpCurrent, hpMax);
 			rageVersion.transform.position = transform.position;
 			rageVersion.SetActive(true);
 			gameObject.SetActive(false);
