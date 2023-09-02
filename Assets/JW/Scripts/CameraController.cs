@@ -12,6 +12,7 @@ public class CameraController : MonoBehaviour
 	#region PrivateVariables
 	[SerializeField] private List<Vector2> stageCameraPosition = new List<Vector2>();
 	[SerializeField] private Vector3 respawnPoint;
+	[SerializeField] private CameraShaker shaker;
 	#endregion
 
 	#region PublicMethod
@@ -33,6 +34,10 @@ public class CameraController : MonoBehaviour
 		}
 		result.z = -10f;
 		transform.DOMove(result, 0.5f);
+	}
+	public void HitShake()
+	{
+		shaker.HitShake();
 	}
 	#endregion
 

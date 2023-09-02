@@ -5782,6 +5782,7 @@ GameObject:
   - component: {fileID: 1288541790}
   - component: {fileID: 1288541789}
   - component: {fileID: 1288541792}
+  - component: {fileID: 1288541793}
   - component: {fileID: 1288541788}
   - component: {fileID: 1288541791}
   m_Layer: 0
@@ -5908,6 +5909,22 @@ MonoBehaviour:
   stageCameraPosition:
   - {x: 0, y: 3.75}
   respawnPoint: {x: -20, y: 3.75, z: -10}
+  shaker: {fileID: 1288541793}
+--- !u!114 &1288541793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288541787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b69ce12a5d901a84288660688f1599e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  main: {fileID: 1288541789}
+  datas:
+  - {fileID: 11400000, guid: 2fbeed6072e09d543b3d861c77fe24a4, type: 2}
 --- !u!4 &1358923606 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2845327253145278226, guid: 4ce7108c00cb2cb4ebad5f2f54227689, type: 3}

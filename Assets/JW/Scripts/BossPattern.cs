@@ -4,6 +4,7 @@ using UnityEngine;
 using Cysharp.Threading;
 using Cysharp.Threading.Tasks;
 using System.Threading;
+using Sirenix.OdinInspector;
 
 public abstract class BossPattern : MonoBehaviour
 {
@@ -17,8 +18,8 @@ public abstract class BossPattern : MonoBehaviour
 	[SerializeField] protected int preDelayMilliSeconds;
 	[SerializeField] protected int postDelayMilliSeconds;
 
-	protected CancellationTokenSource preDelaySource = new CancellationTokenSource();
-	protected CancellationTokenSource postDelaySource = new CancellationTokenSource();
+	[ShowInInspector] protected CancellationTokenSource preDelaySource = new CancellationTokenSource();
+	[ShowInInspector] protected CancellationTokenSource postDelaySource = new CancellationTokenSource();
 	#endregion
 
 	#region PublicMethod

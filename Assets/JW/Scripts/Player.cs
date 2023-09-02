@@ -36,6 +36,8 @@ public class Player : MonoBehaviour
 		if(isInvincible == false)
 		{
 			GameManager.instance.BattleEnd();
+			BodyGenerator.instance.SpawnBody(transform, false);
+			CameraController.instance.HitShake();
 		}
 	}
 	public Animator GetAnimator() => anim;
