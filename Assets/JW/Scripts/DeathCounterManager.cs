@@ -24,7 +24,6 @@ public class DeathCounterManager : MonoBehaviour
 	public void PlayerDead()
 	{
 		++count;
-		Debug.Log(count);
 		if (current.AddCount() == false)
 		{	
 			current = InstantiateCount();
