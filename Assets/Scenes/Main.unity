@@ -13034,6 +13034,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 774366380986560700, guid: 9f33fcbb16370314d8039e6681cb5373, type: 3}
+      propertyPath: postDelayMilliSeconds
+      value: 4000
+      objectReference: {fileID: 0}
+    - target: {fileID: 774366380986560700, guid: 9f33fcbb16370314d8039e6681cb5373, type: 3}
       propertyPath: firewalls.Array.data[0]
       value: 
       objectReference: {fileID: 7873983}
@@ -13071,7 +13075,7 @@ PrefabInstance:
       objectReference: {fileID: 2097723160}
     - target: {fileID: 1186505515090767772, guid: 9f33fcbb16370314d8039e6681cb5373, type: 3}
       propertyPath: offsetY
-      value: 1.2
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1186505515090767772, guid: 9f33fcbb16370314d8039e6681cb5373, type: 3}
       propertyPath: magmaball
@@ -13080,6 +13084,10 @@ PrefabInstance:
     - target: {fileID: 1186505515090767772, guid: 9f33fcbb16370314d8039e6681cb5373, type: 3}
       propertyPath: preDelayMilliSeconds
       value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1186505515090767772, guid: 9f33fcbb16370314d8039e6681cb5373, type: 3}
+      propertyPath: postDelayMilliSeconds
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 2539018860352829603, guid: 9f33fcbb16370314d8039e6681cb5373, type: 3}
       propertyPath: left.Array.data[0]
@@ -13097,6 +13105,14 @@ PrefabInstance:
       propertyPath: right.Array.data[1]
       value: 
       objectReference: {fileID: 4243154}
+    - target: {fileID: 2539018860352829603, guid: 9f33fcbb16370314d8039e6681cb5373, type: 3}
+      propertyPath: preDelayMilliSeconds
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2539018860352829603, guid: 9f33fcbb16370314d8039e6681cb5373, type: 3}
+      propertyPath: postDelayMilliSeconds
+      value: 2500
+      objectReference: {fileID: 0}
     - target: {fileID: 2935726928556496579, guid: 9f33fcbb16370314d8039e6681cb5373, type: 3}
       propertyPath: delay
       value: 0.8
@@ -13404,8 +13420,12 @@ PrefabInstance:
       objectReference: {fileID: 1608839984809345237}
     - target: {fileID: 5093142162459366962, guid: 3e2e6f1e36f2ccb4f80f6980dbcbdde9, type: 3}
       propertyPath: patternList.Array.size
-      value: 5
+      value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 5093142162459366962, guid: 3e2e6f1e36f2ccb4f80f6980dbcbdde9, type: 3}
+      propertyPath: patternList.Array.data[0]
+      value: 
+      objectReference: {fileID: 5093142162646036296}
     - target: {fileID: 5093142162459366962, guid: 3e2e6f1e36f2ccb4f80f6980dbcbdde9, type: 3}
       propertyPath: patternList.Array.data[1]
       value: 
@@ -13413,21 +13433,25 @@ PrefabInstance:
     - target: {fileID: 5093142162459366962, guid: 3e2e6f1e36f2ccb4f80f6980dbcbdde9, type: 3}
       propertyPath: patternList.Array.data[2]
       value: 
-      objectReference: {fileID: 5093142162646036296}
+      objectReference: {fileID: 5093142162646036298}
     - target: {fileID: 5093142162459366962, guid: 3e2e6f1e36f2ccb4f80f6980dbcbdde9, type: 3}
       propertyPath: patternList.Array.data[3]
       value: 
-      objectReference: {fileID: 5093142162646036298}
+      objectReference: {fileID: 5093142162646036297}
     - target: {fileID: 5093142162459366962, guid: 3e2e6f1e36f2ccb4f80f6980dbcbdde9, type: 3}
       propertyPath: patternList.Array.data[4]
       value: 
-      objectReference: {fileID: 5093142162646036297}
+      objectReference: {fileID: 5093142162646036298}
     - target: {fileID: 5093142162459366962, guid: 3e2e6f1e36f2ccb4f80f6980dbcbdde9, type: 3}
       propertyPath: patternList.Array.data[5]
       value: 
-      objectReference: {fileID: 5093142162646036298}
+      objectReference: {fileID: 5093142162646036296}
     - target: {fileID: 5093142162459366962, guid: 3e2e6f1e36f2ccb4f80f6980dbcbdde9, type: 3}
       propertyPath: patternList.Array.data[6]
+      value: 
+      objectReference: {fileID: 5093142162646036296}
+    - target: {fileID: 5093142162459366962, guid: 3e2e6f1e36f2ccb4f80f6980dbcbdde9, type: 3}
+      propertyPath: patternList.Array.data[7]
       value: 
       objectReference: {fileID: 5093142162646036298}
     - target: {fileID: 5093142162459366963, guid: 3e2e6f1e36f2ccb4f80f6980dbcbdde9, type: 3}
@@ -13440,7 +13464,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5093142162459366963, guid: 3e2e6f1e36f2ccb4f80f6980dbcbdde9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 5093142162459366963, guid: 3e2e6f1e36f2ccb4f80f6980dbcbdde9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -13478,6 +13502,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedMage
       objectReference: {fileID: 0}
+    - target: {fileID: 5093142162459366966, guid: 3e2e6f1e36f2ccb4f80f6980dbcbdde9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7076162387893989451, guid: 3e2e6f1e36f2ccb4f80f6980dbcbdde9, type: 3}
       propertyPath: left.Array.data[0]
       value: 
@@ -13502,7 +13530,12 @@ PrefabInstance:
       propertyPath: speed
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8188735709851659635, guid: 3e2e6f1e36f2ccb4f80f6980dbcbdde9, type: 3}
+      propertyPath: postDelayMilliSeconds
+      value: 1000
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1342645882460092921, guid: 3e2e6f1e36f2ccb4f80f6980dbcbdde9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3e2e6f1e36f2ccb4f80f6980dbcbdde9, type: 3}
 --- !u!114 &5093142162646036296 stripped
 MonoBehaviour:

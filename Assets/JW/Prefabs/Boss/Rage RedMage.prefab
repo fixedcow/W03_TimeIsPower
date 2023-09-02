@@ -79,7 +79,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationStateName: 
   preDelayMilliSeconds: 0
-  postDelayMilliSeconds: 0
+  postDelayMilliSeconds: 3000
 --- !u!114 &3379662072413572797
 MonoBehaviour:
   m_ObjectHideFlags: 0
