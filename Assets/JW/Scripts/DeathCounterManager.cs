@@ -23,8 +23,10 @@ public class DeathCounterManager : MonoBehaviour
 	[Button]
 	public void PlayerDead()
 	{
+		++count;
+		Debug.Log(count);
 		if (current.AddCount() == false)
-		{
+		{	
 			current = InstantiateCount();
 			current.AddCount();
 		}
