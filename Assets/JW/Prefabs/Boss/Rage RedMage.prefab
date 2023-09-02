@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 549867754590232283}
   - component: {fileID: 644492254723900079}
   - component: {fileID: 4978595303568946281}
-  - component: {fileID: 3379662072413572797}
-  - component: {fileID: 2539018860352829603}
+  - component: {fileID: 5320232225595647631}
   - component: {fileID: 774366380986560700}
   - component: {fileID: 1186505515090767772}
   - component: {fileID: 2935726928556496579}
@@ -59,10 +58,17 @@ MonoBehaviour:
   hpMax: 0
   startPattern: {fileID: 4978595303568946281}
   patternList:
-  - {fileID: 3379662072413572797}
-  - {fileID: 2539018860352829603}
-  - {fileID: 774366380986560700}
   - {fileID: 1186505515090767772}
+  - {fileID: 5320232225595647631}
+  - {fileID: 774366380986560700}
+  - {fileID: 5320232225595647631}
+  - {fileID: 774366380986560700}
+  - {fileID: 2935726928556496579}
+  - {fileID: 2935726928556496579}
+  - {fileID: 2935726928556496579}
+  - {fileID: 2935726928556496579}
+  - {fileID: 2935726928556496579}
+  - {fileID: 5320232225595647631}
   patternIndex: 0
   currentPattern: {fileID: 0}
 --- !u!114 &4978595303568946281
@@ -81,7 +87,7 @@ MonoBehaviour:
   preDelayMilliSeconds: 1000
   postDelayMilliSeconds: 2000
   groundFire: {fileID: 0}
---- !u!114 &3379662072413572797
+--- !u!114 &5320232225595647631
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,37 +96,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 549867754590232286}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2822b88140d5f504799f88861b0bc95f, type: 3}
+  m_Script: {fileID: 11500000, guid: 2734a95ca2d4a4a40abdea303245160a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animationStateName: Pattern2
   preDelayMilliSeconds: 1000
   postDelayMilliSeconds: 3000
   teleportPosition:
-  - {x: 6, y: 7.5}
-  - {x: -6, y: 7.5}
   - {x: 0, y: 2.5}
---- !u!114 &2539018860352829603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 549867754590232286}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd1506030655bca4c8016a019c931fb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animationStateName: Pattern2
-  preDelayMilliSeconds: 1000
-  postDelayMilliSeconds: 3000
-  left:
-  - {fileID: 0}
-  - {fileID: 0}
-  right:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {x: -6, y: 7.5}
+  - {x: 6, y: 7.5}
 --- !u!114 &774366380986560700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,18 +120,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationStateName: Pattern2
   preDelayMilliSeconds: 1000
-  postDelayMilliSeconds: 3000
+  postDelayMilliSeconds: 4000
   firewalls:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  activeWallCount: 0
+  activeWallCount: 2
 --- !u!114 &1186505515090767772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,10 +141,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationStateName: Pattern1
-  preDelayMilliSeconds: 500
-  postDelayMilliSeconds: 4500
-  magmaball: {fileID: 0}
-  offsetY: 0
+  preDelayMilliSeconds: 1000
+  postDelayMilliSeconds: 2000
+  magmaball: {fileID: 7998054061223970324, guid: 7dddd037b50286a4bb60507d36f187dd, type: 3}
+  offsetY: 2
 --- !u!114 &2935726928556496579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,12 +157,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1088b2f5d17146438c0e85f5b033356, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationStateName: 
-  preDelayMilliSeconds: 0
-  postDelayMilliSeconds: 0
-  fireball: {fileID: 0}
-  delay: 0
-  speed: 0
+  animationStateName: Pattern1
+  preDelayMilliSeconds: 500
+  postDelayMilliSeconds: 500
+  fireball: {fileID: 8827446450428424874, guid: dd2b7c3223ed18843b1eea16bc4d19a1, type: 3}
+  delay: 0.8
+  speed: 16
 --- !u!61 &549867754590232281
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -127,7 +127,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5093142162459366963
 Transform:
   m_ObjectHideFlags: 0
@@ -159,17 +159,22 @@ MonoBehaviour:
   bossName: "\uC545\uB2F9 \uB9C8\uBC95\uC0AC"
   respawnPoint: {x: 0, y: 0}
   hpCurrent: 0
-  hpMax: 100
+  hpMax: 600
   startPattern: {fileID: 7734617559718899226}
   patternList:
-  - {fileID: 5093142162459366960}
+  - {fileID: 8188735709851659635}
   - {fileID: 8188735709851659635}
   - {fileID: 8188735709851659635}
   - {fileID: 5093142162459366960}
   - {fileID: 7076162387893989451}
+  - {fileID: 5093142162459366960}
+  - {fileID: 8188735709851659635}
+  - {fileID: 8188735709851659635}
+  - {fileID: 5093142162459366960}
   patternIndex: 0
   currentPattern: {fileID: 0}
   rageVersion: {fileID: 0}
+  ragePercentage: 0.5
 --- !u!114 &7734617559718899226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,7 +204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationStateName: Pattern2
   preDelayMilliSeconds: 1000
-  postDelayMilliSeconds: 3000
+  postDelayMilliSeconds: 3500
   teleportPosition:
   - {x: 0, y: 0}
   - {x: -6.5, y: 2.5}
@@ -221,7 +226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationStateName: Pattern2
   preDelayMilliSeconds: 1000
-  postDelayMilliSeconds: 3000
+  postDelayMilliSeconds: 1000
   left:
   - {fileID: 0}
   - {fileID: 0}
@@ -242,10 +247,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationStateName: Pattern1
   preDelayMilliSeconds: 500
-  postDelayMilliSeconds: 2500
+  postDelayMilliSeconds: 1000
   fireball: {fileID: 8827446450428424874, guid: dd2b7c3223ed18843b1eea16bc4d19a1, type: 3}
-  delay: 0
-  speed: 0
+  delay: 1.2
+  speed: 12
 --- !u!61 &5093142162459366961
 BoxCollider2D:
   m_ObjectHideFlags: 0
