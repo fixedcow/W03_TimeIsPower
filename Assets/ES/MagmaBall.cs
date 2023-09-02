@@ -36,8 +36,16 @@ public class MagmaBall : MonoBehaviour
 		}
 		else
 		{
-			Destroy(this.gameObject);
+			GetComponent<ParticleSystem>().Stop();
+			GetComponent<CircleCollider2D>().enabled = false;
+			Invoke("DestroyObject", 10f);
 		}
+	}
+
+
+	private void DestroyObject()
+    {
+		Destroy(this.gameObject);
 	}
 
     private void Update()
