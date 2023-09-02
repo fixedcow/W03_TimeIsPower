@@ -18,8 +18,8 @@ public abstract class BossPattern : MonoBehaviour
 	[SerializeField] protected int preDelayMilliSeconds;
 	[SerializeField] protected int postDelayMilliSeconds;
 
-	[ShowInInspector] protected CancellationTokenSource preDelaySource = new CancellationTokenSource();
-	[ShowInInspector] protected CancellationTokenSource postDelaySource = new CancellationTokenSource();
+	protected CancellationTokenSource preDelaySource = new CancellationTokenSource();
+	protected CancellationTokenSource postDelaySource = new CancellationTokenSource();
 	#endregion
 
 	#region PublicMethod
@@ -64,7 +64,6 @@ public abstract class BossPattern : MonoBehaviour
 	{
 		if (animationStateName != "")
 		{
-			//TODO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 			transform.Find("renderer").TryGetComponent(out anim);
 			anim.Play(animationStateName);
 		}

@@ -11,6 +11,10 @@ public class RageRedMage : Boss
 	#endregion
 
 	#region PublicMethod
+	public override void Initialize()
+	{
+		patternIndex = -1;
+	}
 	public void SetHpSameWithMain(int _hpCurrent, int _hpMax)
 	{
 		hpMax = _hpMax;
@@ -25,7 +29,7 @@ public class RageRedMage : Boss
 		BossHpGUI.instance.SetMaxHp(hpMax);
 		BossHpGUI.instance.SetHp(hpCurrent);
 		GameManager.instance.SetBoss(this);
-		PatternStart();
+		Initialize();
 	}
 	#endregion
 }

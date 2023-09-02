@@ -23,8 +23,6 @@ public class RedMageMagmaBallPattern : BossPattern
         Vector3 attackPos = transform.position;
         attackPos.y += offsetY;
         GameObject attack = Instantiate(magmaball, attackPos, Quaternion.identity);
-        //나중에 DynamicObjectManager 연결해서 AddMagmaBall()호출해주기
-        // 메인씬 건드리는거 불안해서 안함
-
+		DynamicObjectManager.instance.AddObject(attack);
     }
 }
