@@ -20,5 +20,10 @@ public class RageRedMageStartPattern : BossPattern
 	{
 		groundFire.StartAttack();
 	}
+	protected override void OnDisable()
+	{
+		base.OnDisable();
+		groundFire.InitAttack();
+	}
 	#endregion
 }

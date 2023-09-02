@@ -4914,6 +4914,6 @@ MonoBehaviour:
   scaleOffsetY: 20
   cautionEffect: {fileID: 6403648206044000330}
   cautionTime: 2
-  blinkTime: 1
+  blinkTime: 0.5
   attackParticle: {fileID: 6403648206978197815}
   attackTime: 2
