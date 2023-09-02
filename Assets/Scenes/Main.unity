@@ -13326,7 +13326,7 @@ PrefabInstance:
       objectReference: {fileID: 926397545}
     - target: {fileID: 5093142162459366962, guid: 3e2e6f1e36f2ccb4f80f6980dbcbdde9, type: 3}
       propertyPath: hpMax
-      value: 10
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 5093142162459366962, guid: 3e2e6f1e36f2ccb4f80f6980dbcbdde9, type: 3}
       propertyPath: rageVersion
