@@ -7,7 +7,6 @@ public class MagmaBall : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] float guideSpeed;
     [SerializeField] float rotateSpeed;
-    [SerializeField] float maxSpeed;
     [SerializeField] float destroyMagmaTime;
     private float timer;
     [SerializeField] private Rigidbody2D rigid;

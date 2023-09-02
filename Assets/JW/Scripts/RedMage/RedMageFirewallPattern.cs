@@ -26,9 +26,9 @@ public class RedMageFirewallPattern : BossPattern
     }
     protected override void ActionContext()
     {
-        int randonCount = 0;
+        int randomCount = 0;
         List<int> indexList = new();
-        while (randonCount < activeWallCount)
+        while (randomCount < activeWallCount)
         {
             int rand = GetRandom();
 
@@ -38,7 +38,15 @@ public class RedMageFirewallPattern : BossPattern
             }
 
             indexList.Add(rand);
-            randonCount++;
+			if(rand == 1)
+			{
+				indexList.Add(2);
+			}
+			else if(rand == 2)
+			{
+				indexList.Add(1);
+			}
+            randomCount++;
         }
 
         

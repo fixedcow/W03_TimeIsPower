@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 549867754590232283}
   - component: {fileID: 644492254723900079}
-  - component: {fileID: 4098008575011612136}
+  - component: {fileID: 4978595303568946281}
   - component: {fileID: 3379662072413572797}
   - component: {fileID: 2539018860352829603}
   - component: {fileID: 774366380986560700}
@@ -57,7 +57,7 @@ MonoBehaviour:
   respawnPoint: {x: 0, y: 0}
   hpCurrent: 0
   hpMax: 0
-  startPattern: {fileID: 4098008575011612136}
+  startPattern: {fileID: 4978595303568946281}
   patternList:
   - {fileID: 3379662072413572797}
   - {fileID: 2539018860352829603}
@@ -65,7 +65,7 @@ MonoBehaviour:
   - {fileID: 1186505515090767772}
   patternIndex: 0
   currentPattern: {fileID: 0}
---- !u!114 &4098008575011612136
+--- !u!114 &4978595303568946281
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,12 +74,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 549867754590232286}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c790e9fe21fcfd24086d08704fa63ebc, type: 3}
+  m_Script: {fileID: 11500000, guid: af2467c836ed8d941a73c1259186d308, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationStateName: 
-  preDelayMilliSeconds: 0
-  postDelayMilliSeconds: 3000
+  animationStateName: Pattern2
+  preDelayMilliSeconds: 1000
+  postDelayMilliSeconds: 2000
+  groundFire: {fileID: 0}
 --- !u!114 &3379662072413572797
 MonoBehaviour:
   m_ObjectHideFlags: 0
