@@ -65,19 +65,17 @@ public class StaticAttack : MonoBehaviour
     [Button]
     public void StartAttack()
     {
-        StartCoroutine(AttackPlay());
+        StartCoroutine(nameof(AttackPlay));
     }
     public IEnumerator AttackPlay()
     {
         blinkSequence.Play();
         cautionEffect.SetActive(true);
         yield return waitCautionTime;
-        cautionEffect.SetActive(false);
-
-        attackParticle.Play();
+		cautionEffect.SetActive(false);
+		attackParticle.Play();
         yield return waitAttackTime;
-
-        attackParticle.Stop();
+		attackParticle.Stop();
         blinkSequence.Rewind();
     }
 
@@ -104,7 +102,7 @@ public class StaticAttack : MonoBehaviour
     public void InitAttack()
     {
         blinkSequence.Rewind();
-        StopCoroutine(AttackPlay());
+        StopCoroutine(nameof(AttackPlay));
         cautionEffect.SetActive(false);
         attackParticle.Stop();
     }
