@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
 	#endregion
 
 	#region PublicMethod
+	public EGameState GetGameState() => state;
 	public Player GetPlayer() => player;
 	public Boss GetBoss() => boss;
 	public void SetBoss(Boss _boss) => boss = _boss;
@@ -41,7 +42,6 @@ public class GameManager : MonoBehaviour
 	}
 	public void BattleStart(Utils.EStage _stage)
 	{
-		
 		state = EGameState.battle;
 		boss = bossList[(int)_stage];
 		stageEnterTrigger = stageEnterTriggerList[(int)_stage];
