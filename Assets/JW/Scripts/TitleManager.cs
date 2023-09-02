@@ -3,6 +3,7 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TitleManager : MonoBehaviour
 {
@@ -11,12 +12,14 @@ public class TitleManager : MonoBehaviour
 
 	#region PrivateVariables
 	[SerializeField] private BlackScreen blackScreen;
-
+	bool isStarted = false;
 	#endregion
 
 	#region PublicMethod
 	public void StartGame()
 	{
+		if (isStarted) return;
+		isStarted = true;
 		StartGameTask().Forget();
 	}
 	public void ExitGame()
@@ -37,5 +40,10 @@ public class TitleManager : MonoBehaviour
 		await blackScreen.ScreenFadeIn();
 		GameManager.instance.GameStart();
 	}
-	#endregion
+
+    private void Start()
+    {
+		isStarted = false;
+    }
+    #endregion
 }
