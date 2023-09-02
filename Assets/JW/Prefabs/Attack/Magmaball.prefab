@@ -4829,9 +4829,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.033604622, y: -0.05176294}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.1127596
+  m_Radius: 0.6
 --- !u!114 &80815681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4845,9 +4845,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  guideSpeed: 0.9
+  guideSpeed: 1.2
   rotateSpeed: 1
-  maxSpeed: 0.001
   destroyMagmaTime: 20
   rigid: {fileID: 1831204253549701126}
 --- !u!50 &1831204253549701126
