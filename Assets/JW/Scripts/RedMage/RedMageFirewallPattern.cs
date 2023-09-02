@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
+using Sirenix.OdinInspector;
 
 public class RedMageFirewallPattern : BossPattern
 {
@@ -10,12 +12,13 @@ public class RedMageFirewallPattern : BossPattern
 	#region PrivateVariables
 	[SerializeField] List<StaticAttack> firewalls = new List<StaticAttack>();
     [SerializeField] int activeWallCount;
-    #endregion
+	#endregion
 
-    #region PublicMethod
-    #endregion
+	#region PublicMethod
+	#endregion
 
-    #region PrivateMethod
+	#region PrivateMethod
+	[Button]
     protected override void OnDisable()
     {
         base.OnDisable();
@@ -24,39 +27,28 @@ public class RedMageFirewallPattern : BossPattern
             attack.InitAttack();
         }
     }
+	[Button]
     protected override void ActionContext()
     {
-        int randomCount = 0;
-        List<int> indexList = new();
-        while (randomCount < activeWallCount)
-        {
-            int rand = Random.Range(0, firewalls.Count);
+		List<StaticAttack> deepcopyList = firewalls.ToList();
 
-			if (indexList.Contains(rand))
-            {
-                break;
-            }
-
-            indexList.Add(rand);
-			if(activeWallCount == 1)
+		for(int i = 0; i < activeWallCount;)
+		{
+			int rand = Random.Range(0, deepcopyList.Count);
+			if(rand == 1 || rand == 2)
 			{
-				if (rand == 1)
-				{
-					indexList.Add(2);
-				}
-				else if (rand == 2)
-				{
-					indexList.Add(1);
-				}
+				deepcopyList[rand].StartAttack();
+				deepcopyList.RemoveAt(1);
+				deepcopyList.RemoveAt(1);
+				++i;
 			}
-            ++randomCount;
-        }
-
-        
-        foreach (int i in indexList)
-        {
-            firewalls[i].StartAttack();
-        }
+			else
+			{
+				deepcopyList[rand].StartAttack();
+				deepcopyList.RemoveAt(rand);
+				++i;
+			}
+		}
     }
     #endregion
 }

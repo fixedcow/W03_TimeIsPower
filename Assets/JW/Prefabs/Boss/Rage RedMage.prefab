@@ -55,7 +55,7 @@ MonoBehaviour:
   bossName: "\uBD84\uB178\uD55C \uC545\uB2F9 \uB9C8\uBC95\uC0AC"
   respawnPoint: {x: 0, y: 0}
   hpCurrent: 0
-  hpMax: 0
+  hpMax: 20
   startPattern: {fileID: 4978595303568946281}
   patternList:
   - {fileID: 1186505515090767772}
@@ -69,6 +69,21 @@ MonoBehaviour:
   - {fileID: 2935726928556496579}
   - {fileID: 2935726928556496579}
   - {fileID: 5320232225595647631}
+  initAttackList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  halo: {fileID: 2548604622673590352}
   patternIndex: 0
   currentPattern: {fileID: 0}
 --- !u!114 &4978595303568946281
@@ -85,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationStateName: Pattern2
   preDelayMilliSeconds: 1000
-  postDelayMilliSeconds: 2000
+  postDelayMilliSeconds: 1000
   groundFire: {fileID: 0}
 --- !u!114 &5320232225595647631
 MonoBehaviour:
@@ -144,7 +159,7 @@ MonoBehaviour:
   preDelayMilliSeconds: 1000
   postDelayMilliSeconds: 2000
   magmaball: {fileID: 7998054061223970324, guid: 7dddd037b50286a4bb60507d36f187dd, type: 3}
-  offsetY: 2
+  offsetY: 3
 --- !u!114 &2935726928556496579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,6 +178,7 @@ MonoBehaviour:
   fireball: {fileID: 8827446450428424874, guid: dd2b7c3223ed18843b1eea16bc4d19a1, type: 3}
   delay: 0.8
   speed: 16
+  yPos: 2
 --- !u!61 &549867754590232281
 BoxCollider2D:
   m_ObjectHideFlags: 0

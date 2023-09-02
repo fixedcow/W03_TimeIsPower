@@ -98,7 +98,7 @@ public abstract class Boss : MonoBehaviour
 	{
 		hitSeq = DOTween.Sequence()
 			.SetAutoKill(false)
-			.Append(rend.transform.DOShakePosition(0.1f, 0.3f))
+			.Append(rend.transform.DOShakePosition(0.1f, 0.2f))
 			.Pause();
 		Initialize();
 	}
