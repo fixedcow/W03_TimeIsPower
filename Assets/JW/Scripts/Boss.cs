@@ -73,6 +73,10 @@ public abstract class Boss : MonoBehaviour
 		currentPattern = patternList[patternIndex];
 		currentPattern.Act().Forget();
 	}
+	public void ShutdownAction()
+	{
+		currentPattern.ShutdownAction();
+	}
 	#endregion
 
 	#region PrivateMethod
