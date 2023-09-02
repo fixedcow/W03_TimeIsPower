@@ -37,7 +37,7 @@ public class CameraController : MonoBehaviour
 	}
 	public void HitShake()
 	{
-		shaker.HitShake();
+		shaker.StartCameraShake();
 	}
 	#endregion
 
