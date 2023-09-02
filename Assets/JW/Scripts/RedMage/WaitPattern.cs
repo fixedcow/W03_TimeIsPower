@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RageRedMageStartPattern : BossPattern
+public class WaitPattern : BossPattern
 {
 	#region PublicVariables
 	#endregion

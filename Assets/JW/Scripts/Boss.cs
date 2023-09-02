@@ -32,7 +32,7 @@ public abstract class Boss : MonoBehaviour
 	public virtual void Initialize()
 	{
 		hpCurrent = hpMax;
-		patternIndex = 0;
+		patternIndex = -1;
 	}
 	public virtual void Hit(int _damage, GameObject _source)
 	{
@@ -48,6 +48,7 @@ public abstract class Boss : MonoBehaviour
 	{
 
 	}
+	[Button]
 	public void PatternStart()
 	{
 		currentPattern = startPattern; 
