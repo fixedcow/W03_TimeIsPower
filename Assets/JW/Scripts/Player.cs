@@ -67,6 +67,7 @@ public class Player : MonoBehaviour
 		input.Player.Move.performed += Move;
 		input.Player.Move.canceled += MoveCanceled;
 		input.Player.Attack.performed += Attack;
+		input.Player.Attack.canceled += AttackCanceled;
 		input.Player.Dodge.performed += Dodge;
 		input.Player.Jump.performed += Jump;
 		input.Player.Down.performed += Down;
@@ -77,6 +78,7 @@ public class Player : MonoBehaviour
 		input.Player.Move.performed -= Move;
 		input.Player.Move.canceled -= MoveCanceled;
 		input.Player.Attack.performed -= Attack;
+		input.Player.Attack.canceled -= AttackCanceled;
 		input.Player.Dodge.performed -= Dodge;
 		input.Player.Jump.performed -= Jump;
 		input.Player.Down.performed -= Down;
@@ -110,12 +112,21 @@ public class Player : MonoBehaviour
 	{
 		if (canAct == false)
 			return;
-		attack.Attack();
+
+		attack.isAttack = true;
+		//attack.Attack();
+	}
+
+	private void AttackCanceled(InputAction.CallbackContext _context)
+    {
+		attack.isAttack = false;
 	}
 	private void Dodge(InputAction.CallbackContext _context)
 	{
 		if (canAct == false)
 			return;
+		// 공격키 누르고 바로 회피하면 isAttack이 true로 남아서, 회피후 바로 공격하는 문제가 있어서 일단 이렇게 함
+		attack.isAttack = false;
 		dodge.Dodge();
 	}
 	private void Down(InputAction.CallbackContext _context)
