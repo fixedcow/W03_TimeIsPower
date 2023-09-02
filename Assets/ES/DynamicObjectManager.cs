@@ -4,15 +4,34 @@ using UnityEngine;
 
 public class DynamicObjectManager : MonoBehaviour
 {
-    private List<GameObject> magmaBalls = new();
-
-    public void AddMagmaBall(GameObject magmaBall)
+    public List<GameObject> objects = new();
+    public static DynamicObjectManager instance;
+    public void AddObject(GameObject _object)
     {
-        magmaBalls.Add(magmaBall);
+        objects.Add(_object);
     }
 
-    public void InitMagmaBalls()
+    
+
+    public void Clear()
     {
-        magmaBalls.Clear();
+        foreach( GameObject go in objects)
+        {
+            Destroy(go);   
+        }
+        objects.Clear();
+    }
+
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(instance);
+        }
     }
 }

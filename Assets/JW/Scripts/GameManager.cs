@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
 	#region PublicMethod
 	public Player GetPlayer() => player;
 	public Boss GetBoss() => boss;
+	public void SetBoss(Boss _boss) => boss = _boss;
 	public void Initialize()
 	{
 
@@ -62,6 +63,7 @@ public class GameManager : MonoBehaviour
 		fadeBlackController.GameOverFade();
 		stageEnterTrigger.SetActive(true);
 		GhostManager.instance.StopRecordAndReplay();
+		DynamicObjectManager.instance.Clear();
 		boss.gameObject.SetActive(false);
 		boss = null;
 	}
