@@ -28,6 +28,7 @@ public class RedMageFirebreathPattern : BossPattern
 		{
 			breath.InitAttack();
 		}
+		flip = false;
 	}
 	protected override void ActionContext()
 	{

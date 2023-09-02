@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -23,6 +24,7 @@ public class Fireball : MonoBehaviour
     {
         _player = GameManager.instance.GetPlayer();
         currentTime = 0;
+		Invoke(nameof(DestroySelf), 5f);
     }
 
     void Update()
@@ -44,6 +46,10 @@ public class Fireball : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Destroy(this.gameObject);
+		DestroySelf();
     }
+	private void DestroySelf()
+	{
+		Destroy(gameObject);
+	}
 }

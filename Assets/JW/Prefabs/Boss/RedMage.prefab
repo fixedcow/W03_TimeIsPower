@@ -116,6 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5093142162459366963}
   - component: {fileID: 5093142162459366962}
+  - component: {fileID: 1342645882460092921}
   - component: {fileID: 5093142162459366960}
   - component: {fileID: 7076162387893989451}
   - component: {fileID: 8188735709851659635}
@@ -159,6 +160,7 @@ MonoBehaviour:
   respawnPoint: {x: 0, y: 0}
   hpCurrent: 0
   hpMax: 100
+  startPattern: {fileID: 1342645882460092921}
   patternList:
   - {fileID: 5093142162459366960}
   - {fileID: 8188735709851659635}
@@ -168,6 +170,21 @@ MonoBehaviour:
   patternIndex: 0
   currentPattern: {fileID: 0}
   rageVersion: {fileID: 0}
+--- !u!114 &1342645882460092921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5093142162459366966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02b999df48a52a548bc3b09819f831b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationStateName: 
+  preDelayMilliSeconds: 0
+  postDelayMilliSeconds: 0
 --- !u!114 &5093142162459366960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,6 +244,8 @@ MonoBehaviour:
   preDelayMilliSeconds: 500
   postDelayMilliSeconds: 2500
   fireball: {fileID: 8827446450428424874, guid: dd2b7c3223ed18843b1eea16bc4d19a1, type: 3}
+  delay: 0
+  speed: 0
 --- !u!61 &5093142162459366961
 BoxCollider2D:
   m_ObjectHideFlags: 0

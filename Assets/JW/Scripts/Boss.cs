@@ -20,6 +20,7 @@ public abstract class Boss : MonoBehaviour
 	[SerializeField] private Vector2 respawnPoint;
 	[ReadOnly] [SerializeField] protected int hpCurrent;
 	[SerializeField] protected int hpMax;
+	[SerializeField] protected BossPattern startPattern;
 	[SerializeField] protected List<BossPattern> patternList = new List<BossPattern>();
 	[ReadOnly] [SerializeField] protected int patternIndex;
 	[ReadOnly][SerializeField] protected BossPattern currentPattern;
@@ -49,7 +50,7 @@ public abstract class Boss : MonoBehaviour
 	}
 	public void PatternStart()
 	{
-		currentPattern = patternList[patternIndex];
+		currentPattern = startPattern; 
 		currentPattern.Act().Forget();
 	}
 	public void PatternNext()
@@ -61,16 +62,16 @@ public abstract class Boss : MonoBehaviour
 	#endregion
 
 	#region PrivateMethod
-	protected void Awake()
+	protected virtual void Awake()
 	{
 		rend = transform.Find("renderer").gameObject;
 		transform.Find("renderer").TryGetComponent(out anim);
 	}
-	private void OnEnable()
+	protected virtual void OnEnable()
 	{
 		transform.position = respawnPoint;
 	}
-	protected void Start()
+	protected virtual void Start()
 	{
 		hitSeq = DOTween.Sequence()
 			.SetAutoKill(false)
