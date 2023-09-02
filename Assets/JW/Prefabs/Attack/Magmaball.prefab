@@ -4846,5 +4846,5 @@ MonoBehaviour:
   guideSpeed: 0.9
   rotateSpeed: 1
   maxSpeed: 0.001
-  destroyMagmaTime: 15
+  destroyMagmaTime: 20
   rigid: {fileID: 0}
