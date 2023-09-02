@@ -35,6 +35,11 @@ public abstract class BossPattern : MonoBehaviour
 	{
 		main.PatternNext();
 	}
+	public void ShutdownAction()
+	{
+		preDelaySource.Cancel();
+		postDelaySource.Cancel();
+	}
 	#endregion
 
 	#region PrivateMethod
@@ -57,8 +62,7 @@ public abstract class BossPattern : MonoBehaviour
 	}
 	protected virtual void OnDisable()
 	{
-		preDelaySource.Cancel();
-		postDelaySource.Cancel();
+		ShutdownAction();
 	}
 	private void PlayAnimation()
 	{
