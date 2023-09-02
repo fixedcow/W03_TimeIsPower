@@ -14,6 +14,7 @@ public class Fireball : MonoBehaviour
     Player _player;
     Vector2 direction;
 	[SerializeField] private Collider2D col;
+	[SerializeField] private ParticleSystem ps;
 
 	public void SetInitStat(float _delay, float _speed)
 	{
@@ -46,7 +47,8 @@ public class Fireball : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-		DestroySelf();
+		ps.Stop();
+		Invoke(nameof(DestroySelf), 3f);
     }
 	private void DestroySelf()
 	{

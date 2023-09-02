@@ -30,23 +30,26 @@ public class RedMageFirewallPattern : BossPattern
         List<int> indexList = new();
         while (randomCount < activeWallCount)
         {
-            int rand = GetRandom();
+            int rand = Random.Range(0, firewalls.Count);
 
-            if (indexList.Contains(rand))
+			if (indexList.Contains(rand))
             {
                 break;
             }
 
             indexList.Add(rand);
-			if(rand == 1)
+			if(activeWallCount == 1)
 			{
-				indexList.Add(2);
+				if (rand == 1)
+				{
+					indexList.Add(2);
+				}
+				else if (rand == 2)
+				{
+					indexList.Add(1);
+				}
 			}
-			else if(rand == 2)
-			{
-				indexList.Add(1);
-			}
-            randomCount++;
+            ++randomCount;
         }
 
         
@@ -54,12 +57,6 @@ public class RedMageFirewallPattern : BossPattern
         {
             firewalls[i].StartAttack();
         }
-    }
-
-    private int GetRandom()
-    {
-        System.Random random = new System.Random();
-        return random.Next(0, firewalls.Count);
     }
     #endregion
 }
