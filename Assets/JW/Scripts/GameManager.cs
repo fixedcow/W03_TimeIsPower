@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
 	public void GameClear()
 	{
 		GameClearUI.SetActive(true);
-		Time.timeScale = 0;
+		Time.timeScale = 0.001f;
 		Physics2D.SyncTransforms();
 	}
 	#endregion

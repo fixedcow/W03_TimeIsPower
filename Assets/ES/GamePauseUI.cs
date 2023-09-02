@@ -42,10 +42,15 @@ public class GamePauseUI : MonoBehaviour
 
     public void GameQuit()
     {
+		Time.timeScale = 1f;
+#if UNITY_EDITOR
+		UnityEditor.EditorApplication.isPlaying = false;
+#else
         Application.Quit();
-    }
+#endif
+	}
 
-    private void Pause(InputAction.CallbackContext _context)
+	private void Pause(InputAction.CallbackContext _context)
     {
         Debug.Log("key");
         if (isPause)

@@ -15,13 +15,6 @@ public class CameraShaker : MonoBehaviour
 	[SerializeField] private int shakeVibrato;
 	[SerializeField] private float shakeRandomness;
 
-	private enum Etype
-	{
-		playerHit = 0
-	}
-	[SerializeField] List<CameraShakingData> datas = new List<CameraShakingData>();
-
-	[Button]
 	public void StartCameraShake()
     {
 		transform.DOShakePosition(shakeDuration, shakeStrength, shakeVibrato, shakeRandomness);
