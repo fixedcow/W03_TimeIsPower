@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2539018860352829603}
   - component: {fileID: 774366380986560700}
   - component: {fileID: 1186505515090767772}
+  - component: {fileID: 2935726928556496579}
   - component: {fileID: 549867754590232281}
   m_Layer: 9
   m_Name: Rage RedMage
@@ -145,6 +146,22 @@ MonoBehaviour:
   postDelayMilliSeconds: 4500
   magmaball: {fileID: 0}
   offsetY: 0
+--- !u!114 &2935726928556496579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 549867754590232286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1088b2f5d17146438c0e85f5b033356, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationStateName: 
+  preDelayMilliSeconds: 0
+  postDelayMilliSeconds: 0
+  fireball: {fileID: 0}
 --- !u!61 &549867754590232281
 BoxCollider2D:
   m_ObjectHideFlags: 0
