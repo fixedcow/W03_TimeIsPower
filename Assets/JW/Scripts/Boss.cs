@@ -39,14 +39,14 @@ public abstract class Boss : MonoBehaviour
 		hitSeq.Restart();
 		hpCurrent = Mathf.Clamp(hpCurrent - _damage, 0, hpMax);
 		BossHpGUI.instance.SetHp(hpCurrent);
-		if(hpCurrent == 0)
+		if(hpCurrent <= 0)
 		{
 			BossKilled();
 		}
 	}
 	public void BossKilled()
 	{
-
+		GameManager.instance.GameClear();
 	}
 	public void PatternStart()
 	{
