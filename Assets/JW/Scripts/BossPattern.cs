@@ -17,8 +17,8 @@ public abstract class BossPattern : MonoBehaviour
 	[SerializeField] protected int preDelayMilliSeconds;
 	[SerializeField] protected int postDelayMilliSeconds;
 
-	protected CancellationTokenSource preDelaySource;
-	protected CancellationTokenSource postDelaySource;
+	protected CancellationTokenSource preDelaySource = new CancellationTokenSource();
+	protected CancellationTokenSource postDelaySource = new CancellationTokenSource();
 	#endregion
 
 	#region PublicMethod

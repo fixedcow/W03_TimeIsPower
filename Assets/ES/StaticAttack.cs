@@ -16,6 +16,7 @@ public class StaticAttack : MonoBehaviour
     private float scaleOffsetY;
 
     [SerializeField] private GameObject cautionEffect;
+	private SpriteRenderer cautionEffectRenderer;
     [SerializeField] private float cautionTime;
     private WaitForSeconds waitCautionTime;
     [SerializeField] private float blinkTime;
@@ -28,20 +29,27 @@ public class StaticAttack : MonoBehaviour
 
     private Vector3 defaultCautionPosition;
 
-    private void Start()
+	private void Awake()
+	{
+		cautionEffect.TryGetComponent(out cautionEffectRenderer);
+	}
+	private void Start()
     {
 
         waitCautionTime = new WaitForSeconds(cautionTime);
         waitAttackTime = new WaitForSeconds(attackTime);
 
         blinkSequence = DOTween.Sequence();
-        blinkSequence.Append(DOTween.ToAlpha(() => cautionEffect.GetComponent<SpriteRenderer>().color,
-                color => cautionEffect.GetComponent<SpriteRenderer>().color = color, 0f, blinkTime / 2));
-        blinkSequence.Append(DOTween.ToAlpha(() => cautionEffect.GetComponent<SpriteRenderer>().color,
-            color => cautionEffect.GetComponent<SpriteRenderer>().color = color, 0.5f, blinkTime / 2));
-        blinkSequence.SetLoops(-1);
+		/*		blinkSequence.Append(cautionEffectRenderer.DOFade(0, blinkTime / 2).SetEase(Ease.Linear))
+					.Append(cautionEffectRenderer.DOFade(0.5f, blinkTime / 2).SetEase(Ease.Linear))
+					.SetLoops(-1);*/
+		blinkSequence.Append(DOTween.ToAlpha(() => cautionEffect.GetComponent<SpriteRenderer>().color,
+				color => cautionEffect.GetComponent<SpriteRenderer>().color = color, 0.5f, blinkTime / 2));
+		blinkSequence.Append(DOTween.ToAlpha(() => cautionEffect.GetComponent<SpriteRenderer>().color,
+			color => cautionEffect.GetComponent<SpriteRenderer>().color = color, 0f, blinkTime / 2));
+		blinkSequence.SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
 
-        defaultCautionScale = cautionEffect.transform.localScale;
+		defaultCautionScale = cautionEffect.transform.localScale;
 
         defaultCautionPosition = cautionEffect.transform.localPosition;
     }
