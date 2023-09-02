@@ -39,15 +39,23 @@ public class StaticAttack : MonoBehaviour
         waitCautionTime = new WaitForSeconds(cautionTime);
         waitAttackTime = new WaitForSeconds(attackTime);
 
-        blinkSequence = DOTween.Sequence();
-		/*		blinkSequence.Append(cautionEffectRenderer.DOFade(0, blinkTime / 2).SetEase(Ease.Linear))
+        blinkSequence = DOTween.Sequence()
+            .SetAutoKill(false)
+            .Pause();
+        /*		blinkSequence.Append(cautionEffectRenderer.DOFade(0, blinkTime / 2).SetEase(Ease.Linear))
 					.Append(cautionEffectRenderer.DOFade(0.5f, blinkTime / 2).SetEase(Ease.Linear))
 					.SetLoops(-1);*/
-		blinkSequence.Append(DOTween.ToAlpha(() => cautionEffect.GetComponent<SpriteRenderer>().color,
-				color => cautionEffect.GetComponent<SpriteRenderer>().color = color, 0.5f, blinkTime / 2));
-		blinkSequence.Append(DOTween.ToAlpha(() => cautionEffect.GetComponent<SpriteRenderer>().color,
-			color => cautionEffect.GetComponent<SpriteRenderer>().color = color, 0f, blinkTime / 2));
-		blinkSequence.SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
+        int blinkCount = (int)cautionTime / (int)blinkTime;
+        for(int i=0; i < blinkCount; i++)
+        {
+            blinkSequence.Append(DOTween.ToAlpha(() => cautionEffect.GetComponent<SpriteRenderer>().color,
+                color => cautionEffect.GetComponent<SpriteRenderer>().color = color, 0.5f, blinkTime / 2));
+            blinkSequence.Append(DOTween.ToAlpha(() => cautionEffect.GetComponent<SpriteRenderer>().color,
+                color => cautionEffect.GetComponent<SpriteRenderer>().color = color, 0f, blinkTime / 2));
+        }
+		
+
+
 
 		defaultCautionScale = cautionEffect.transform.localScale;
 
@@ -61,6 +69,7 @@ public class StaticAttack : MonoBehaviour
     }
     public IEnumerator AttackPlay()
     {
+        blinkSequence.Play();
         cautionEffect.SetActive(true);
         yield return waitCautionTime;
         cautionEffect.SetActive(false);
@@ -69,6 +78,7 @@ public class StaticAttack : MonoBehaviour
         yield return waitAttackTime;
 
         attackParticle.Stop();
+        blinkSequence.Rewind();
     }
 
     public void OnValueChange()
@@ -93,6 +103,7 @@ public class StaticAttack : MonoBehaviour
 
     public void InitAttack()
     {
+        blinkSequence.Rewind();
         StopCoroutine(AttackPlay());
         cautionEffect.SetActive(false);
         attackParticle.Stop();
