@@ -25,9 +25,14 @@ public class PlayerAttackData : MonoBehaviour
 			foreach (Collider2D col in cols)
 			{
 				Boss boss;
+				GateSwitch _switch;
 				if(col.TryGetComponent(out boss) == true)
 				{
 					boss.Hit(damage, source);
+				}
+				if(col.TryGetComponent(out _switch) == true)
+				{
+
 				}
 				
 			}
