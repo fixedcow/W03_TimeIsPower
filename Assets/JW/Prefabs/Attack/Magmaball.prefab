@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7998054061223970322}
   - component: {fileID: 7998054061223970323}
   - component: {fileID: 80815679}
+  - component: {fileID: 8116501407134260322}
   - component: {fileID: 80815681}
   m_Layer: 0
   m_Name: Magmaball
@@ -4827,9 +4828,30 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.033604622, y: -0.05176294}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.1127596
+  m_Radius: 0.8
+--- !u!50 &8116501407134260322
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7998054061223970324}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &80815681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4847,4 +4869,4 @@ MonoBehaviour:
   rotateSpeed: 1
   maxSpeed: 0.001
   destroyMagmaTime: 20
-  rigid: {fileID: 0}
+  rigid: {fileID: 8116501407134260322}

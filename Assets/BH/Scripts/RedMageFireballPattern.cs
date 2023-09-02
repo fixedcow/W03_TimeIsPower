@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class RedMageFireballPattern : BossPattern
 {
-    #region PublicVariables
-    [HideInInspector] public GameObject fireball;
-    #endregion
+	#region PublicVariables
+	#endregion
 
-    #region PrivateVariables
-    Transform _player;
+	#region PrivateVariables
+	[SerializeField] public GameObject fireball;
+	Transform _player;
+	[SerializeField] private float delay;
+	[SerializeField] private float speed;
     #endregion
 
     #region PublicMethod
@@ -24,6 +26,7 @@ public class RedMageFireballPattern : BossPattern
     protected override void ActionContext()
     {
         GameObject go =  Instantiate(fireball, (Vector2)this.transform.position + Vector2.up * 3f, Quaternion.identity);
+		go.GetComponent<Fireball>().SetInitStat(delay, speed);
         DynamicObjectManager.instance.objects.Add(go);
     }
     #endregion
