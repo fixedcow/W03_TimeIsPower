@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 7998054061223970322}
   - component: {fileID: 7998054061223970323}
   - component: {fileID: 80815679}
-  - component: {fileID: 8116501407134260322}
   - component: {fileID: 80815681}
+  - component: {fileID: 1831204253549701126}
+  - component: {fileID: 523237149818744338}
   m_Layer: 0
   m_Name: Magmaball
   m_TagString: Untagged
@@ -4828,10 +4829,28 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.033604622, y: -0.05176294}
   serializedVersion: 2
-  m_Radius: 0.8
---- !u!50 &8116501407134260322
+  m_Radius: 1.1127596
+--- !u!114 &80815681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7998054061223970324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f47ae1afdf5d7c45a2ebfcdff421ea3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  guideSpeed: 0.9
+  rotateSpeed: 1
+  maxSpeed: 0.001
+  destroyMagmaTime: 20
+  rigid: {fileID: 1831204253549701126}
+--- !u!50 &1831204253549701126
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -4852,7 +4871,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &80815681
+--- !u!114 &523237149818744338
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4861,12 +4880,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7998054061223970324}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f47ae1afdf5d7c45a2ebfcdff421ea3, type: 3}
+  m_Script: {fileID: 11500000, guid: b4aa8f22a6bbdef44a44570d52876a13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  guideSpeed: 0.9
-  rotateSpeed: 1
-  maxSpeed: 0.001
-  destroyMagmaTime: 20
-  rigid: {fileID: 8116501407134260322}
