@@ -10,6 +10,8 @@ public class RageRedMage : Boss
 	#region PrivateVariables
 	#endregion
 
+
+	
 	#region PublicMethod
 	public override void Initialize()
 	{
