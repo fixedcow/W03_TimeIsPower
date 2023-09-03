@@ -9,7 +9,6 @@ public class JumpRopeAttack : MonoBehaviour
     [SerializeField] private GameObject cautionEffect;
     [SerializeField] private Collider2D attackCollider;
     private SpriteRenderer cautionEffectRenderer;
-    [SerializeField] private SpriteRenderer attackEffectRenderer;
     [SerializeField] private float cautionTime;
     private WaitForSeconds waitCautionTime;
     [SerializeField] private float blinkTime;
@@ -56,18 +55,16 @@ public class JumpRopeAttack : MonoBehaviour
     }
     public IEnumerator AttackPlay()
     {
-        
+    /*    
         blinkSequence.Play();
         cautionEffect.SetActive(true);
-        yield return waitCautionTime;
+        yield return waitCautionTime;*/
         attackCollider.enabled = true;
-        //attackEffectRenderer.enabled = true;
         cautionEffect.SetActive(false);
         attackAnimation.Rebind();
         attackAnimation.Play("Thunder_Linear");
         yield return waitAttackTime;
         attackCollider.enabled = false;
-        //attackEffectRenderer.enabled = false;
         blinkSequence.Rewind();
     }
 
@@ -76,7 +73,6 @@ public class JumpRopeAttack : MonoBehaviour
         attackAnimation.Rebind();
         blinkSequence.Rewind();
         attackCollider.enabled = false;
-        attackEffectRenderer.enabled = false;
         StopCoroutine(nameof(AttackPlay));
         cautionEffect.SetActive(false);
     }
