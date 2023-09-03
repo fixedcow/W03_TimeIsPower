@@ -76,11 +76,14 @@ public class GameManager : MonoBehaviour
 		DynamicObjectManager.instance.Clear();
 
 	}
+	public void SetGameStateIdle()
+	{
+		state = EGameState.idle;
+	}
 	public void GameClear()
 	{
 		GameClearUI.EnableEndingUI();
 		GameClearUI.SetTryText();
-		
 		Physics2D.SyncTransforms();
 	}
 	#endregion
