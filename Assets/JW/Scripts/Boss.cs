@@ -51,6 +51,7 @@ public abstract class Boss : MonoBehaviour
 	}
 	public virtual void BossKilled()
 	{
+		GameManager.instance.SetGameStateIdle();
 		GameManager.instance.GetPlayer().CanNotAct();
 		anim.Play("Die");
 		ShutdownAction();
