@@ -10,7 +10,8 @@ public class GameManager : MonoBehaviour
 	public enum EGameState
 	{
 		idle = 0,
-		battle = 1
+		battle = 1,
+		tutorial = 2,
 	}
 	#endregion
 
@@ -55,9 +56,12 @@ public class GameManager : MonoBehaviour
 	}
 	public void BattleEnd()
 	{
-		if (state == EGameState.idle)
-			return;
-		state = EGameState.idle;
+		if (state == EGameState.idle) return;
+		if (state != EGameState.tutorial)
+		{
+			state = EGameState.idle;
+		}
+
 		CameraController.instance.EndFollowToPlayer();
 		player.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
 		DeathCounterManager.instance.PlayerDead();
@@ -69,12 +73,13 @@ public class GameManager : MonoBehaviour
 
 	private void WaitBattleEnd()
     {
+		if (state == EGameState.tutorial) return;
+
 		BossHpGUI.instance.HideGUI();
 		stageEnterTrigger.SetActive(true);
 		boss.gameObject.SetActive(false);
 		boss = null;
 		DynamicObjectManager.instance.Clear();
-
 	}
 	public void SetGameStateIdle()
 	{
@@ -85,6 +90,11 @@ public class GameManager : MonoBehaviour
 		GameClearUI.EnableEndingUI();
 		GameClearUI.SetTryText();
 		Physics2D.SyncTransforms();
+	}
+
+	public void ChangeState(EGameState _state)
+	{
+		state = _state;
 	}
 	#endregion
 	
