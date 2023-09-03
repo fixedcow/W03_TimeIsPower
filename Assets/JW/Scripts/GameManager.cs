@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.U2D;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -65,16 +66,16 @@ public class GameManager : MonoBehaviour
 		fadeBlackController.StartFade();
 		stageEnterTrigger.SetActive(true);
 		GhostManager.instance.StopRecordAndReplay();
-		DynamicObjectManager.instance.Clear();
-		 
 		Invoke(nameof(WaitBattleEnd), fadeBlackController.waitFadeTime+fadeBlackController.fadeTime);
 	}
 
 	private void WaitBattleEnd()
     {
 		BossHpGUI.instance.HideGUI();
+		
 		boss.gameObject.SetActive(false);
 		boss = null;
+		DynamicObjectManager.instance.Clear();
 
 	}
 	public void GameClear()
