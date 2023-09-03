@@ -42,9 +42,6 @@ public class StaticAttack : MonoBehaviour
         blinkSequence = DOTween.Sequence()
             .SetAutoKill(false)
             .Pause();
-        /*		blinkSequence.Append(cautionEffectRenderer.DOFade(0, blinkTime / 2).SetEase(Ease.Linear))
-					.Append(cautionEffectRenderer.DOFade(0.5f, blinkTime / 2).SetEase(Ease.Linear))
-					.SetLoops(-1);*/
         int blinkCount = Mathf.RoundToInt(cautionTime / blinkTime);
         for(int i=0; i < blinkCount; i++)
         {
