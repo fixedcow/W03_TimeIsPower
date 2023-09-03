@@ -28,7 +28,8 @@ public class RedMageFireballPattern : BossPattern
     {
         GameObject go =  Instantiate(fireball, (Vector2)this.transform.position + Vector2.up * yPos, Quaternion.identity);
 		go.GetComponent<Fireball>().SetInitStat(delay, speed);
-        DynamicObjectManager.instance.objects.Add(go);
+        DynamicObject dynamic = go.GetComponent<DynamicObject>();
+        DynamicObjectManager.instance.objects.Add(dynamic);
     }
     #endregion
 }

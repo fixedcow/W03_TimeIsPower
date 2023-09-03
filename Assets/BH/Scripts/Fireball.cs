@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Fireball : MonoBehaviour
+public class Fireball : DynamicObject
 {
 	private float delayTime;
     private float delaySpeed = 0.1f;
@@ -25,7 +25,7 @@ public class Fireball : MonoBehaviour
     {
         _player = GameManager.instance.GetPlayer();
         currentTime = 0;
-		Invoke(nameof(DestroySelf), 5f);
+		Invoke(nameof(DestroyObject), 5f);
     }
 
     void Update()
@@ -47,11 +47,21 @@ public class Fireball : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-		ps.Stop();
-		Invoke(nameof(DestroySelf), 3f);
+        StopObject();
     }
-	private void DestroySelf()
-	{
-		Destroy(gameObject);
-	}
+	
+    public override void DestroyObject()
+    {
+        //DynamicObjectManager.instance.DeleteObjects(this);
+        Destroy(gameObject);
+
+    }
+
+    public override void StopObject()
+    {
+        
+        ps.Stop();
+        col.enabled = false;
+        Invoke(nameof(DestroyObject), 3f);
+    }
 }

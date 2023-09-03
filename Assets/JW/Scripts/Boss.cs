@@ -43,7 +43,6 @@ public abstract class Boss : MonoBehaviour
 			GameManager.instance.GetPlayer().CanNotAct();
 			halo.SetActive(false);
 			ShutdownAction();
-			DynamicObjectManager.instance.Clear();
 			foreach (StaticAttack attack in initAttackList)
 			{
 				attack.InitAttack();
@@ -51,6 +50,7 @@ public abstract class Boss : MonoBehaviour
 			transform.Find("renderer").TryGetComponent(out anim);
 			anim.Play("Die");
 			Invoke("BossKilled", 3f);
+			DynamicObjectManager.instance.EndClear();
 		}
         else
         {

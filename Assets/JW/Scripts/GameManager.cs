@@ -66,16 +66,16 @@ public class GameManager : MonoBehaviour
 		fadeBlackController.StartFade();
 		stageEnterTrigger.SetActive(true);
 		GhostManager.instance.StopRecordAndReplay();
-
 		Invoke(nameof(WaitBattleEnd), fadeBlackController.waitFadeTime+fadeBlackController.fadeTime);
 	}
 
 	private void WaitBattleEnd()
     {
 		BossHpGUI.instance.HideGUI();
-		DynamicObjectManager.instance.Clear();
+		
 		boss.gameObject.SetActive(false);
 		boss = null;
+		DynamicObjectManager.instance.Clear();
 
 	}
 	public void GameClear()

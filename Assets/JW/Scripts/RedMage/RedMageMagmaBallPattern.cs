@@ -23,6 +23,7 @@ public class RedMageMagmaBallPattern : BossPattern
         Vector3 attackPos = transform.position;
         attackPos.y += offsetY;
         GameObject attack = Instantiate(magmaball, attackPos, Quaternion.identity);
-		DynamicObjectManager.instance.AddObject(attack);
+        DynamicObject dynamic = attack.GetComponent<DynamicObject>();
+		DynamicObjectManager.instance.AddObject(dynamic);
     }
 }
