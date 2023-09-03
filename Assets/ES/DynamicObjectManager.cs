@@ -34,7 +34,7 @@ public class DynamicObjectManager : MonoBehaviour
         {
             try
             {
-                go.DestroyObject();
+                go.StopObject();
             }
             catch (Exception ex)
             {
