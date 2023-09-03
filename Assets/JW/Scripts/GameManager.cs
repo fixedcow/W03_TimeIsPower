@@ -58,13 +58,12 @@ public class GameManager : MonoBehaviour
 	{
 		if (state == EGameState.idle)
 			return;
+		state = EGameState.idle;
 		CameraController.instance.EndFollowToPlayer();
 		player.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
-		state = EGameState.idle;
 		DeathCounterManager.instance.PlayerDead();
 		CameraController.instance.HitShake();
 		fadeBlackController.StartFade();
-		stageEnterTrigger.SetActive(true);
 		GhostManager.instance.StopRecordAndReplay();
 		Invoke(nameof(WaitBattleEnd), fadeBlackController.waitFadeTime+fadeBlackController.fadeTime);
 	}
@@ -72,7 +71,7 @@ public class GameManager : MonoBehaviour
 	private void WaitBattleEnd()
     {
 		BossHpGUI.instance.HideGUI();
-		
+		stageEnterTrigger.SetActive(true);
 		boss.gameObject.SetActive(false);
 		boss = null;
 		DynamicObjectManager.instance.Clear();

@@ -28,6 +28,10 @@ public class RedMage : Boss
 			rage.PatternStart();
 		}
 	}
+	public override void BossKilled()
+	{
+
+	}
 	#endregion
 
 	#region PrivateMethod

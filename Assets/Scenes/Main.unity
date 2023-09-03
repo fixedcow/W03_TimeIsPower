@@ -8188,11 +8188,6 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
---- !u!1 &2082757472 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2548604622673590352, guid: 9f33fcbb16370314d8039e6681cb5373, type: 3}
-  m_PrefabInstance: {fileID: 1293160630908050955}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2130219859
 GameObject:
   m_ObjectHideFlags: 0
@@ -13072,18 +13067,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 926397545}
     - target: {fileID: 644492254723900079, guid: 9f33fcbb16370314d8039e6681cb5373, type: 3}
-      propertyPath: halo
-      value: 
-      objectReference: {fileID: 2082757472}
-    - target: {fileID: 644492254723900079, guid: 9f33fcbb16370314d8039e6681cb5373, type: 3}
-      propertyPath: hpMax
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 644492254723900079, guid: 9f33fcbb16370314d8039e6681cb5373, type: 3}
-      propertyPath: initAttackList.Array.size
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 644492254723900079, guid: 9f33fcbb16370314d8039e6681cb5373, type: 3}
       propertyPath: initAttackList.Array.data[0]
       value: 
       objectReference: {fileID: 9183466287488068187}
@@ -13155,10 +13138,6 @@ PrefabInstance:
       propertyPath: firewalls.Array.data[4]
       value: 
       objectReference: {fileID: 348633291}
-    - target: {fileID: 2935726928556496579, guid: 9f33fcbb16370314d8039e6681cb5373, type: 3}
-      propertyPath: yPos
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 4978595303568946281, guid: 9f33fcbb16370314d8039e6681cb5373, type: 3}
       propertyPath: groundFire
       value: 
@@ -13325,17 +13304,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 926397545}
     - target: {fileID: 5093142162459366962, guid: 3e2e6f1e36f2ccb4f80f6980dbcbdde9, type: 3}
-      propertyPath: hpMax
-      value: 400
-      objectReference: {fileID: 0}
-    - target: {fileID: 5093142162459366962, guid: 3e2e6f1e36f2ccb4f80f6980dbcbdde9, type: 3}
       propertyPath: rageVersion
       value: 
       objectReference: {fileID: 1608839984809345237}
-    - target: {fileID: 5093142162459366962, guid: 3e2e6f1e36f2ccb4f80f6980dbcbdde9, type: 3}
-      propertyPath: ragePercentage
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 5093142162459366963, guid: 3e2e6f1e36f2ccb4f80f6980dbcbdde9, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -13400,10 +13371,6 @@ PrefabInstance:
       propertyPath: right.Array.data[1]
       value: 
       objectReference: {fileID: 4243154}
-    - target: {fileID: 8188735709851659635, guid: 3e2e6f1e36f2ccb4f80f6980dbcbdde9, type: 3}
-      propertyPath: yPos
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e2e6f1e36f2ccb4f80f6980dbcbdde9, type: 3}
 --- !u!1001 &5206396051138674924

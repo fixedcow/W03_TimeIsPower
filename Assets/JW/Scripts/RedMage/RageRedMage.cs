@@ -8,10 +8,9 @@ public class RageRedMage : Boss
 	#endregion
 
 	#region PrivateVariables
+	[SerializeField] private GameObject halo;
 	#endregion
 
-
-	
 	#region PublicMethod
 	public override void Initialize()
 	{
@@ -21,6 +20,11 @@ public class RageRedMage : Boss
 	{
 		hpMax = _hpMax;
 		hpCurrent = _hpCurrent;
+	}
+	public override void BossKilled()
+	{
+		base.BossKilled();
+		halo.SetActive(false);
 	}
 	#endregion
 

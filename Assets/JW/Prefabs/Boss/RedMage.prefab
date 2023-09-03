@@ -159,7 +159,7 @@ MonoBehaviour:
   bossName: "\uC545\uB2F9 \uB9C8\uBC95\uC0AC"
   respawnPoint: {x: 0, y: 0}
   hpCurrent: 0
-  hpMax: 600
+  hpMax: 400
   startPattern: {fileID: 7734617559718899226}
   patternList:
   - {fileID: 8188735709851659635}
@@ -171,6 +171,7 @@ MonoBehaviour:
   - {fileID: 8188735709851659635}
   - {fileID: 8188735709851659635}
   - {fileID: 5093142162459366960}
+  initAttackList: []
   patternIndex: 0
   currentPattern: {fileID: 0}
   rageVersion: {fileID: 0}
@@ -202,8 +203,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2734a95ca2d4a4a40abdea303245160a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animationStateName: Pattern2
-  preDelayMilliSeconds: 1000
+  animationStateName: Teleport
+  preDelayMilliSeconds: 900
   postDelayMilliSeconds: 3500
   teleportPosition:
   - {x: 0, y: 0}
@@ -251,6 +252,7 @@ MonoBehaviour:
   fireball: {fileID: 8827446450428424874, guid: dd2b7c3223ed18843b1eea16bc4d19a1, type: 3}
   delay: 1.2
   speed: 12
+  yPos: 2
 --- !u!61 &5093142162459366961
 BoxCollider2D:
   m_ObjectHideFlags: 0
