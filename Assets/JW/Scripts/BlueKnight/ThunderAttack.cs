@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class ThunderAttack : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Collider2D thunderCollider;
+    [SerializeField] private float AttackTime;
+
+    private void OnEnable()
     {
-        
+        StartCoroutine(nameof(AttackPlay));
+    }
+    public IEnumerator AttackPlay()
+    {
+        thunderCollider.enabled = true;
+        yield return new WaitForSeconds(AttackTime);
+        Destroy(this.gameObject);
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void InitAttack()
     {
-        
+        StopCoroutine(nameof(AttackPlay));
+        thunderCollider.enabled = false;
+
     }
+   
 }

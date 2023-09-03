@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
 	#region PrivateVariables
 	private EGameState state;
 	[SerializeField] private Player player;
-	private Boss boss;
+	[SerializeField]private Boss boss;
 	private GameObject stageEnterTrigger;
 
 	[SerializeField] private EndingUI GameClearUI;
