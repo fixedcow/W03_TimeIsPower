@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MagmaBall : MonoBehaviour
+public class MagmaBall : DynamicObject
 {
     [SerializeField] private GameObject player;
     [SerializeField] float guideSpeed;
@@ -14,7 +14,6 @@ public class MagmaBall : MonoBehaviour
     private void Start()
     {
 		player = GameManager.instance.GetPlayer().gameObject;
-		DynamicObjectManager.instance.AddObject(this.gameObject);
     }
     private void GuideToPlayer()
     {
@@ -41,24 +40,25 @@ public class MagmaBall : MonoBehaviour
 		}
 	}
 
-
-	private void DestroyObject()
-    {
-		Destroy(this.gameObject);
-	}
+	
 
     private void Update()
     {
         GuideToPlayer();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public override void DestroyObject()
     {
-		if (collision.gameObject.CompareTag("Player"))
-		{
-			GameManager.instance.GetPlayer().Hit();
-		}
-    }
+		//DynamicObjectManager.instance.DeleteObjects(this);
+		Destroy(this.gameObject);
+	}
+
+    public override void StopObject()
+    {
+		GetComponent<ParticleSystem>().Stop();
+		GetComponent<CircleCollider2D>().enabled = false;
+		Invoke("DestroyObject", 10f);
+	}
 }
 
 
