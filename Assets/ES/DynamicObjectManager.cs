@@ -12,8 +12,6 @@ public class DynamicObjectManager : MonoBehaviour
         objects.Add(_object);
     }
 
-    
-
     public void Clear()
     {
         foreach(DynamicObject go in objects)

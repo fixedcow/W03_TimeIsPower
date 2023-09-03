@@ -4832,7 +4832,7 @@ MonoBehaviour:
   cautionTime: 1.8
   blinkTime: 0.9
   attackParticle: {fileID: 4020162765607843911}
-  attackTime: 8
+  attackTime: 6
 --- !u!1 &4020162766302776457
 GameObject:
   m_ObjectHideFlags: 0

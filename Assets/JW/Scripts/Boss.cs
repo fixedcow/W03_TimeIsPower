@@ -23,7 +23,7 @@ public abstract class Boss : MonoBehaviour
 	[SerializeField] protected BossPattern startPattern;
 	[SerializeField] protected List<BossPattern> patternList = new List<BossPattern>();
 	[SerializeField] protected List<StaticAttack> initAttackList = new();
-	[SerializeField] private GameObject halo;
+
 	[ReadOnly] [SerializeField] protected int patternIndex;
 	[ReadOnly][SerializeField] protected BossPattern currentPattern;
 	#endregion
@@ -38,19 +38,9 @@ public abstract class Boss : MonoBehaviour
 	}
 	public virtual void Hit(int _damage, GameObject _source)
 	{
-		if (hpCurrent <= 0)
+		if (hpCurrent <= 0 && GameManager.instance.GetGameState() == GameManager.EGameState.battle)
 		{
-			GameManager.instance.GetPlayer().CanNotAct();
-			halo.SetActive(false);
-			ShutdownAction();
-			foreach (StaticAttack attack in initAttackList)
-			{
-				attack.InitAttack();
-			}
-			transform.Find("renderer").TryGetComponent(out anim);
-			anim.Play("Die");
-			Invoke("BossKilled", 3f);
-			DynamicObjectManager.instance.EndClear();
+			BossKilled();
 		}
         else
         {
@@ -58,15 +48,19 @@ public abstract class Boss : MonoBehaviour
 			hpCurrent = Mathf.Clamp(hpCurrent - _damage, 0, hpMax);
 			BossHpGUI.instance.SetHp(hpCurrent);
 		}
-		
-		
 	}
-	public void BossKilled()
+	public virtual void BossKilled()
 	{
-		GameManager.instance.GameClear();
-
+		GameManager.instance.GetPlayer().CanNotAct();
+		anim.Play("Die");
+		ShutdownAction();
+		foreach (StaticAttack attack in initAttackList)
+		{
+			attack.InitAttack();
+		}
+		DynamicObjectManager.instance.EndClear();
+		Invoke(nameof(GameClear), 3f);
 	}
-	[Button]
 	public void PatternStart()
 	{
 		currentPattern = startPattern; 
@@ -114,6 +108,10 @@ public abstract class Boss : MonoBehaviour
 			++result;
 		}
 		return result;
+	}
+	private void GameClear()
+	{
+		GameManager.instance.GameClear();
 	}
 	#endregion
 }

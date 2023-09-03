@@ -55,7 +55,7 @@ MonoBehaviour:
   bossName: "\uBD84\uB178\uD55C \uC545\uB2F9 \uB9C8\uBC95\uC0AC"
   respawnPoint: {x: 0, y: 0}
   hpCurrent: 0
-  hpMax: 20
+  hpMax: 0
   startPattern: {fileID: 4978595303568946281}
   patternList:
   - {fileID: 1186505515090767772}
@@ -83,9 +83,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  halo: {fileID: 2548604622673590352}
   patternIndex: 0
   currentPattern: {fileID: 0}
+  halo: {fileID: 2548604622673590352}
 --- !u!114 &4978595303568946281
 MonoBehaviour:
   m_ObjectHideFlags: 0

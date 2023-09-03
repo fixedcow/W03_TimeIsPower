@@ -42,7 +42,13 @@ public class Player : MonoBehaviour
 	public Animator GetAnimator() => anim;
 	public void SetInvincibility(bool b) => isInvincible = b;
 	public void CanAct() => canAct = true;
-	public void CanNotAct() => canAct = false;
+	public void CanNotAct()
+	{
+		canAct = false;
+		move.MoveCanceled();
+		attack.isAttack = false;
+	}
+
 	public void MoveToRespawnPoint()
 	{
 		transform.position = RespawnPoint;
@@ -115,7 +121,6 @@ public class Player : MonoBehaviour
 			return;
 
 		attack.isAttack = true;
-		//attack.Attack();
 	}
 
 	private void AttackCanceled(InputAction.CallbackContext _context)
@@ -126,7 +131,6 @@ public class Player : MonoBehaviour
 	{
 		if (canAct == false)
 			return;
-		// 공격키 누르고 바로 회피하면 isAttack이 true로 남아서, 회피후 바로 공격하는 문제가 있어서 일단 이렇게 함
 		attack.isAttack = false;
 		dodge.Dodge();
 	}
