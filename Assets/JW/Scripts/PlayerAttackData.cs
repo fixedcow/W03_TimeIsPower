@@ -18,28 +18,24 @@ public class PlayerAttackData : MonoBehaviour
 	#region PublicMethod
 	public void OnAttackAnimationImpact()
 	{
-		Collider2D[] cols = Physics2D.OverlapAreaAll((Vector2)transform.position + source.transform.localScale.x * pointA
+		Collider2D col = Physics2D.OverlapArea((Vector2)transform.position + source.transform.localScale.x * pointA
 			, (Vector2)transform.position + source.transform.localScale.x * pointB, 1 << LayerMask.NameToLayer("Enemy"));
-		if (cols.Length > 0)
+		if (col != null)
 		{
-			foreach (Collider2D col in cols)
+			Boss boss;
+			Zombie zombie;
+			Lever lever;
+			if (col.TryGetComponent(out boss) == true)
 			{
-				Boss boss;
-				Zombie zombie;
-				Lever _switch;
-				if(col.TryGetComponent(out boss) == true)
-				{
-					boss.Hit(damage, source);
-				}
-				if(col.TryGetComponent(out _switch) == true)
-				{
-					_switch.Hit();
-				}
-				if (col.TryGetComponent(out zombie) == true)
-				{
-					zombie.HitZombie(damage, source);
-				}
-
+				boss.Hit(damage, source);
+			}
+			if (col.TryGetComponent(out lever) == true)
+			{
+				lever.Hit();
+			}
+			if (col.TryGetComponent(out zombie) == true)
+			{
+				zombie.HitZombie(damage, source);
 			}
 		}
 	}

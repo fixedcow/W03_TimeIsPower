@@ -12,7 +12,7 @@ public class SoulTree : Boss
 		base.Hit(_damage, _source);
 		if (hpCurrent < hpMax * ragePercentage)
 		{
-			RageRedMage rage;
+			RageSoulTree rage;
 			rageVersion.TryGetComponent(out rage);
 			rage.SetHpSameWithMain(hpCurrent, hpMax);
 			rageVersion.transform.position = transform.position;

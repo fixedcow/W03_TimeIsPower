@@ -60,6 +60,10 @@ public abstract class Boss : MonoBehaviour
 			attack.InitAttack();
 		}
 		DynamicObjectManager.instance.EndClear();
+        if (gameObject is RageSoulTree)
+        {
+			Invoke(nameof(GameClear), 3f);
+		}
 		Invoke(nameof(BossClear), 3f);
 	}
 	[Button]

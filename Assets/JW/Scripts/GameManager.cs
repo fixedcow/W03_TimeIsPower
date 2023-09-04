@@ -125,6 +125,7 @@ public class GameManager : MonoBehaviour
 
 	public void BossClear()
     {
+		Debug.Log("º¸½º³¡");
 		GhostManager.instance.GetReplayer().ClearData();
 		foreach(GameObject go in stageEnterTriggerList)
         {

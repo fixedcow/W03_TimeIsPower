@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 5901335584027809102}
-  maxHP: 1
+  maxHP: 0
   moveSpeed: 0.002
   brazierSpace: 1
 --- !u!61 &5901335584029547557

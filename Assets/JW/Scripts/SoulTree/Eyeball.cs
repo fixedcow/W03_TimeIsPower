@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class Eyeball : MonoBehaviour
 {
-
-    [SerializeField] private Transform pupilTransform;
     [SerializeField] private float moveSpeed;
     private Vector3 direction;
 
     private void Start()
     {
         direction = GetAngleToPlayer();
+        Invoke(nameof(DestroyObject), 10f);
     }
 
     private Vector3 GetAngleToPlayer()
     {
-        return GameManager.instance.GetPlayer().transform.position - pupilTransform.position;
+        return GameManager.instance.GetPlayer().transform.position - transform.position;
 
 
     }
@@ -26,6 +25,10 @@ public class Eyeball : MonoBehaviour
         
     }
 
+    private void DestroyObject()
+    {
+        Destroy(this.gameObject);
+    }
     private void Update()
     {
         ShootAtPlayer();

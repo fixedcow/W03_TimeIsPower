@@ -5,6 +5,7 @@ using Sirenix.OdinInspector;
 
 public class GhostReplayer : MonoBehaviour
 {
+    [SerializeField]
     private List<GhostData> ghostDatas = new List<GhostData>();
     private WaitForSeconds replayWait;
 	private bool isReplaying;
@@ -28,6 +29,10 @@ public class GhostReplayer : MonoBehaviour
 	}
     public void ClearData()
     {
+        foreach(GhostData ghost in ghostDatas)
+        {
+            Destroy(ghost.gameObject);
+        }
         ghostDatas.Clear();
     }
 	private IEnumerator ReplayGhost()

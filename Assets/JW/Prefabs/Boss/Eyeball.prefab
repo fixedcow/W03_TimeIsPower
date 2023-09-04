@@ -216,3 +216,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxReactDistance: 10
   blinkDelay: 3
+  eyeballPrefab: {fileID: 4234787543626802126, guid: b4a0082ecbf80704d82d594eaed5caa3, type: 3}
+  shootDelay: 5
