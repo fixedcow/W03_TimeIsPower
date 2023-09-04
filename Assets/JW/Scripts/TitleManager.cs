@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class TitleManager : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class TitleManager : MonoBehaviour
 
 	#region PrivateVariables
 	[SerializeField] private BlackScreen blackScreen;
+	[SerializeField] private SpriteRenderer button;
+	[SerializeField] private TextMeshPro text;
+
 	public bool isStarted = false;
 	#endregion
 
@@ -35,6 +39,14 @@ public class TitleManager : MonoBehaviour
 	}
 	#endregion
 
+	public void SkipTutorial()
+	{
+		if (!LocalDataManager.Instance.isTutorialCleared) return;
+		if (isStarted) return;
+		isStarted = true;
+		SkipTutorialTask().Forget();
+	}
+
 	#region PrivateMethod
 	private async UniTaskVoid StartGameTask()
 	{
@@ -44,6 +56,13 @@ public class TitleManager : MonoBehaviour
 		GameManager.instance.GameStart();
 	}
 
+	async UniTaskVoid SkipTutorialTask()
+	{
+		await blackScreen.ScreenFadeOut();
+		CameraController.instance.MoveToRespawnPoint();
+		SceneManager.LoadScene("Main");
+	}
+
     private void Awake()
     {
         Instance = this;
@@ -51,7 +70,11 @@ public class TitleManager : MonoBehaviour
 
     private void Start()
     {
-		isStarted = false;
+		if(LocalDataManager.Instance.isTutorialCleared && !isStarted)
+		{
+			button.color = new Color(1, 1, 1, 1);
+			text.color = new Color(1, 1, 1, 1);
+		}
     }
     #endregion
 }

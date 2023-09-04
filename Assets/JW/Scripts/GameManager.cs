@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
 		boss.gameObject.SetActive(false);
 		boss = null;
 		DynamicObjectManager.instance.Clear();
-		TrophyManager.Instance.GetTrophy();
+		LocalDataManager.Instance.GetTrophy();
 	}
 	public void SetGameStateIdle()
 	{
@@ -108,7 +108,7 @@ public class GameManager : MonoBehaviour
 
 		if(DeathCounterManager.instance.count == 1)
 		{
-			TrophyManager.Instance.SetTrophy(boss.bossName);
+			LocalDataManager.Instance.SetTrophy(boss.bossName);
 		}
 
 	}
