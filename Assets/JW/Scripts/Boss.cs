@@ -62,6 +62,7 @@ public abstract class Boss : MonoBehaviour
 		DynamicObjectManager.instance.EndClear();
 		Invoke(nameof(GameClear), 3f);
 	}
+	[Button]
 	public void PatternStart()
 	{
 		currentPattern = startPattern; 

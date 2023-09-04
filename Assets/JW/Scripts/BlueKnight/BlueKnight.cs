@@ -22,6 +22,7 @@ public class BlueKnight : Boss
 			rageVersion.TryGetComponent(out rage);
 			rage.SetHpSameWithMain(hpCurrent, hpMax);
 			rageVersion.transform.position = transform.position;
+			rageVersion.transform.localScale = transform.localScale;
 			gameObject.SetActive(false);
 			rageVersion.SetActive(true);
 			rage.PatternStart();
