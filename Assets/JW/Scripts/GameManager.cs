@@ -61,10 +61,19 @@ public class GameManager : MonoBehaviour
 		{
 			state = EGameState.idle;
 		}
+		else
+		{
+			TutorialManager.Instance.fire.Stop();
+		}
 
 		CameraController.instance.EndFollowToPlayer();
 		player.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = false;
-		DeathCounterManager.instance.PlayerDead();
+
+		if (state != EGameState.tutorial)
+		{
+			DeathCounterManager.instance.PlayerDead();
+		}
+
 		CameraController.instance.HitShake();
 		fadeBlackController.StartFade();
 		GhostManager.instance.StopRecordAndReplay();

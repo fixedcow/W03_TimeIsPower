@@ -8,7 +8,7 @@ public class TutorialManager : MonoBehaviour
     public static TutorialManager Instance;
     public List<Vector3> spawnPosition;
     public ParticleSystem fire;
-    float fireDelayTime = 12f;
+    float fireDelayTime = 14f;
 
     [SerializeField] private List<GameObject> stageEnterTriggerList = new List<GameObject>();
     [SerializeField] private FadeBlackController fadeBlackController;
