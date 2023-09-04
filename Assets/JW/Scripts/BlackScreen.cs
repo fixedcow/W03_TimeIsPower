@@ -4,6 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using Cysharp.Threading;
 using Cysharp.Threading.Tasks;
+using UnityEngine.SceneManagement;
 
 public class BlackScreen : MonoBehaviour
 {
@@ -36,5 +37,20 @@ public class BlackScreen : MonoBehaviour
 		TryGetComponent(out sr);
 		gameObject.SetActive(false);
 	}
-	#endregion
+
+    private void OnEnable()
+    {
+		SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    async void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+	{
+		TitleManager.Instance.StartGame();
+	}
+    #endregion
 }

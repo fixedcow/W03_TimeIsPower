@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8997290957466816276}
-  - component: {fileID: 8997290957466816279}
+  - component: {fileID: 6120370003591621005}
   - component: {fileID: 8997290957466816275}
   - component: {fileID: 8997290957466816264}
-  - component: {fileID: 8997290957466816265}
+  - component: {fileID: 4205813871658400108}
   - component: {fileID: 8997290957466816278}
   - component: {fileID: 8997290957466816277}
   - component: {fileID: 8997290957466816267}
@@ -40,7 +40,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8997290957466816279
+--- !u!114 &6120370003591621005
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e58a40bef8eb6d24c8e5b195062f5576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0.005
+  moveSpeed: 0
 --- !u!114 &8997290957466816275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,28 +65,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 892a6f8505a62054c9b685953b2b2f69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossName: "\uCCAD\uBC31\uC758 \uACE0\uBBFC\uC815 \"\uB354 \uBCFC\uD2B8\uC2A4\uD30C\uC774\uD06C\""
+  bossName: "\uCCAD\uBC31\uC758 \uAE30\uC0AC"
   respawnPoint: {x: -40, y: 0}
   hpCurrent: 0
   hpMax: 420
   startPattern: {fileID: 8997290957466816264}
   patternList:
   - {fileID: 8997290957466816278}
-  - {fileID: 8997290957466816265}
   - {fileID: 8997290957466816277}
+  - {fileID: 4205813871658400108}
   - {fileID: 8997290957466816277}
   - {fileID: 8997290957466816278}
-  - {fileID: 8997290957466816265}
+  - {fileID: 4205813871658400108}
   - {fileID: 8997290957466816278}
+  - {fileID: 8997290957466816278}
+  - {fileID: 8997290957466816277}
   - {fileID: 8997290957466816267}
   - {fileID: 8997290957466816277}
   - {fileID: 8997290957466816278}
   - {fileID: 8997290957466816277}
-  - {fileID: 8997290957466816278}
-  - {fileID: 8997290957466816265}
-  - {fileID: 8997290957466816277}
   - {fileID: 8997290957466816267}
-  - {fileID: 8997290957466816265}
+  - {fileID: 4205813871658400108}
   initAttackList: []
   patternIndex: 0
   currentPattern: {fileID: 0}
@@ -107,7 +106,7 @@ MonoBehaviour:
   animationStateName: 
   preDelayMilliSeconds: 1000
   postDelayMilliSeconds: 1500
---- !u!114 &8997290957466816265
+--- !u!114 &4205813871658400108
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,7 +134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationStateName: Stamp
-  preDelayMilliSeconds: 1600
+  preDelayMilliSeconds: 1800
   postDelayMilliSeconds: 2000
   stamp: {fileID: 7147887247012882290, guid: 414f6be30d72a0241905b212bc9ae54b, type: 3}
   stampCount: 5
@@ -157,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationStateName: Charging
-  preDelayMilliSeconds: 1400
+  preDelayMilliSeconds: 1600
   postDelayMilliSeconds: 2000
   chanrgeAttack: {fileID: 8930476658659740008, guid: 6685e6ffb0e44714d80b06df71b3777d, type: 3}
 --- !u!114 &8997290957466816267

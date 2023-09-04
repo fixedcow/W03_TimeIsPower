@@ -25,7 +25,6 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private List<Boss> bossList = new List<Boss>();
 	[SerializeField] private List<GameObject> stageEnterTriggerList = new List<GameObject>();
 	[SerializeField] private FadeBlackController fadeBlackController;
-	[SerializeField] List<GameObject> perfectAwards;
 
 	#endregion
 
@@ -45,8 +44,8 @@ public class GameManager : MonoBehaviour
 	public void BattleStart(Utils.EStage _stage)
 	{
 		state = EGameState.battle;
-		boss = bossList[(int)_stage];
-		stageEnterTrigger = stageEnterTriggerList[(int)_stage];
+		boss = bossList[(int)_stage - 1];
+		stageEnterTrigger = stageEnterTriggerList[(int)_stage - 1];
 		boss.Initialize();
 		boss.gameObject.SetActive(true);
 		BossHpGUI.instance.ShowGUI();
@@ -60,22 +59,11 @@ public class GameManager : MonoBehaviour
 	{
 		if (state == EGameState.idle) return;
 
-		//if (state != EGameState.tutorial)
-		//{
+		if (state != EGameState.tutorial)
+		{
 			state = EGameState.idle;
-			if(PlayerPrefs.GetString("분노한 악당 마법사") == "Achieve")
-			{
-				perfectAwards[0].SetActive(true);
-			}
-            if (PlayerPrefs.GetString("분노한 아무튼 기사") == "Achieve")
-            {
-                perfectAwards[1].SetActive(true);
-            }
-            if (PlayerPrefs.GetString("분노한 아무튼 나무") == "Achieve")
-            {
-                perfectAwards[2].SetActive(true);
-            }
-        //}
+		}
+	
 
 		if (state == EGameState.tutorial)
 		{
@@ -106,7 +94,7 @@ public class GameManager : MonoBehaviour
 		boss.gameObject.SetActive(false);
 		boss = null;
 		DynamicObjectManager.instance.Clear();
-
+		TrophyManager.Instance.GetTrophy();
 	}
 	public void SetGameStateIdle()
 	{
@@ -120,7 +108,7 @@ public class GameManager : MonoBehaviour
 
 		if(DeathCounterManager.instance.count == 1)
 		{
-			PlayerPrefs.SetString(boss.bossName, "Achieve");
+			TrophyManager.Instance.SetTrophy(boss.bossName);
 		}
 
 	}

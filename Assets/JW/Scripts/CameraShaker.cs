@@ -8,16 +8,20 @@ public class CameraShaker : MonoBehaviour
 {
 	#region PublicVariables
 	public Camera main;
+
+	public enum ECameraShakingType
+	{
+		playerHit = 0,
+		thunder = 1
+	}
 	#endregion
 
-	[SerializeField] private float shakeDuration;
-	[SerializeField] private float shakeStrength;
-	[SerializeField] private int shakeVibrato;
-	[SerializeField] private float shakeRandomness;
+	[SerializeField] private List<CameraShakingData> datas = new List<CameraShakingData>();
 
-	public void StartCameraShake()
+	public void StartCameraShake(ECameraShakingType type)
     {
-		transform.DOShakePosition(shakeDuration, shakeStrength, shakeVibrato, shakeRandomness);
+		CameraShakingData data = datas[(int)type];
+		transform.DOShakePosition(data.duration, data.strength, data.vibrato, data.randomness);
     }
 
 }
