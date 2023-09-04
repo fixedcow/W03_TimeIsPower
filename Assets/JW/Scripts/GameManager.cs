@@ -94,7 +94,6 @@ public class GameManager : MonoBehaviour
 		boss.gameObject.SetActive(false);
 		boss = null;
 		DynamicObjectManager.instance.Clear();
-		LocalDataManager.Instance.GetTrophy();
 	}
 	public void SetGameStateIdle()
 	{
