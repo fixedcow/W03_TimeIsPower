@@ -115,7 +115,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6489920591418624577}
   serializedVersion: 8
-  lengthInSec: 5
+  lengthInSec: 2
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -190,7 +190,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 1
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -243,8 +243,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 16
-      minScalar: 9
+      scalar: 32
+      minScalar: 16
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3862,7 +3862,7 @@ ParticleSystem:
     radiusScale: 0.5
     collidesWith:
       serializedVersion: 2
-      m_Bits: 1152
+      m_Bits: 128
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
@@ -4835,7 +4835,7 @@ MonoBehaviour:
   cautionTime: 1.8
   blinkTime: 0.9
   attackParticle: {fileID: 6489920591418624578}
-  attackTime: 2
+  attackTime: 1
 --- !u!1 &6489920592631911231
 GameObject:
   m_ObjectHideFlags: 0

@@ -688,9 +688,9 @@ MonoBehaviour:
   - {fileID: 4567720561716598257}
   - {fileID: 1118208496}
   - {fileID: 1118208492}
-  - {fileID: 1118208495}
   - {fileID: 1118208496}
   - {fileID: 4567720561716598257}
+  - {fileID: 1118208495}
   - {fileID: 1118208496}
   initAttackList: []
   patternIndex: 0
@@ -726,11 +726,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationStateName: 
   preDelayMilliSeconds: 1000
-  postDelayMilliSeconds: 3000
+  postDelayMilliSeconds: 6000
   illusionPrefab: {fileID: 5760634048153385850, guid: e67a9b8d51c79c84384a8e320de1250c, type: 3}
-  illusionCount: 5
+  illusionCount: 3
   illusionDelay: 3
-  illusionDelayInterval: 0.4
+  illusionDelayInterval: 0.6
   illusionStartPosition: {x: -19, y: -10, z: 0}
 --- !u!114 &1118208495
 MonoBehaviour:
@@ -749,8 +749,8 @@ MonoBehaviour:
   postDelayMilliSeconds: 3000
   rightCrowAttack: {fileID: 1981834095733953297}
   leftCrowAttack: {fileID: 8614545840548387123}
-  rightPosX: -14
-  leftPosX: -24.5
+  rightPosX: -12
+  leftPosX: -26.5
   minY: -22
   maxY: -6
 --- !u!114 &1118208496
@@ -805,6 +805,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1835606178189181110}
     m_Modifications:
+    - target: {fileID: 1814058721985491459, guid: 7c76a6740f92109498e2b95e322e1417, type: 3}
+      propertyPath: attackTime
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 1814058721985491462, guid: 7c76a6740f92109498e2b95e322e1417, type: 3}
       propertyPath: m_Name
       value: RightCrowAttack
@@ -925,6 +929,10 @@ PrefabInstance:
     - target: {fileID: 6489920591418624577, guid: 58ba8cfd1d7f2ae4da4c1832fd6b10b5, type: 3}
       propertyPath: m_Name
       value: LeftCrowAttack
+      objectReference: {fileID: 0}
+    - target: {fileID: 6489920591418624580, guid: 58ba8cfd1d7f2ae4da4c1832fd6b10b5, type: 3}
+      propertyPath: attackTime
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58ba8cfd1d7f2ae4da4c1832fd6b10b5, type: 3}
