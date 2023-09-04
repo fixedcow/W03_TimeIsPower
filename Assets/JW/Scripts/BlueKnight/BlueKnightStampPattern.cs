@@ -21,23 +21,14 @@ public class BlueKnightStampPattern : BossPattern
     {
         waitAttackDelay = new WaitForSeconds(attackDelay);
         waitAttackInterval = new WaitForSeconds(attackInterval);
-
     }
-    
-  
+
+	[Button]
     protected override void ActionContext()
     {
-
         StartCoroutine(nameof(ThunderStamp));
     }
-
-    [Button]
-    private void TestPattern()
-    {
-        StartCoroutine(ThunderStamp());
-    }
-
-    private IEnumerator ThunderStamp()
+	private IEnumerator ThunderStamp()
     {
         float bossPosX = GameManager.instance.GetBoss().transform.position.x;
         float leftStampPosX = bossPosX - bossSpaceX;

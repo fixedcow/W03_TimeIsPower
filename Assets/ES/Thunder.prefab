@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4782823884660571164}
   - component: {fileID: 322461446444670613}
   - component: {fileID: 7147887247012882290}
+  - component: {fileID: 2985196318479137303}
   - component: {fileID: 3812783425922087213}
   - component: {fileID: 2824498831771262658}
   m_Layer: 0
@@ -100,9 +101,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationName: Thunder
+  attackAnim: {fileID: 2824498831771262658}
   thunderCollider: {fileID: 3812783425922087213}
   AttackTime: 0.3
-  attackAnim: {fileID: 2824498831771262658}
+--- !u!114 &2985196318479137303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554764529047716329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4aa8f22a6bbdef44a44570d52876a13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &3812783425922087213
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -113,7 +126,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.05092764, y: -0.0848794}
