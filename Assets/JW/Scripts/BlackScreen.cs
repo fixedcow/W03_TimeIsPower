@@ -4,6 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using Cysharp.Threading;
 using Cysharp.Threading.Tasks;
+using UnityEngine.SceneManagement;
 
 public class BlackScreen : MonoBehaviour
 {
@@ -34,7 +35,15 @@ public class BlackScreen : MonoBehaviour
 	{
 		main = Camera.main;
 		TryGetComponent(out sr);
-		gameObject.SetActive(false);
 	}
-	#endregion
+
+    private void Start()
+    {
+        if(GameManager.instance.GetGameState() != GameManager.EGameState.tutorial)
+		{
+			this.gameObject.SetActive(false);
+		}
+    }
+
+    #endregion
 }

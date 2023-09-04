@@ -1,7 +1,9 @@
+using Sirenix.OdinInspector;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TutorialManager : MonoBehaviour
 {
@@ -12,7 +14,6 @@ public class TutorialManager : MonoBehaviour
 
     public List<GameObject> gates;
     public List<GameObject> fixedGates;
-
 
     private void Awake()
     {
@@ -67,4 +68,5 @@ public class TutorialManager : MonoBehaviour
             go.SetActive(false);
         }
     }
+
 }
