@@ -31,6 +31,7 @@ public class TutorialEnterTrigger : MonoBehaviour
             //    go.GetComponent<Gate>().KillTween();
             //}
 
+            LocalDataManager.Instance.ClearTutorial();
             FadeOut().Forget();
         }
     }
