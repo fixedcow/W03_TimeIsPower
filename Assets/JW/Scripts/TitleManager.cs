@@ -41,7 +41,7 @@ public class TitleManager : MonoBehaviour
 
 	public void SkipTutorial()
 	{
-		if (!LocalDataManager.Instance.isTutorialCleared) return;
+		if (!LocalDataManager.Instance.IsTutorialCleared) return;
 		if (isStarted) return;
 		isStarted = true;
 		SkipTutorialTask().Forget();
@@ -59,7 +59,6 @@ public class TitleManager : MonoBehaviour
 	async UniTaskVoid SkipTutorialTask()
 	{
 		await blackScreen.ScreenFadeOut();
-		CameraController.instance.MoveToRespawnPoint();
 		SceneManager.LoadScene("Main");
 	}
 
@@ -70,11 +69,11 @@ public class TitleManager : MonoBehaviour
 
     private void Start()
     {
-		/*if(LocalDataManager.Instance.isTutorialCleared && !isStarted)
+		if(LocalDataManager.Instance.IsTutorialCleared && !isStarted)
 		{
 			button.color = new Color(1, 1, 1, 1);
 			text.color = new Color(1, 1, 1, 1);
-		}*/
+		}
     }
     #endregion
 }

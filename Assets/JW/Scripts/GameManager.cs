@@ -93,7 +93,6 @@ public class GameManager : MonoBehaviour
 
 	private void WaitBattleEnd()
     {
-		Debug.Log("전투끝");
 		if (state == EGameState.tutorial) return;
 
 		BossHpGUI.instance.HideGUI();
@@ -104,7 +103,6 @@ public class GameManager : MonoBehaviour
 		boss.gameObject.SetActive(false);
 		boss = null;
 		DynamicObjectManager.instance.Clear();
-		//LocalDataManager.Instance.GetTrophy();
 	}
 	public void SetGameStateIdle()
 	{
@@ -116,17 +114,19 @@ public class GameManager : MonoBehaviour
 		GameClearUI.SetTryText();
 		Physics2D.SyncTransforms();
 
-		if(DeathCounterManager.instance.count == 1)
-		{
-			LocalDataManager.Instance.SetTrophy(boss.bossName);
-		}
-
 	}
 
 	public void BossClear()
     {
-		Debug.Log("보스끝");
-		GhostManager.instance.GetReplayer().ClearData();
+		LocalDataManager.Instance.SetTrophy(boss.bossName);
+        if (DeathCounterManager.instance.count == 0)
+        {
+            LocalDataManager.Instance.SetPerfect(boss.bossName);
+        }
+		
+
+
+        GhostManager.instance.GetReplayer().ClearData();
 		foreach(GameObject go in stageEnterTriggerList)
         {
 			go.SetActive(true);
@@ -138,7 +138,8 @@ public class GameManager : MonoBehaviour
 		}
 		bossClearText.SetActive(true);
 		GetBoss().Initialize();
-		bossClearFadeBlack.DOFade(1f, 2)
+		
+		bossClearFadeBlack.DOFade(1f, 4)
 			.OnComplete(() =>
 			{
 				BossHpGUI.instance.HideGUI();
@@ -146,9 +147,15 @@ public class GameManager : MonoBehaviour
 				{
 					state = EGameState.idle;
 				}
+				
 				CameraController.instance.EndFollowToPlayer();
 				CameraController.instance.MoveToRespawnPoint();
+				
 				player.transform.position = initPlayerPosition;
+
+				ProgressManager.Instance.ResetWall();
+				TrophyManager.Instance.GetTrophy();
+				ProgressManager.Instance.SetProgress();
 				
 				Color color = Color.black;
 				color.a = 0;
@@ -156,7 +163,7 @@ public class GameManager : MonoBehaviour
 				bossClearText.SetActive(false);
 
 				player.CanAct();
-				Debug.Log("끝");
+
 			});
 		
 
