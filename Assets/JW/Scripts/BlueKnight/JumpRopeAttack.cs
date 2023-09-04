@@ -24,9 +24,9 @@ public class JumpRopeAttack : MonoBehaviour
 
     private void Start()
     {
-
         waitCautionTime = new WaitForSeconds(cautionTime);
         waitAttackTime = new WaitForSeconds(attackTime);
+
 
         blinkSequence = DOTween.Sequence()
             .SetAutoKill(false)
@@ -39,10 +39,6 @@ public class JumpRopeAttack : MonoBehaviour
             blinkSequence.Append(DOTween.ToAlpha(() => cautionEffect.GetComponent<SpriteRenderer>().color,
                 color => cautionEffect.GetComponent<SpriteRenderer>().color = color, 0f, blinkTime / 2));
         }
-
-
-
-
         defaultCautionScale = cautionEffect.transform.localScale;
 
         defaultCautionPosition = cautionEffect.transform.localPosition;

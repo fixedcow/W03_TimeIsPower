@@ -91,7 +91,7 @@ public class CameraController : MonoBehaviour
 		{
 			Vector3 cameraPos = defaultCameraPosition;
 			float posX = Mathf.Clamp(player.position.x, -45f, -40f);
-			float posY = 4f;
+			float posY = 2f;
 			cameraPos.x = posX;
 			cameraPos.y = posY;
 			cameraPos.z = -10;
