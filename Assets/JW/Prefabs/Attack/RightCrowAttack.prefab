@@ -25,8 +25,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1814058720782822264}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 10, z: 0}
-  m_LocalScale: {x: 1.8, y: 20, z: 0}
+  m_LocalPosition: {x: 0, y: 5.34, z: 0}
+  m_LocalScale: {x: 1.8, y: 40, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1814058721985491463}
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -168246843
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 290
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 0.9647059}
   m_FlipX: 0
@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 1814058721985491458}
   - component: {fileID: 1814058721985491461}
   - component: {fileID: 1814058721985491459}
+  - component: {fileID: 5020848472172029948}
   m_Layer: 0
   m_Name: RightCrowAttack
   m_TagString: Untagged
@@ -110,7 +111,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1814058721985491462}
-  m_LocalRotation: {x: 0, y: 0, z: -0.8349279, w: -0.5503594}
+  m_LocalRotation: {x: 0, y: 0, z: 0.8349295, w: 0.5503569}
   m_LocalPosition: {x: -14, y: -12.350304, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -118,7 +119,7 @@ Transform:
   - {fileID: 1814058720782822265}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 113.217}
 --- !u!199 &1814058721985491458
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -4920,3 +4921,15 @@ MonoBehaviour:
   blinkTime: 0.9
   attackParticle: {fileID: 1814058721985491461}
   attackTime: 2
+--- !u!114 &5020848472172029948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814058721985491462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4aa8f22a6bbdef44a44570d52876a13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
