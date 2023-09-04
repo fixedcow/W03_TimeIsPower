@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Illusion : MonoBehaviour
+public class Illusion : DynamicObject
 {
     [SerializeField] private Vector3 illusionPosition;
     [SerializeField] private float radius;
@@ -22,19 +22,21 @@ public class Illusion : MonoBehaviour
 
     }
 
-    public void SetIllusion(Vector3 startPos, float angle)
+    public void SetIllusion(Vector3 startPos, float angle,float delay)
     {
+        Debug.Log(illusionPosition);
         illusionPosition = startPos;
         circleAngle = angle;
+        delayTime = delay;
     }
 
     private void moveCirclePath()
     {
+        
         float radians = circleAngle * Mathf.Deg2Rad;
         Vector3 newPosition = illusionPosition+ new Vector3(Mathf.Cos(radians) * radius, Mathf.Sin(radians) * radius, 0.0f);
         transform.position = newPosition;
         circleAngle += circleMoveSpeed * Time.deltaTime;
-
         if (circleAngle >= 360.0f)
         {
             circleAngle = 0.0f;
@@ -44,7 +46,6 @@ public class Illusion : MonoBehaviour
     private void AttackPlayer()
     {
         currentTime += Time.deltaTime;
-
         if (currentTime < delayTime)
         {
             col.enabled = false;
@@ -63,8 +64,14 @@ public class Illusion : MonoBehaviour
         AttackPlayer();
     }
 
-    public void DestroyObject()
+   
+    public override void DestroyObject()
     {
         Destroy(this.gameObject);
+    }
+
+    public override void StopObject()
+    {
+        throw new System.NotImplementedException();
     }
 }
