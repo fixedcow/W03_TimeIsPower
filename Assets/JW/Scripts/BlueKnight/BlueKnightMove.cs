@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class BlueKnightMove : MonoBehaviour
 {
-    [SerializeField] private bool canAct;
+    private bool canAct;
     [SerializeField] private float moveSpeed;
-    public Transform testBoss;
     public void CanAct() => canAct = true;
 
     public void CanNotAct() => canAct = false;
@@ -17,14 +16,14 @@ public class BlueKnightMove : MonoBehaviour
         {
             float playerPosX = GameManager.instance.GetPlayer().transform.position.x;
             float bossPosX = transform.position.x;
-            if (playerPosX > bossPosX)
+            if ((playerPosX - bossPosX) > 0.5f)
             {
-                transform.localScale = new Vector3(-1, 0, 0);
+                transform.localScale = new Vector3(-1, 1, 1);
                 transform.Translate(moveSpeed, 0, 0);
             }
-            else
+            else if ((playerPosX - bossPosX) < -0.5f)
             {
-                transform.localScale = new Vector3(1, 0, 0);
+                transform.localScale = new Vector3(1, 1, 1);
                 transform.Translate(-moveSpeed, 0, 0);
             }
         }

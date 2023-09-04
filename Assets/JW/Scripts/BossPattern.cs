@@ -25,10 +25,13 @@ public abstract class BossPattern : MonoBehaviour
 	#region PublicMethod
 	public async UniTaskVoid Act()
 	{
+		PreProcessing();
 		PlayAnimation();
 		await UniTask.Delay(preDelayMilliSeconds, cancellationToken: preDelaySource.Token);
 		ActionContext();
 		await UniTask.Delay(postDelayMilliSeconds, cancellationToken: postDelaySource.Token);
+		PostProcessing();
+
 		CallNextAction();
 	}
 	public void CallNextAction()
@@ -43,7 +46,7 @@ public abstract class BossPattern : MonoBehaviour
 	#endregion
 
 	#region PrivateMethod
-	protected void Awake()
+	protected virtual void Awake()
 	{
 		TryGetComponent(out main);
 	}
@@ -71,6 +74,14 @@ public abstract class BossPattern : MonoBehaviour
 			transform.Find("renderer").TryGetComponent(out anim);
 			anim.Play(animationStateName);
 		}
+	}
+	protected virtual void PreProcessing()
+	{
+
+	}
+	protected virtual void PostProcessing()
+	{
+
 	}
 	protected abstract void ActionContext();
 	#endregion
