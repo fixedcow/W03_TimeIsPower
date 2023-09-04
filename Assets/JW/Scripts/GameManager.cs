@@ -44,8 +44,8 @@ public class GameManager : MonoBehaviour
 	public void BattleStart(Utils.EStage _stage)
 	{
 		state = EGameState.battle;
-		boss = bossList[(int)_stage];
-		stageEnterTrigger = stageEnterTriggerList[(int)_stage];
+		boss = bossList[(int)_stage - 1];
+		stageEnterTrigger = stageEnterTriggerList[(int)_stage - 1];
 		boss.Initialize();
 		boss.gameObject.SetActive(true);
 		BossHpGUI.instance.ShowGUI();

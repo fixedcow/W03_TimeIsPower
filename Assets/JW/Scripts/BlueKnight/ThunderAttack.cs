@@ -21,9 +21,9 @@ public class ThunderAttack : MonoBehaviour
             attackAnim.Play(nameof(animationName));
         }
         thunderCollider.enabled = true;
-        yield return new WaitForSeconds(AttackTime);
+		CameraController.instance.ThunderShake();
+		yield return new WaitForSeconds(AttackTime);
         Destroy(this.gameObject);
-
     }
 
     public void InitAttack()
