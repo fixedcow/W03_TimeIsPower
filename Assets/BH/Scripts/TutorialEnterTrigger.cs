@@ -23,6 +23,10 @@ public class TutorialEnterTrigger : MonoBehaviour
 
         if(collision.transform.position.x > 29)
         {
+            foreach(var go in TutorialManager.Instance.gates)
+            {
+                go.GetComponent<Gate>().KillTween();
+            }
             SceneManager.LoadScene("Main");
         }
     }

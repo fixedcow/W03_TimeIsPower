@@ -64,12 +64,14 @@ public class Gate : MonoBehaviour
     public void Close()
     {
         GateMoveTween.ChangeEndValue(closePos, speed, true).Restart();
-
     }
     public void Open()
     {
         GateMoveTween.ChangeEndValue(openPos, speed, true).Restart();
-
+    }
+    public void KillTween()
+    {
+        GateMoveTween.Kill();
     }
 }
 
