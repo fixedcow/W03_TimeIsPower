@@ -2,16 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GateSwitch : MonoBehaviour
+public class Lever : MonoBehaviour
 {
     public bool isActive = false;
     [SerializeField] float timer = 1.5f;
     WaitForSeconds wfs;
     public Gate gate;
+    public Sprite leverOn;
+    public Sprite leverOff;
+    SpriteRenderer leverSprite;
 
     private void Start()
     {
         wfs = new WaitForSeconds(timer);
+        leverSprite = this.GetComponent<SpriteRenderer>();
     }
 
     public void Hit()
@@ -24,14 +28,14 @@ public class GateSwitch : MonoBehaviour
 
     IEnumerator SwitchTimer()
     {
-        this.GetComponent<SpriteRenderer>().color = Color.red;
+        this.leverSprite.sprite = leverOn;
         gate.IsOpen = true;
 
         yield return wfs;
 
-        this.GetComponent<SpriteRenderer>().color = Color.blue;
-        gate.IsOpen = false;
+        this.leverSprite.sprite = leverOff;
 
         isActive = false;
+        gate.IsOpen = false;
     }
 }
