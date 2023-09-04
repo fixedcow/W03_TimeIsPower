@@ -96,7 +96,6 @@ GameObject:
   - component: {fileID: 1814058721985491458}
   - component: {fileID: 1814058721985491461}
   - component: {fileID: 1814058721985491459}
-  - component: {fileID: 5020848472172029948}
   m_Layer: 0
   m_Name: RightCrowAttack
   m_TagString: Untagged
@@ -4921,15 +4920,3 @@ MonoBehaviour:
   blinkTime: 0.9
   attackParticle: {fileID: 1814058721985491461}
   attackTime: 2
---- !u!114 &5020848472172029948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1814058721985491462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4aa8f22a6bbdef44a44570d52876a13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

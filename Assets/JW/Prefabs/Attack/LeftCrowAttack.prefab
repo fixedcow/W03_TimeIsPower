@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6489920591418624581}
   - component: {fileID: 6489920591418624578}
   - component: {fileID: 6489920591418624580}
-  - component: {fileID: 2329695451273896084}
   m_Layer: 0
   m_Name: LeftCrowAttack
   m_TagString: Untagged
@@ -4837,18 +4836,6 @@ MonoBehaviour:
   blinkTime: 0.9
   attackParticle: {fileID: 6489920591418624578}
   attackTime: 2
---- !u!114 &2329695451273896084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6489920591418624577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4aa8f22a6bbdef44a44570d52876a13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6489920592631911231
 GameObject:
   m_ObjectHideFlags: 0
