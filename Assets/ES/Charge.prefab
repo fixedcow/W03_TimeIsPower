@@ -75,7 +75,7 @@ MonoBehaviour:
   animationName: 
   attackAnim: {fileID: 0}
   thunderCollider: {fileID: 6678297903603485179}
-  AttackTime: 0.5
+  AttackTime: 0.3
 --- !u!114 &-9142516337074423225
 MonoBehaviour:
   m_ObjectHideFlags: 0

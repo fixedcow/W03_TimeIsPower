@@ -68,26 +68,24 @@ MonoBehaviour:
   bossName: "\uCCAD\uBC31\uC758 \uACE0\uBBFC\uC815 \"\uB354 \uBCFC\uD2B8\uC2A4\uD30C\uC774\uD06C\""
   respawnPoint: {x: -40, y: 0}
   hpCurrent: 0
-  hpMax: 500
+  hpMax: 420
   startPattern: {fileID: 8997290957466816264}
   patternList:
   - {fileID: 8997290957466816278}
   - {fileID: 8997290957466816265}
   - {fileID: 8997290957466816277}
-  - {fileID: 8997290957466816265}
   - {fileID: 8997290957466816277}
   - {fileID: 8997290957466816278}
   - {fileID: 8997290957466816265}
-  - {fileID: 8997290957466816278}
-  - {fileID: 8997290957466816265}
-  - {fileID: 8997290957466816277}
-  - {fileID: 8997290957466816278}
-  - {fileID: 8997290957466816264}
-  - {fileID: 8997290957466816277}
   - {fileID: 8997290957466816278}
   - {fileID: 8997290957466816267}
+  - {fileID: 8997290957466816277}
+  - {fileID: 8997290957466816278}
+  - {fileID: 8997290957466816277}
+  - {fileID: 8997290957466816278}
   - {fileID: 8997290957466816265}
   - {fileID: 8997290957466816277}
+  - {fileID: 8997290957466816267}
   - {fileID: 8997290957466816265}
   initAttackList: []
   patternIndex: 0
@@ -137,7 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationStateName: Stamp
-  preDelayMilliSeconds: 1100
+  preDelayMilliSeconds: 1600
   postDelayMilliSeconds: 2000
   stamp: {fileID: 7147887247012882290, guid: 414f6be30d72a0241905b212bc9ae54b, type: 3}
   stampCount: 5
@@ -159,7 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationStateName: Charging
-  preDelayMilliSeconds: 900
+  preDelayMilliSeconds: 1400
   postDelayMilliSeconds: 2000
   chanrgeAttack: {fileID: 8930476658659740008, guid: 6685e6ffb0e44714d80b06df71b3777d, type: 3}
 --- !u!114 &8997290957466816267
@@ -178,10 +176,10 @@ MonoBehaviour:
   preDelayMilliSeconds: 1000
   postDelayMilliSeconds: 3000
   teleportPosition:
-  - {x: -35, y: 1}
-  - {x: -40, y: 1}
-  - {x: -45, y: 1}
-  - {x: -50, y: 1}
+  - {x: -35, y: 0}
+  - {x: -40, y: 0}
+  - {x: -45, y: 0}
+  - {x: -50, y: 0}
 --- !u!61 &8997290957466816266
 BoxCollider2D:
   m_ObjectHideFlags: 0
