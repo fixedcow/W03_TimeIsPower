@@ -2,17 +2,13 @@ using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class Gate : MonoBehaviour
 {
-    public List<GateSwitch> switches = new();
-    [SerializeField] float openSpeed = 1f;
-    [SerializeField] float closeSpeed = 0.3f;
-
+    public List<Lever> Levers = new();
+    float speed = 0.5f;
+    Tweener GateMoveTween;
 
     bool _isOpen = false;
     public bool IsOpen
@@ -23,33 +19,57 @@ public class Gate : MonoBehaviour
         }
         set
         {
-            _isOpen = value;
             if (value)
             {
-                foreach (var v in switches)
+                _isOpen = true;
+                foreach (var v in Levers)
                 {
-                    if (!v.isActive) return;
+                    if (!v.isActive)
+                    {
+                        _isOpen = false;
+                        break;
+                    }
                 }
-                GateOpen();
             }
             else
             {
-                GateClose();
+                _isOpen = value;
+                this.Open();
             }
         }
     }
 
+    Vector3 openPos;
+    Vector3 closePos;
 
-    void GateOpen()
+    private void Start()
     {
-        this.gameObject.transform.DOMoveY(4.2f, openSpeed);
+        GateMoveTween = this.transform.DOMoveY(1.2f, speed).SetAutoKill(false);
+        openPos = this.transform.position + Vector3.up * 3f;
+        closePos = this.transform.position;
     }
 
-    void GateClose()
+    private void Update()
     {
-        this.gameObject.transform.DOMoveY(1.2f, closeSpeed);
+        if (!_isOpen)
+        {
+            this.Close();
+        }
+        else
+        {
+            this.Open();
+        }
     }
+    
+    public void Close()
+    {
+        GateMoveTween.ChangeEndValue(closePos, speed, true).Restart();
 
-  
+    }
+    public void Open()
+    {
+        GateMoveTween.ChangeEndValue(openPos, speed, true).Restart();
+
+    }
 }
 

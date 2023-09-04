@@ -34,7 +34,7 @@ public class GhostRecorder : MonoBehaviour
 	}
 	private IEnumerator StartRecordGhost()
     {
-        GameObject ghost = Instantiate(ghostPrefab, new Vector3(15, 0, 0), Quaternion.identity);
+        GameObject ghost = Instantiate(ghostPrefab);
         GhostData ghostData = ghost.GetComponent<GhostData>();
 
         while (isRecording)
