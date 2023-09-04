@@ -15,9 +15,6 @@ public class TutorialManager : MonoBehaviour
     public List<GameObject> gates;
     public List<GameObject> fixedGates;
 
-
-   
-
     private void Awake()
     {
         Instance = this;

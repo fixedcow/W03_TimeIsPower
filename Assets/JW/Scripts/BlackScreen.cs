@@ -35,22 +35,15 @@ public class BlackScreen : MonoBehaviour
 	{
 		main = Camera.main;
 		TryGetComponent(out sr);
-		gameObject.SetActive(false);
 	}
 
-    private void OnEnable()
+    private void Start()
     {
-		SceneManager.sceneLoaded += OnSceneLoaded;
+        if(GameManager.instance.GetGameState() != GameManager.EGameState.tutorial)
+		{
+			this.gameObject.SetActive(false);
+		}
     }
 
-    private void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-
-    async void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-	{
-		TitleManager.Instance.StartGame();
-	}
     #endregion
 }
