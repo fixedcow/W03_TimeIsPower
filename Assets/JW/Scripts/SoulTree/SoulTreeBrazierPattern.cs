@@ -15,6 +15,8 @@ public class SoulTreeBrazierPattern : BossPattern
         GameObject zombie = Instantiate(zombiePrefab, zombieSpawnPoint, Quaternion.identity);
         Vector3 pos = brazierPosList[Random.Range(0, brazierPosList.Count)];
         zombie.GetComponent<Zombie>().SetBrazierPosition(pos);
+        DynamicObject dynamic = zombie.GetComponent<DynamicObject>();
+        DynamicObjectManager.instance.AddObject(dynamic);
     }
 
 }

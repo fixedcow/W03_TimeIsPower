@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private GameObject bossClearText;
 	[SerializeField] private SpriteRenderer bossClearFadeBlack;
 	[SerializeField] private Vector3 initPlayerPosition;
+	[SerializeField] private SpriteRenderer fadeBlack;
+	[SerializeField] private Brazier brazier;
 
 	#endregion
 
@@ -83,7 +85,11 @@ public class GameManager : MonoBehaviour
 		{
 			DeathCounterManager.instance.PlayerDead();
 		}
-
+		brazier.Init();
+		Color black = Color.black;
+		black.a = 0;
+		fadeBlack.color = black;
+		
 		CameraController.instance.HitShake();
 		fadeBlackController.StartFade();
 		GhostManager.instance.StopRecordAndReplay();
@@ -93,7 +99,6 @@ public class GameManager : MonoBehaviour
 
 	private void WaitBattleEnd()
     {
-		Debug.Log("전투끝");
 		if (state == EGameState.tutorial) return;
 
 		BossHpGUI.instance.HideGUI();
@@ -125,7 +130,6 @@ public class GameManager : MonoBehaviour
 
 	public void BossClear()
     {
-		Debug.Log("보스끝");
 		GhostManager.instance.GetReplayer().ClearData();
 		foreach(GameObject go in stageEnterTriggerList)
         {
@@ -138,7 +142,7 @@ public class GameManager : MonoBehaviour
 		}
 		bossClearText.SetActive(true);
 		GetBoss().Initialize();
-		bossClearFadeBlack.DOFade(1f, 2)
+		bossClearFadeBlack.DOFade(1f, 5)
 			.OnComplete(() =>
 			{
 				BossHpGUI.instance.HideGUI();
@@ -156,7 +160,6 @@ public class GameManager : MonoBehaviour
 				bossClearText.SetActive(false);
 
 				player.CanAct();
-				Debug.Log("끝");
 			});
 		
 

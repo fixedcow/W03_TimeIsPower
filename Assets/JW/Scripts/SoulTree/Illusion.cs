@@ -24,7 +24,6 @@ public class Illusion : DynamicObject
 
     public void SetIllusion(Vector3 startPos, float angle,float delay)
     {
-        Debug.Log(illusionPosition);
         illusionPosition = startPos;
         circleAngle = angle;
         delayTime = delay;
