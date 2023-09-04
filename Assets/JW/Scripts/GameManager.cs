@@ -31,6 +31,8 @@ public class GameManager : MonoBehaviour
 	[SerializeField] private GameObject bossClearText;
 	[SerializeField] private SpriteRenderer bossClearFadeBlack;
 	[SerializeField] private Vector3 initPlayerPosition;
+	[SerializeField] private SpriteRenderer fadeBlack;
+	[SerializeField] private Brazier brazier;
 
 	#endregion
 
@@ -83,7 +85,11 @@ public class GameManager : MonoBehaviour
 		{
 			DeathCounterManager.instance.PlayerDead();
 		}
-
+		brazier.Init();
+		Color black = Color.black;
+		black.a = 0;
+		fadeBlack.color = black;
+		
 		CameraController.instance.HitShake();
 		fadeBlackController.StartFade();
 		GhostManager.instance.StopRecordAndReplay();

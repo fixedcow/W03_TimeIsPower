@@ -15,6 +15,11 @@ public class Brazier : MonoBehaviour
     {
 		nowBrazier = maxBrazier;
     }
+
+	public void Init()
+    {
+		nowBrazier = maxBrazier;
+	}
     public void Hit(int _damage, GameObject _source)
 	{
         if (nowBrazier >= 1)
