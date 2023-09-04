@@ -25,6 +25,7 @@ public class PlayerAttackData : MonoBehaviour
 			foreach (Collider2D col in cols)
 			{
 				Boss boss;
+				Zombie zombie;
 				GateSwitch _switch;
 				if(col.TryGetComponent(out boss) == true)
 				{
@@ -34,7 +35,11 @@ public class PlayerAttackData : MonoBehaviour
 				{
 					_switch.Hit();
 				}
-				
+				if (col.TryGetComponent(out zombie) == true)
+				{
+					zombie.HitZombie(damage, source);
+				}
+
 			}
 		}
 	}
