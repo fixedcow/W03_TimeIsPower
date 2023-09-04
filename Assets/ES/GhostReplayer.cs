@@ -26,7 +26,10 @@ public class GhostReplayer : MonoBehaviour
 	{
 		ghostDatas.Add(_data);
 	}
-
+    public void ClearData()
+    {
+        ghostDatas.Clear();
+    }
 	private IEnumerator ReplayGhost()
     {
         //비활성화 되어있는 ghost들 켜주기

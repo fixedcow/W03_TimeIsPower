@@ -70,11 +70,11 @@ public class TitleManager : MonoBehaviour
 
     private void Start()
     {
-		if(LocalDataManager.Instance.isTutorialCleared && !isStarted)
+		/*if(LocalDataManager.Instance.isTutorialCleared && !isStarted)
 		{
 			button.color = new Color(1, 1, 1, 1);
 			text.color = new Color(1, 1, 1, 1);
-		}
+		}*/
     }
     #endregion
 }

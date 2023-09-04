@@ -14,6 +14,7 @@ public class GhostManager : MonoBehaviour
 	private GhostReplayer replayer;
 	#endregion
 
+	public GhostReplayer GetReplayer() => replayer;
 	#region PublicMethod
 	public void RecordAndReplay()
 	{
