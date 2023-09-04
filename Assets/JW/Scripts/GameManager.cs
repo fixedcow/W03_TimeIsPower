@@ -84,11 +84,11 @@ public class GameManager : MonoBehaviour
 		if (state != EGameState.tutorial)
 		{
 			DeathCounterManager.instance.PlayerDead();
+			brazier.Init();
+			Color black = Color.black;
+			black.a = 0;
+			fadeBlack.color = black;
 		}
-		brazier.Init();
-		Color black = Color.black;
-		black.a = 0;
-		fadeBlack.color = black;
 		
 		CameraController.instance.HitShake();
 		fadeBlackController.StartFade();
