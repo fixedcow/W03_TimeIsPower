@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3929673242542050056}
   - component: {fileID: 3929673242542050057}
   - component: {fileID: 3929673242542050070}
+  - component: {fileID: 6847270921480568216}
   m_Layer: 0
   m_Name: JumpRope
   m_TagString: Untagged
@@ -74,8 +75,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1474902605
-  m_SortingLayer: 5
+  m_SortingLayerID: -1654260333
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -448995384, guid: 632a28b1ee4051349b48afd9f73997c9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -119,7 +120,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -149,11 +150,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cautionEffect: {fileID: 3929673242818414659}
   attackCollider: {fileID: 3929673242542050057}
-  attackEffectRenderer: {fileID: 0}
   cautionTime: 1.8
   blinkTime: 0.9
   attackAnimation: {fileID: 3929673242542050056}
   attackTime: 0.5
+--- !u!114 &6847270921480568216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3929673242542050071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4aa8f22a6bbdef44a44570d52876a13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3929673242818414659
 GameObject:
   m_ObjectHideFlags: 0
