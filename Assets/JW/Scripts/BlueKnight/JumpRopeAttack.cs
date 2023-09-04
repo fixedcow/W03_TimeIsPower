@@ -55,7 +55,7 @@ public class JumpRopeAttack : MonoBehaviour
     }
     public IEnumerator AttackPlay()
     {
-    /*    
+    /*  
         blinkSequence.Play();
         cautionEffect.SetActive(true);
         yield return waitCautionTime;*/
