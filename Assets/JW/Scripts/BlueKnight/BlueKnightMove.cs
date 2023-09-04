@@ -19,10 +19,12 @@ public class BlueKnightMove : MonoBehaviour
             float bossPosX = transform.position.x;
             if (playerPosX > bossPosX)
             {
+                transform.localScale = new Vector3(-1, 0, 0);
                 transform.Translate(moveSpeed, 0, 0);
             }
             else
             {
+                transform.localScale = new Vector3(1, 0, 0);
                 transform.Translate(-moveSpeed, 0, 0);
             }
         }
