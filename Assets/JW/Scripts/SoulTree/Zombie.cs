@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Zombie : MonoBehaviour
+public class Zombie : DynamicObject
 {
 	[SerializeField] Animator anim;
 
@@ -88,4 +88,13 @@ public class Zombie : MonoBehaviour
 		attackZombie();
     }
 
+    public override void DestroyObject()
+    {
+		Destroy(this.gameObject);
+    }
+
+    public override void StopObject()
+    {
+		Destroy(this.gameObject);
+	}
 }
