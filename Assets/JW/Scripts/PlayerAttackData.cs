@@ -26,7 +26,7 @@ public class PlayerAttackData : MonoBehaviour
 			{
 				Boss boss;
 				Zombie zombie;
-				GateSwitch _switch;
+				Lever _switch;
 				if(col.TryGetComponent(out boss) == true)
 				{
 					boss.Hit(damage, source);

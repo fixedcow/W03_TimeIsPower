@@ -33,8 +33,9 @@ public class Player : MonoBehaviour
 	[Button]
 	public void Hit()
 	{
-		if (isInvincible == false && GameManager.instance.GetGameState() == GameManager.EGameState.battle || GameManager.instance.GetGameState() == GameManager.EGameState.tutorial) ;
+		if (GameManager.instance.GetGameState() == GameManager.EGameState.battle || GameManager.instance.GetGameState() == GameManager.EGameState.tutorial)
 		{
+			if (isInvincible) return;
 			GameManager.instance.BattleEnd();
 			BodyGenerator.instance.SpawnBody(transform, false);
 		}
@@ -57,6 +58,7 @@ public class Player : MonoBehaviour
 	private void OnParticleCollision()
 	{
 		Hit();
+		SetInvincibility(true);
 	}
 
 	#region PrivateMethod
