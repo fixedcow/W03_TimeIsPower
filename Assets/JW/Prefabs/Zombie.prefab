@@ -171,7 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 5901335584027809102}
   maxHP: 0
-  moveSpeed: 0.0012
+  moveSpeed: 0.01
   brazierSpace: 1
 --- !u!61 &5901335584029547557
 BoxCollider2D:

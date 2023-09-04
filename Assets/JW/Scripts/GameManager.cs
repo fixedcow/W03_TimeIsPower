@@ -109,6 +109,8 @@ public class GameManager : MonoBehaviour
 		boss.gameObject.SetActive(false);
 		boss = null;
 		DynamicObjectManager.instance.Clear();
+		ProgressManager.Instance.ResetWall();
+		ProgressManager.Instance.SetProgress();
 	}
 	public void SetGameStateIdle()
 	{

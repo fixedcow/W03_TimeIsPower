@@ -5104,6 +5104,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProgressManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2225117873291023831, guid: 6f33cea37d5421b4e997bbc52fcfb133, type: 3}
+      propertyPath: speed
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f33cea37d5421b4e997bbc52fcfb133, type: 3}
 --- !u!4 &796377088 stripped
@@ -7087,6 +7091,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 283088564}
     m_Modifications:
+    - target: {fileID: 177392738767594603, guid: 69c63825c82c9c14a92a3e99e7b3e316, type: 3}
+      propertyPath: maxBrazier
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 177392738767594603, guid: 69c63825c82c9c14a92a3e99e7b3e316, type: 3}
+      propertyPath: HealTimeInterval
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6523716907613784760, guid: 69c63825c82c9c14a92a3e99e7b3e316, type: 3}
       propertyPath: m_IsTrigger
       value: 1
@@ -23008,6 +23020,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 283088564}
     m_Modifications:
+    - target: {fileID: 1118208492, guid: b12a8253138d2e24b9ad1b37924c7f58, type: 3}
+      propertyPath: illusionCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118208492, guid: b12a8253138d2e24b9ad1b37924c7f58, type: 3}
+      propertyPath: illusionDelayInterval
+      value: 0.3
+      objectReference: {fileID: 0}
     - target: {fileID: 1835606178189181108, guid: b12a8253138d2e24b9ad1b37924c7f58, type: 3}
       propertyPath: rageVersion
       value: 
@@ -23062,67 +23082,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b12a8253138d2e24b9ad1b37924c7f58, type: 3}
---- !u!1001 &2587674560862992930
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2722995187972100879, guid: b4a0082ecbf80704d82d594eaed5caa3, type: 3}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2722995187972100879, guid: b4a0082ecbf80704d82d594eaed5caa3, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -22.07
-      objectReference: {fileID: 0}
-    - target: {fileID: 2722995187972100879, guid: b4a0082ecbf80704d82d594eaed5caa3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -9.23
-      objectReference: {fileID: 0}
-    - target: {fileID: 2722995187972100879, guid: b4a0082ecbf80704d82d594eaed5caa3, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.011032763
-      objectReference: {fileID: 0}
-    - target: {fileID: 2722995187972100879, guid: b4a0082ecbf80704d82d594eaed5caa3, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2722995187972100879, guid: b4a0082ecbf80704d82d594eaed5caa3, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2722995187972100879, guid: b4a0082ecbf80704d82d594eaed5caa3, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2722995187972100879, guid: b4a0082ecbf80704d82d594eaed5caa3, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2722995187972100879, guid: b4a0082ecbf80704d82d594eaed5caa3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2722995187972100879, guid: b4a0082ecbf80704d82d594eaed5caa3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2722995187972100879, guid: b4a0082ecbf80704d82d594eaed5caa3, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4234787543626802126, guid: b4a0082ecbf80704d82d594eaed5caa3, type: 3}
-      propertyPath: m_Name
-      value: Eyeball
-      objectReference: {fileID: 0}
-    - target: {fileID: 4234787543626802126, guid: b4a0082ecbf80704d82d594eaed5caa3, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b4a0082ecbf80704d82d594eaed5caa3, type: 3}
 --- !u!1001 &2845327253768391058
 PrefabInstance:
   m_ObjectHideFlags: 0
