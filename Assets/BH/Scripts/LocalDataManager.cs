@@ -21,7 +21,7 @@ public class LocalDataManager : MonoBehaviour
     {
         get
         {
-            return "어딘가의 마법사이름";
+            return "분노한 악당 마법사";
         }
     }
 
@@ -29,7 +29,7 @@ public class LocalDataManager : MonoBehaviour
     {
         get
         {
-            return "어딘가의 기사 이름";
+            return "진노한 청백의 기사";
         }
     }
 
@@ -37,7 +37,7 @@ public class LocalDataManager : MonoBehaviour
     {
         get
         {
-            return "어딘가의 나무 이름";
+            return "분노한 혼거두미";
         }
     }
 

@@ -5,6 +5,12 @@ using UnityEngine;
 public class TrophyManager : MonoBehaviour
 {
     [SerializeField] List<GameObject> awards;
+    public static TrophyManager Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {

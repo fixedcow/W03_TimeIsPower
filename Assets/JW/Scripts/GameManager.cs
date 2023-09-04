@@ -114,17 +114,19 @@ public class GameManager : MonoBehaviour
 		GameClearUI.SetTryText();
 		Physics2D.SyncTransforms();
 
-		if(DeathCounterManager.instance.count == 1)
-		{
-			LocalDataManager.Instance.SetTrophy(boss.bossName);
-		}
-
 	}
 
 	public void BossClear()
     {
+		LocalDataManager.Instance.SetTrophy(boss.bossName);
+        if (DeathCounterManager.instance.count == 0)
+        {
+            LocalDataManager.Instance.SetPerfect(boss.bossName);
+        }
+		
 
-		GhostManager.instance.GetReplayer().ClearData();
+
+        GhostManager.instance.GetReplayer().ClearData();
 		foreach(GameObject go in stageEnterTriggerList)
         {
 			go.SetActive(true);
@@ -136,7 +138,8 @@ public class GameManager : MonoBehaviour
 		}
 		bossClearText.SetActive(true);
 		GetBoss().Initialize();
-		bossClearFadeBlack.DOFade(1f, 2)
+		
+		bossClearFadeBlack.DOFade(1f, 4)
 			.OnComplete(() =>
 			{
 				BossHpGUI.instance.HideGUI();
@@ -144,9 +147,15 @@ public class GameManager : MonoBehaviour
 				{
 					state = EGameState.idle;
 				}
+				
 				CameraController.instance.EndFollowToPlayer();
 				CameraController.instance.MoveToRespawnPoint();
+				
 				player.transform.position = initPlayerPosition;
+
+				ProgressManager.Instance.ResetWall();
+				TrophyManager.Instance.GetTrophy();
+				ProgressManager.Instance.SetProgress();
 				
 				Color color = Color.black;
 				color.a = 0;

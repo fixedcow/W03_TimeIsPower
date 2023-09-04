@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class ProgressManager : MonoBehaviour
 {
+    public static ProgressManager Instance;
+
     [SerializeField] GameObject redMageWall;
     [SerializeField] GameObject blueKnightWall;
     [SerializeField] GameObject soulTreeWall;
@@ -17,6 +19,8 @@ public class ProgressManager : MonoBehaviour
 
     private void Awake()
     {
+        Instance = this;
+
         originRedMageWall = redMageWall.transform.position;
         originBlueKnightWall = blueKnightWall.transform.position;
         originSoulTreeWall = soulTreeWall.transform.position;
