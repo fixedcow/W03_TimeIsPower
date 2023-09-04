@@ -167,7 +167,11 @@ MonoBehaviour:
   hpMax: 0
   startPattern: {fileID: 7237450471394314803}
   patternList:
+  - {fileID: 6998008966939605118}
   - {fileID: 7237450471394314803}
+  - {fileID: 4530531855931120578}
+  - {fileID: 6998008966939605118}
+  - {fileID: 3852145022920305804}
   initAttackList: []
   patternIndex: 0
   currentPattern: {fileID: 0}
@@ -226,11 +230,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animationStateName: 
   preDelayMilliSeconds: 1000
-  postDelayMilliSeconds: 3000
+  postDelayMilliSeconds: 6000
   illusionPrefab: {fileID: 5760634048153385850, guid: e67a9b8d51c79c84384a8e320de1250c, type: 3}
   illusionCount: 5
   illusionDelay: 3
-  illusionDelayInterval: 0.4
+  illusionDelayInterval: 0.25
   illusionStartPosition: {x: -19, y: -10, z: 0}
 --- !u!114 &3852145022920305804
 MonoBehaviour:
@@ -249,8 +253,8 @@ MonoBehaviour:
   postDelayMilliSeconds: 3000
   rightCrowAttack: {fileID: 8478611153215127096}
   leftCrowAttack: {fileID: 4174003369855460761}
-  rightPosX: -14
-  leftPosX: -24.5
+  rightPosX: -12
+  leftPosX: -26.5
   minY: -22
   maxY: -6
 --- !u!114 &6998008966939605118
@@ -266,8 +270,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animationStateName: 
-  preDelayMilliSeconds: 500
-  postDelayMilliSeconds: 1000
+  preDelayMilliSeconds: 0
+  postDelayMilliSeconds: 0
   zombiePrefab: {fileID: 5901335584029547556, guid: 6d5f4288e7fd4344287a4cb8f33e565d, type: 3}
   zombieSpawnPoint: {x: -14, y: -22, z: 0}
   brazierPosList:
@@ -803,6 +807,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 6497036242231219010, guid: 892e23898765dd7449c8199792834864, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 6497036242231219010, guid: 892e23898765dd7449c8199792834864, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.46
+      objectReference: {fileID: 0}
     - target: {fileID: 6497036242847102770, guid: 892e23898765dd7449c8199792834864, type: 3}
       propertyPath: m_Layer
       value: 9
@@ -821,11 +833,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6497036243323664898, guid: 892e23898765dd7449c8199792834864, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -3.79
       objectReference: {fileID: 0}
     - target: {fileID: 6497036243323664898, guid: 892e23898765dd7449c8199792834864, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 2.61
       objectReference: {fileID: 0}
     - target: {fileID: 6497036243323664898, guid: 892e23898765dd7449c8199792834864, type: 3}
       propertyPath: m_LocalPosition.z
@@ -877,6 +889,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 6497036242231219010, guid: 892e23898765dd7449c8199792834864, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 6497036242231219010, guid: 892e23898765dd7449c8199792834864, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.36
+      objectReference: {fileID: 0}
     - target: {fileID: 6497036242847102770, guid: 892e23898765dd7449c8199792834864, type: 3}
       propertyPath: m_Layer
       value: 9
@@ -895,11 +915,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6497036243323664898, guid: 892e23898765dd7449c8199792834864, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 3.85
       objectReference: {fileID: 0}
     - target: {fileID: 6497036243323664898, guid: 892e23898765dd7449c8199792834864, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.32
       objectReference: {fileID: 0}
     - target: {fileID: 6497036243323664898, guid: 892e23898765dd7449c8199792834864, type: 3}
       propertyPath: m_LocalPosition.z
@@ -999,6 +1019,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 6489920591418624580, guid: 58ba8cfd1d7f2ae4da4c1832fd6b10b5, type: 3}
+      propertyPath: attackTime
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 6489920592631911231, guid: 58ba8cfd1d7f2ae4da4c1832fd6b10b5, type: 3}
       propertyPath: m_Layer
       value: 9
@@ -1031,6 +1055,10 @@ PrefabInstance:
     - target: {fileID: 1814058720782822264, guid: 7c76a6740f92109498e2b95e322e1417, type: 3}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1814058721985491459, guid: 7c76a6740f92109498e2b95e322e1417, type: 3}
+      propertyPath: attackTime
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 1814058721985491462, guid: 7c76a6740f92109498e2b95e322e1417, type: 3}
       propertyPath: m_Name

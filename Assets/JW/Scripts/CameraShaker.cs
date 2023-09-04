@@ -18,6 +18,7 @@ public class CameraShaker : MonoBehaviour
 
 	[SerializeField] private List<CameraShakingData> datas = new List<CameraShakingData>();
 
+	[Button]
 	public void StartCameraShake(ECameraShakingType type)
     {
 		CameraShakingData data = datas[(int)type];

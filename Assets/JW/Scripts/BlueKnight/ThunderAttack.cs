@@ -16,10 +16,6 @@ public class ThunderAttack : MonoBehaviour
     }
     public IEnumerator AttackPlay()
     {
-        if (animationName != "")
-        {
-            attackAnim.Play(nameof(animationName));
-        }
         thunderCollider.enabled = true;
 		CameraController.instance.ThunderShake();
 		yield return new WaitForSeconds(AttackTime);
