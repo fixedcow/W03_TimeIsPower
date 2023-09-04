@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
 	[Button]
 	public void Hit()
 	{
-		if (isInvincible == false && GameManager.instance.GetGameState() == GameManager.EGameState.battle || GameManager.instance.GetGameState() == GameManager.EGameState.tutorial) ;
+		if (isInvincible == false && GameManager.instance.GetGameState() == GameManager.EGameState.battle || GameManager.instance.GetGameState() == GameManager.EGameState.tutorial)
 		{
 			GameManager.instance.BattleEnd();
 			BodyGenerator.instance.SpawnBody(transform, false);
