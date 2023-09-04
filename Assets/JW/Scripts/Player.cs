@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
 
 	private bool isInvincible;
 	private bool isPressedDown;
-	private bool canAct = false;
+	[SerializeField] private bool canAct = false;
 	Vector2 RespawnPoint = new Vector2(-19f, 0.3f);
 	
 	#endregion

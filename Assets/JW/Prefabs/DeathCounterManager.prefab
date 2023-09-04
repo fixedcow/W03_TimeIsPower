@@ -48,8 +48,8 @@ MonoBehaviour:
   deathCountPrefab: {fileID: 709546245778422917, guid: ee4e5a4ec4f075948bce245af0e73a2a, type: 3}
   deathCounters:
   - {fileID: 100430734186762465}
-  posXRange: 3
-  posYRange: 1.5
+  posXRange: 4
+  posYRange: 1
   current: {fileID: 100430734186762465}
 --- !u!1001 &629410712777550954
 PrefabInstance:
