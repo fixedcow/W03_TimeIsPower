@@ -2315,8 +2315,8 @@ MeshRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1474902605
-  m_SortingLayer: 5
+  m_SortingLayerID: 529096933
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &419790693
@@ -2885,6 +2885,7 @@ MonoBehaviour:
   cameraPos: {x: 19, y: 4.5, z: -10}
   gate: {fileID: 1105807584}
   fixedGate: {fileID: 1416295873}
+  black: {fileID: 583780746}
 --- !u!61 &572839959
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2985,6 +2986,17 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &583780746 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5206396050702735745, guid: 112f2edc6fc554442b4f6b9d73694337, type: 3}
+  m_PrefabInstance: {fileID: 5206396051138674924}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f07fd20d863173f4d9334509be406403, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &606593358
 GameObject:
   m_ObjectHideFlags: 0
@@ -6256,6 +6268,7 @@ MonoBehaviour:
   cameraPos: {x: -0.5, y: 4.5, z: -10}
   gate: {fileID: 793635097}
   fixedGate: {fileID: 678613774}
+  black: {fileID: 0}
 --- !u!1 &1605102764
 GameObject:
   m_ObjectHideFlags: 0
@@ -8589,6 +8602,7 @@ MonoBehaviour:
   cameraPos: {x: 19, y: 4.5, z: -10}
   gate: {fileID: 1661727784}
   fixedGate: {fileID: 1094382118}
+  black: {fileID: 0}
 --- !u!61 &1964427382
 BoxCollider2D:
   m_ObjectHideFlags: 0
