@@ -12,6 +12,6 @@ public class EndingUI : MonoBehaviour
     public void SetTryText()
     {
 
-        tryText.text = DeathCounterManager.instance.count.ToString();
+        tryText.text = (DeathCounterManager.instance.count + 1).ToString();
     }
 }

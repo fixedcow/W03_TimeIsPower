@@ -32,7 +32,7 @@ public class PlayerAttackData : MonoBehaviour
 				}
 				if(col.TryGetComponent(out _switch) == true)
 				{
-
+					_switch.Hit();
 				}
 				
 			}

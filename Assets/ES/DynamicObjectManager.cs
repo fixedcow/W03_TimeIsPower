@@ -43,17 +43,7 @@ public class DynamicObjectManager : MonoBehaviour
         }
         objects.Clear();
     }
-/*
-    public void DeleteObjects(DynamicObject dynamic)
-    {
-        for(int i=0; i < objects.Count; i++)
-        {
-            if (objects[i] == dynamic)
-            {
-                objects.RemoveAt(i);
-            }
-        }
-    }*/
+
     private void Awake()
     {
         if (instance == null)

@@ -17,7 +17,7 @@ public class CameraController : MonoBehaviour
 	[SerializeField] private CameraShaker shaker;
 
 	private Transform player;
-	private bool isGameStart;
+	private Utils.EStage stage;
 	#endregion
 
 	#region PublicMethod
@@ -36,11 +36,14 @@ public class CameraController : MonoBehaviour
 			case Utils.EStage.Stage2:
 				result = stageCameraPosition[1];
 				break;
+			case Utils.EStage.Stage3:
+				result = stageCameraPosition[2];
+				break;
 		}
 		result.z = -10f;
 		transform.DOMove(result, 0.5f)
 			.OnComplete(()=>{
-				StartFollowToPlayer();
+				StartFollowToPlayer(stageNumber);
 			});
 	}
 	public void HitShake()
@@ -48,14 +51,14 @@ public class CameraController : MonoBehaviour
 		shaker.StartCameraShake();
 	}
 
-	public void StartFollowToPlayer()
+	public void StartFollowToPlayer(Utils.EStage _stage)
     {
-		isGameStart = true;
+		stage = _stage;
     }
 
 	public void EndFollowToPlayer()
     {
-		isGameStart = false;
+		stage = Utils.EStage.main;
     }
 	#endregion
 
@@ -72,13 +75,30 @@ public class CameraController : MonoBehaviour
     }
     private void FollowToPlayer()
     {
-        if (isGameStart)
+		if (stage == Utils.EStage.title 
+			|| stage == Utils.EStage.main)
+			return;
+
+        if (stage == Utils.EStage.Stage1)
         {
 			Vector3 cameraPos = defaultCameraPosition;
 			float posY = Mathf.Clamp(player.position.y + offsetY, 4f, 6f);
 			cameraPos.y = posY;
 			cameraPos.z = -10;
 			transform.position = cameraPos;
+		}
+		else if(stage == Utils.EStage.Stage2)
+		{
+			Vector3 cameraPos = defaultCameraPosition;
+			float posX = Mathf.Clamp(player.position.x, -45f, -40f);
+			float posY = Mathf.Clamp(player.position.y + offsetY, 4f, 6f);
+			cameraPos.y = posY;
+			cameraPos.z = -10;
+			transform.position = cameraPos;
+		}
+		else if(stage == Utils.EStage.Stage3)
+		{
+
 		}
 		
     }
