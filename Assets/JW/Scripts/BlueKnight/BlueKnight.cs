@@ -10,7 +10,6 @@ public class BlueKnight : Boss
 	#region PrivateVariables
 	[SerializeField] GameObject rageVersion;
 	[Range(0, 1)][SerializeField] private float ragePercentage;
-	[SerializeField] BlueKnightMove move;
 	#endregion
 
 	#region PublicMethod
@@ -31,14 +30,6 @@ public class BlueKnight : Boss
 	public override void BossKilled()
 	{
 
-	}
-	public void Move()
-	{
-		move.CanAct();
-	}
-	public void Stop()
-	{
-		move.CanNotAct();
 	}
 	#endregion
 
