@@ -8,10 +8,10 @@ public class TutorialManager : MonoBehaviour
     public static TutorialManager Instance;
     public List<Vector3> spawnPosition;
     public ParticleSystem fire;
-    float fireDelayTime = 14f;
+    float fireDelayTime = 6f;
 
-    [SerializeField] private List<GameObject> stageEnterTriggerList = new List<GameObject>();
-    [SerializeField] private FadeBlackController fadeBlackController;
+    public List<GameObject> gates;
+    public List<GameObject> fixedGates;
 
 
     private void Awake()
@@ -55,5 +55,16 @@ public class TutorialManager : MonoBehaviour
         fire.Play();
     }
 
-
+    public void Reset()
+    {
+        fire.Stop();
+        foreach(GameObject go in gates)
+        {
+            go.SetActive(true);
+        }
+        foreach(GameObject go in fixedGates)
+        {
+            go.SetActive(false);
+        }
+    }
 }

@@ -124,6 +124,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 773131ce1f05e7241b0a7e57bd929a85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  switches: []
-  openSpeed: 0.9
-  closeSpeed: 1
+  Levers: []

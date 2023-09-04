@@ -57,13 +57,16 @@ public class GameManager : MonoBehaviour
 	public void BattleEnd()
 	{
 		if (state == EGameState.idle) return;
+
 		if (state != EGameState.tutorial)
 		{
 			state = EGameState.idle;
+
 		}
-		else
+
+		if (state == EGameState.tutorial)
 		{
-			TutorialManager.Instance.fire.Stop();
+			TutorialManager.Instance.Reset();
 		}
 
 		CameraController.instance.EndFollowToPlayer();
@@ -78,6 +81,7 @@ public class GameManager : MonoBehaviour
 		fadeBlackController.StartFade();
 		GhostManager.instance.StopRecordAndReplay();
 		Invoke(nameof(WaitBattleEnd), fadeBlackController.waitFadeTime+fadeBlackController.fadeTime);
+		GetPlayer().SetInvincibility(false);
 	}
 
 	private void WaitBattleEnd()
