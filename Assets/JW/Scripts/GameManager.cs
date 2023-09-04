@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
@@ -23,8 +24,13 @@ public class GameManager : MonoBehaviour
 
 	[SerializeField] private EndingUI GameClearUI;
 	[SerializeField] private List<Boss> bossList = new List<Boss>();
+	[SerializeField] private List<GameObject> rageBossList = new List<GameObject>();
 	[SerializeField] private List<GameObject> stageEnterTriggerList = new List<GameObject>();
 	[SerializeField] private FadeBlackController fadeBlackController;
+
+	[SerializeField] private GameObject bossClearText;
+	[SerializeField] private SpriteRenderer bossClearFadeBlack;
+	[SerializeField] private Vector3 initPlayerPosition;
 
 	#endregion
 
@@ -87,14 +93,18 @@ public class GameManager : MonoBehaviour
 
 	private void WaitBattleEnd()
     {
+		Debug.Log("전투끝");
 		if (state == EGameState.tutorial) return;
 
 		BossHpGUI.instance.HideGUI();
-		stageEnterTrigger.SetActive(true);
+		foreach(GameObject go in stageEnterTriggerList)
+        {
+			go.SetActive(true);
+        }
 		boss.gameObject.SetActive(false);
 		boss = null;
 		DynamicObjectManager.instance.Clear();
-		LocalDataManager.Instance.GetTrophy();
+		//LocalDataManager.Instance.GetTrophy();
 	}
 	public void SetGameStateIdle()
 	{
@@ -112,6 +122,45 @@ public class GameManager : MonoBehaviour
 		}
 
 	}
+
+	public void BossClear()
+    {
+		Debug.Log("보스끝");
+		GhostManager.instance.GetReplayer().ClearData();
+		foreach(GameObject go in stageEnterTriggerList)
+        {
+			go.SetActive(true);
+        }
+
+		foreach (GameObject go in rageBossList)
+		{
+			go.SetActive(false);
+		}
+		bossClearText.SetActive(true);
+		GetBoss().Initialize();
+		bossClearFadeBlack.DOFade(1f, 2)
+			.OnComplete(() =>
+			{
+				BossHpGUI.instance.HideGUI();
+				if (state != EGameState.tutorial)
+				{
+					state = EGameState.idle;
+				}
+				CameraController.instance.EndFollowToPlayer();
+				CameraController.instance.MoveToRespawnPoint();
+				player.transform.position = initPlayerPosition;
+				
+				Color color = Color.black;
+				color.a = 0;
+				bossClearFadeBlack.color = color;
+				bossClearText.SetActive(false);
+
+				player.CanAct();
+				Debug.Log("끝");
+			});
+		
+
+    }
 
 	public void ChangeState(EGameState _state)
 	{

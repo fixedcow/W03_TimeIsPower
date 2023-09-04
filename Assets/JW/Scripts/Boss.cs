@@ -60,7 +60,11 @@ public abstract class Boss : MonoBehaviour
 			attack.InitAttack();
 		}
 		DynamicObjectManager.instance.EndClear();
-		Invoke(nameof(GameClear), 3f);
+        if (gameObject is RageSoulTree)
+        {
+			Invoke(nameof(GameClear), 3f);
+		}
+		Invoke(nameof(BossClear), 3f);
 	}
 	[Button]
 	public void PatternStart()
@@ -111,6 +115,11 @@ public abstract class Boss : MonoBehaviour
 		}
 		return result;
 	}
+
+	private void BossClear()
+    {
+		GameManager.instance.BossClear();
+    }
 	private void GameClear()
 	{
 		GameManager.instance.GameClear();

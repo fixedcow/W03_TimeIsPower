@@ -15,6 +15,11 @@ public class EyeballBlink : MonoBehaviour
 	[SerializeField] private float maxReactDistance;
 	[SerializeField] private float blinkDelay;
 	private float blinkTimer;
+
+	[SerializeField] private GameObject eyeballPrefab;
+	[SerializeField] private float shootDelay;
+	private float shootTimer;
+
 	#endregion
 
 	#region PublicMethod
@@ -31,7 +36,19 @@ public class EyeballBlink : MonoBehaviour
 	{
 		ChasingPlayer();
 		CheckTimeToBlink();
+		shootEyeball();
 	}
+
+	private void shootEyeball()
+    {
+		shootTimer += Time.deltaTime;
+        if (shootTimer >= shootDelay)
+        {
+            Instantiate(eyeballPrefab, pupil.transform.position, Quaternion.identity);
+			shootTimer = 0;
+        }
+    }
+
 	private void ChasingPlayer()
 	{
 		float distancePercentage = Mathf.Clamp01(GetDistanceWIthPlayer() / maxReactDistance);
