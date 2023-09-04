@@ -93,7 +93,6 @@ public class GameManager : MonoBehaviour
 
 	private void WaitBattleEnd()
     {
-		Debug.Log("전투끝");
 		if (state == EGameState.tutorial) return;
 
 		BossHpGUI.instance.HideGUI();
@@ -104,7 +103,6 @@ public class GameManager : MonoBehaviour
 		boss.gameObject.SetActive(false);
 		boss = null;
 		DynamicObjectManager.instance.Clear();
-		//LocalDataManager.Instance.GetTrophy();
 	}
 	public void SetGameStateIdle()
 	{
@@ -125,7 +123,7 @@ public class GameManager : MonoBehaviour
 
 	public void BossClear()
     {
-		Debug.Log("보스끝");
+
 		GhostManager.instance.GetReplayer().ClearData();
 		foreach(GameObject go in stageEnterTriggerList)
         {
@@ -156,7 +154,7 @@ public class GameManager : MonoBehaviour
 				bossClearText.SetActive(false);
 
 				player.CanAct();
-				Debug.Log("끝");
+
 			});
 		
 

@@ -5957,8 +5957,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa632f248209a4e4c862b5874b4f2e28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  perfectAwards: []
-  isTutorialCleared: 0
 --- !u!4 &1371745607 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6275724414897398067, guid: 8cee444e6f0d4bf4baaff4876fc1e9ad, type: 3}

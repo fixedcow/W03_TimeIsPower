@@ -1,4 +1,5 @@
 using Sirenix.OdinInspector;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,9 +8,38 @@ public class LocalDataManager : MonoBehaviour
 {
     public static LocalDataManager Instance;
 
-    [SerializeField] List<GameObject> perfectAwards;
+    bool _isTutorialCleared = false;
+    public bool IsTutorialCleared
+    {
+        get
+        {
+            return TutorialCanSkip();     
+        }
+    }
 
-    public bool isTutorialCleared = false;
+    public string RedMageName
+    {
+        get
+        {
+            return "어딘가의 마법사이름";
+        }
+    }
+
+    public string BlueKnightName
+    {
+        get
+        {
+            return "어딘가의 기사 이름";
+        }
+    }
+
+    public string SoulTreeName
+    {
+        get
+        {
+            return "어딘가의 나무 이름";
+        }
+    }
 
     private void Awake()
     {
@@ -29,42 +59,23 @@ public class LocalDataManager : MonoBehaviour
     void Start()
     {
         
-
     }
 
-    public void GetTrophy()
-    {
-        if (PlayerPrefs.GetString("분노한 악당 마법사") == "Achieve")
-        {
-            perfectAwards[0].SetActive(true);
-        }
-        if (PlayerPrefs.GetString("분노한 아무튼 기사") == "Achieve")
-        {
-            perfectAwards[1].SetActive(true);
-        }
-        if (PlayerPrefs.GetString("분노한 아무튼 나무") == "Achieve")
-        {
-            perfectAwards[2].SetActive(true);
-        }
-    }
+
 
     public void SetTrophy(string bossname)
     {
-        PlayerPrefs.SetString(bossname, "Achieve");
+        PlayerPrefs.SetInt(bossname, 1);
     }
 
-    void TutorialCanSkip()
+    public void SetPerfect(string bossname)
     {
-        if (PlayerPrefs.GetInt("TutorialClear") == 1)
-        {
-            isTutorialCleared = true;
-        }
-        else
-        {
-            isTutorialCleared = false;
-        }
+        PlayerPrefs.SetInt(bossname + "Perfect", 1);
+    }
 
-
+    bool TutorialCanSkip()
+    {
+        return PlayerPrefs.GetInt("TutorialClear") == 1 ? true : false;
     }
 
     public void ClearTutorial()
@@ -82,5 +93,41 @@ public class LocalDataManager : MonoBehaviour
     void DebugClearTutorial()
     {
         PlayerPrefs.SetInt("TutorialClear", 1);
+    }
+
+    [Button]
+    void DebugClearRedMage()
+    {
+        PlayerPrefs.SetInt(RedMageName, 1);
+    }
+
+    [Button]
+    void DebugClearBlueKnight()
+    {
+        PlayerPrefs.SetInt(BlueKnightName, 1);
+    }
+
+    [Button]
+    void DebugClearSoulTree()
+    {
+        PlayerPrefs.SetInt(SoulTreeName, 1);
+    }
+
+    [Button]
+    void DebugPerfectRedMage()
+    {
+        PlayerPrefs.SetInt(RedMageName+"Perfect", 1);
+    }
+
+    [Button]
+    void DebugPerfectBlueKnight()
+    {
+        PlayerPrefs.SetInt(BlueKnightName + "Perfect", 1);
+    }
+
+    [Button]
+    void DebugPerfectSoulTree()
+    {
+        PlayerPrefs.SetInt(SoulTreeName + "Perfect", 1);
     }
 }
