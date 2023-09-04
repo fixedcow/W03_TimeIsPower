@@ -48,7 +48,11 @@ public class CameraController : MonoBehaviour
 	}
 	public void HitShake()
 	{
-		shaker.StartCameraShake();
+		shaker.StartCameraShake(CameraShaker.ECameraShakingType.playerHit);
+	}
+	public void ThunderShake()
+	{
+		shaker.StartCameraShake(CameraShaker.ECameraShakingType.thunder);
 	}
 
 	public void StartFollowToPlayer(Utils.EStage _stage)
@@ -99,7 +103,12 @@ public class CameraController : MonoBehaviour
 		}
 		else if(stage == Utils.EStage.Stage3)
 		{
-
+			Vector3 cameraPos = defaultCameraPosition;
+			float posY = Mathf.Clamp(player.position.y + offsetY, -18.5f, -10f);
+			cameraPos.x = -19f;
+			cameraPos.y = posY;
+			cameraPos.z = -10;
+			transform.position = cameraPos;
 		}
 		
     }
