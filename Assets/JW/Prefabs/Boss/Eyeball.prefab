@@ -178,7 +178,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6497036243323664898}
-  - component: {fileID: 6497036243323664899}
+  - component: {fileID: 6909956357695177809}
   m_Layer: 0
   m_Name: Eyeball
   m_TagString: Untagged
@@ -194,7 +194,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6497036243323664897}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.66, y: -9.65, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -202,7 +202,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6497036243323664899
+--- !u!114 &6909956357695177809
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -211,8 +211,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 6497036243323664897}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e4127410fe69b9478199d85c74b11c8, type: 3}
+  m_Script: {fileID: 11500000, guid: 7609430df08a1d14dbdb5f7a804b0ba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxReactDistance: 0
-  blinkDelay: 0
+  maxReactDistance: 10
+  blinkDelay: 3
