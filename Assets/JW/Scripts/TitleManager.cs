@@ -4,15 +4,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TitleManager : MonoBehaviour
 {
 	#region PublicVariables
+	public static TitleManager Instance;
+
 	#endregion
 
 	#region PrivateVariables
 	[SerializeField] private BlackScreen blackScreen;
-	bool isStarted = false;
+	public bool isStarted = false;
 	#endregion
 
 	#region PublicMethod
@@ -40,6 +43,11 @@ public class TitleManager : MonoBehaviour
 		await blackScreen.ScreenFadeIn();
 		GameManager.instance.GameStart();
 	}
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {
