@@ -173,8 +173,6 @@ public class GameManager : MonoBehaviour
 				player.CanAct();
 
 			});
-		
-
     }
 
 	public void ChangeState(EGameState _state)

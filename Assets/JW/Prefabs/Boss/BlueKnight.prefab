@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e58a40bef8eb6d24c8e5b195062f5576, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 0
+  moveSpeed: 0.001
 --- !u!114 &8997290957466816275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,7 +68,7 @@ MonoBehaviour:
   bossName: "\uCCAD\uBC31\uC758 \uAE30\uC0AC"
   respawnPoint: {x: -40, y: 0}
   hpCurrent: 0
-  hpMax: 420
+  hpMax: 380
   startPattern: {fileID: 8997290957466816264}
   patternList:
   - {fileID: 8997290957466816278}
