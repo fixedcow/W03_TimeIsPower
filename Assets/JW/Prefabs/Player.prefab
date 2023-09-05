@@ -4923,7 +4923,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9901c1a056203642a6fd1cda3f631c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
+  anim: {fileID: 8803760990524184036}
+  canAct: 1
 --- !u!114 &8803760988626880997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4999,7 +5000,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpForce: 11
   grondCheckRayLength: 0.6
-  downJumpRayLength: 10
+  downJumpRayLength: 16
 --- !u!114 &8803760988626880998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5012,6 +5013,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bba0ccbef3e8d474f90c18bac48106b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAttack: 0
 --- !u!50 &8803760988626880999
 Rigidbody2D:
   serializedVersion: 4

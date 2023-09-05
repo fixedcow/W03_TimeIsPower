@@ -24,6 +24,7 @@ public class CameraController : MonoBehaviour
 	public void MoveToRespawnPoint()
 	{
 		transform.position = respawnPoint;
+		Camera.main.transform.localPosition = Vector2.zero;
 	}
 	public void MoveToStage(Utils.EStage stageNumber)
 	{
