@@ -23,8 +23,8 @@ public class CameraController : MonoBehaviour
 	#region PublicMethod
 	public void MoveToRespawnPoint()
 	{
-		transform.position = respawnPoint;
 		Camera.main.transform.localPosition = Vector2.zero;
+		transform.position = respawnPoint;
 	}
 	public void MoveToStage(Utils.EStage stageNumber)
 	{

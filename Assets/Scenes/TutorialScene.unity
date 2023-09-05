@@ -6063,7 +6063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 568ee43cdf39e404d8bf74bcce9ae755, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultCameraPosition: {x: 0, y: 0, z: 0}
+  defaultCameraPosition: {x: -20, y: 4, z: 0}
   offsetY: 0
   stageCameraPosition:
   - {x: 0, y: 3.75}
